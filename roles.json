@@ -3,88 +3,88 @@
         { "roleId": "accounting", "roleName": "Accounting",
             "roles": [
                 { "roleId": "accounting-accounts-payable", "roleName": "Accounts Payable", 
-                  "headerText": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nunc nibh, mollis sed augue vitae, sagittis placerat magna. Sed ultrices nibh eget ante bibendum fringilla. Nulla at tellus mi. Donec enim massa, ultrices in magna et, mollis ullamcorper est. Integer volutpat quam sed nunc aliquam, sit amet dapibus lacus tristique. Maecenas aliquet in ante eget molestie. Integer quis velit id ante mattis elementum in quis elit. Integer molestie, augue vel facilisis sagittis, dolor dui bibendum ipsum, id lacinia nulla tellus sed nunc. Quisque massa nibh, dignissim sit amet imperdiet non, commodo varius erat. Mauris congue in arcu ac consequat. In gravida efficitur enim, sed mollis diam tempor eu. Praesent id ex aliquam, tincidunt ipsum eget, facilisis nisl. Sed efficitur, magna eget pharetra volutpat, ante diam blandit libero, id eleifend est urna sit amet dolor. Morbi et dui dolor.",
-                  "headerImage": "https://static1.squarespace.com/static/57eacb7e197aea92a6bb9682/t/598b63a6197aea4997ae8a46/1502307282396/?format=750w"
+                  "headerText": "",
+                  "headerImage": "https://cdn.rawgit.com/bezlio/bezlio-gallery/master/images/Bezlio-Gallery-Category-AccountsPayable-Wide.png"
                 },
                 { "roleId": "accounting-accounts-receivable", "roleName": "Accounts Receivable", 
-                    "headerText": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nunc nibh, mollis sed augue vitae, sagittis placerat magna. Sed ultrices nibh eget ante bibendum fringilla. Nulla at tellus mi. Donec enim massa, ultrices in magna et, mollis ullamcorper est. Integer volutpat quam sed nunc aliquam, sit amet dapibus lacus tristique. Maecenas aliquet in ante eget molestie. Integer quis velit id ante mattis elementum in quis elit. Integer molestie, augue vel facilisis sagittis, dolor dui bibendum ipsum, id lacinia nulla tellus sed nunc. Quisque massa nibh, dignissim sit amet imperdiet non, commodo varius erat. Mauris congue in arcu ac consequat. In gravida efficitur enim, sed mollis diam tempor eu. Praesent id ex aliquam, tincidunt ipsum eget, facilisis nisl. Sed efficitur, magna eget pharetra volutpat, ante diam blandit libero, id eleifend est urna sit amet dolor. Morbi et dui dolor.",
-                    "headerImage": "https://static1.squarespace.com/static/57eacb7e197aea92a6bb9682/t/598b63a6197aea4997ae8a46/1502307282396/?format=750w"
+                    "headerText": "",
+                    "headerImage": "https://cdn.rawgit.com/bezlio/bezlio-gallery/master/images/Bezlio-Gallery-Category-AccountsReceivable-Wide.png"
                 }
             ]
         },
         { "roleId": "common", "roleName": "Common", 
-            "headerText": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nunc nibh, mollis sed augue vitae, sagittis placerat magna. Sed ultrices nibh eget ante bibendum fringilla. Nulla at tellus mi. Donec enim massa, ultrices in magna et, mollis ullamcorper est. Integer volutpat quam sed nunc aliquam, sit amet dapibus lacus tristique. Maecenas aliquet in ante eget molestie. Integer quis velit id ante mattis elementum in quis elit. Integer molestie, augue vel facilisis sagittis, dolor dui bibendum ipsum, id lacinia nulla tellus sed nunc. Quisque massa nibh, dignissim sit amet imperdiet non, commodo varius erat. Mauris congue in arcu ac consequat. In gravida efficitur enim, sed mollis diam tempor eu. Praesent id ex aliquam, tincidunt ipsum eget, facilisis nisl. Sed efficitur, magna eget pharetra volutpat, ante diam blandit libero, id eleifend est urna sit amet dolor. Morbi et dui dolor.",
-            "headerImage": "https://static1.squarespace.com/static/57eacb7e197aea92a6bb9682/t/598b63a6197aea4997ae8a46/1502307282396/?format=750w"
+            "headerText": "",
+            "headerImage": "https://cdn.rawgit.com/bezlio/bezlio-gallery/master/images/Bezlio-Gallery-Category-Common-Wide.png"
         },
         { "roleId": "customer-service", "roleName": "Customer Service", 
-            "headerText": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nunc nibh, mollis sed augue vitae, sagittis placerat magna. Sed ultrices nibh eget ante bibendum fringilla. Nulla at tellus mi. Donec enim massa, ultrices in magna et, mollis ullamcorper est. Integer volutpat quam sed nunc aliquam, sit amet dapibus lacus tristique. Maecenas aliquet in ante eget molestie. Integer quis velit id ante mattis elementum in quis elit. Integer molestie, augue vel facilisis sagittis, dolor dui bibendum ipsum, id lacinia nulla tellus sed nunc. Quisque massa nibh, dignissim sit amet imperdiet non, commodo varius erat. Mauris congue in arcu ac consequat. In gravida efficitur enim, sed mollis diam tempor eu. Praesent id ex aliquam, tincidunt ipsum eget, facilisis nisl. Sed efficitur, magna eget pharetra volutpat, ante diam blandit libero, id eleifend est urna sit amet dolor. Morbi et dui dolor.",
-            "headerImage": "https://static1.squarespace.com/static/57eacb7e197aea92a6bb9682/t/598b63a6197aea4997ae8a46/1502307282396/?format=750w"
+            "headerText": "",
+            "headerImage": "https://cdn.rawgit.com/bezlio/bezlio-gallery/master/images/Bezlio-Gallery-Category-CustomerService-Wide.png"
         },
         { "roleId": "engineering", "roleName": "Engineering", 
-            "headerText": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nunc nibh, mollis sed augue vitae, sagittis placerat magna. Sed ultrices nibh eget ante bibendum fringilla. Nulla at tellus mi. Donec enim massa, ultrices in magna et, mollis ullamcorper est. Integer volutpat quam sed nunc aliquam, sit amet dapibus lacus tristique. Maecenas aliquet in ante eget molestie. Integer quis velit id ante mattis elementum in quis elit. Integer molestie, augue vel facilisis sagittis, dolor dui bibendum ipsum, id lacinia nulla tellus sed nunc. Quisque massa nibh, dignissim sit amet imperdiet non, commodo varius erat. Mauris congue in arcu ac consequat. In gravida efficitur enim, sed mollis diam tempor eu. Praesent id ex aliquam, tincidunt ipsum eget, facilisis nisl. Sed efficitur, magna eget pharetra volutpat, ante diam blandit libero, id eleifend est urna sit amet dolor. Morbi et dui dolor.",
-            "headerImage": "https://static1.squarespace.com/static/57eacb7e197aea92a6bb9682/t/598b63a6197aea4997ae8a46/1502307282396/?format=750w"
+            "headerText": "",
+            "headerImage": "https://cdn.rawgit.com/bezlio/bezlio-gallery/master/images/Bezlio-Gallery-Category-Engineering-Wide.png"
         },
         { "roleId": "executive", "roleName": "Executive",
             "roles": [
                 { "roleId": "executive-ceo", "roleName": "CEO", 
-                    "headerText": "The head honcho.  The big cheese.  The big kahuna.  Whatever you call him or her, they have a unique need to see the bigger picture, digesting large amounts of information at once.  These Bezls are designed with that role in mind, providing creative views of complex data with the ability to drill-down.",
-                    "headerImage": "https://static1.squarespace.com/static/57eacb7e197aea92a6bb9682/t/598b63a6197aea4997ae8a46/1502307282396/?format=750w"
+                    "headerText": "",
+                    "headerImage": "https://cdn.rawgit.com/bezlio/bezlio-gallery/master/images/Bezlio-Gallery-Category-CEO-Wide.png"
                 },
                 { "roleId": "executive-cfo", "roleName": "CFO", 
-                    "headerText": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nunc nibh, mollis sed augue vitae, sagittis placerat magna. Sed ultrices nibh eget ante bibendum fringilla. Nulla at tellus mi. Donec enim massa, ultrices in magna et, mollis ullamcorper est. Integer volutpat quam sed nunc aliquam, sit amet dapibus lacus tristique. Maecenas aliquet in ante eget molestie. Integer quis velit id ante mattis elementum in quis elit. Integer molestie, augue vel facilisis sagittis, dolor dui bibendum ipsum, id lacinia nulla tellus sed nunc. Quisque massa nibh, dignissim sit amet imperdiet non, commodo varius erat. Mauris congue in arcu ac consequat. In gravida efficitur enim, sed mollis diam tempor eu. Praesent id ex aliquam, tincidunt ipsum eget, facilisis nisl. Sed efficitur, magna eget pharetra volutpat, ante diam blandit libero, id eleifend est urna sit amet dolor. Morbi et dui dolor.",
-                    "headerImage": "https://static1.squarespace.com/static/57eacb7e197aea92a6bb9682/t/598b63a6197aea4997ae8a46/1502307282396/?format=750w"
+                    "headerText": "",
+                    "headerImage": "https://cdn.rawgit.com/bezlio/bezlio-gallery/master/images/Bezlio-Gallery-Category-CFO-Wide.png"
                 }
             ]
         },
         { "roleId": "purchasing", "roleName": "Purchasing", 
-            "headerText": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nunc nibh, mollis sed augue vitae, sagittis placerat magna. Sed ultrices nibh eget ante bibendum fringilla. Nulla at tellus mi. Donec enim massa, ultrices in magna et, mollis ullamcorper est. Integer volutpat quam sed nunc aliquam, sit amet dapibus lacus tristique. Maecenas aliquet in ante eget molestie. Integer quis velit id ante mattis elementum in quis elit. Integer molestie, augue vel facilisis sagittis, dolor dui bibendum ipsum, id lacinia nulla tellus sed nunc. Quisque massa nibh, dignissim sit amet imperdiet non, commodo varius erat. Mauris congue in arcu ac consequat. In gravida efficitur enim, sed mollis diam tempor eu. Praesent id ex aliquam, tincidunt ipsum eget, facilisis nisl. Sed efficitur, magna eget pharetra volutpat, ante diam blandit libero, id eleifend est urna sit amet dolor. Morbi et dui dolor.",
-            "headerImage": "https://static1.squarespace.com/static/57eacb7e197aea92a6bb9682/t/598b63a6197aea4997ae8a46/1502307282396/?format=750w"
+            "headerText": "",
+            "headerImage": "https://cdn.rawgit.com/bezlio/bezlio-gallery/master/images/Bezlio-Gallery-Category-Purchasing-Wide.png"
         },
         { "roleId": "production", "roleName": "Production",
             "roles": [
                 { "roleId": "production-plant-manager", "roleName": "Plant Manager", 
-                    "headerText": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nunc nibh, mollis sed augue vitae, sagittis placerat magna. Sed ultrices nibh eget ante bibendum fringilla. Nulla at tellus mi. Donec enim massa, ultrices in magna et, mollis ullamcorper est. Integer volutpat quam sed nunc aliquam, sit amet dapibus lacus tristique. Maecenas aliquet in ante eget molestie. Integer quis velit id ante mattis elementum in quis elit. Integer molestie, augue vel facilisis sagittis, dolor dui bibendum ipsum, id lacinia nulla tellus sed nunc. Quisque massa nibh, dignissim sit amet imperdiet non, commodo varius erat. Mauris congue in arcu ac consequat. In gravida efficitur enim, sed mollis diam tempor eu. Praesent id ex aliquam, tincidunt ipsum eget, facilisis nisl. Sed efficitur, magna eget pharetra volutpat, ante diam blandit libero, id eleifend est urna sit amet dolor. Morbi et dui dolor.",
-                    "headerImage": "https://static1.squarespace.com/static/57eacb7e197aea92a6bb9682/t/598b63a6197aea4997ae8a46/1502307282396/?format=750w"
+                    "headerText": "",
+                    "headerImage": "https://cdn.rawgit.com/bezlio/bezlio-gallery/master/images/Bezlio-Gallery-Category-PlantManager-Wide.png"
                 },
                 { "roleId": "production-qa", "roleName": "QA", 
-                    "headerText": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nunc nibh, mollis sed augue vitae, sagittis placerat magna. Sed ultrices nibh eget ante bibendum fringilla. Nulla at tellus mi. Donec enim massa, ultrices in magna et, mollis ullamcorper est. Integer volutpat quam sed nunc aliquam, sit amet dapibus lacus tristique. Maecenas aliquet in ante eget molestie. Integer quis velit id ante mattis elementum in quis elit. Integer molestie, augue vel facilisis sagittis, dolor dui bibendum ipsum, id lacinia nulla tellus sed nunc. Quisque massa nibh, dignissim sit amet imperdiet non, commodo varius erat. Mauris congue in arcu ac consequat. In gravida efficitur enim, sed mollis diam tempor eu. Praesent id ex aliquam, tincidunt ipsum eget, facilisis nisl. Sed efficitur, magna eget pharetra volutpat, ante diam blandit libero, id eleifend est urna sit amet dolor. Morbi et dui dolor.",
-                    "headerImage": "https://static1.squarespace.com/static/57eacb7e197aea92a6bb9682/t/598b63a6197aea4997ae8a46/1502307282396/?format=750w"
+                    "headerText": "",
+                    "headerImage": "https://cdn.rawgit.com/bezlio/bezlio-gallery/master/images/Bezlio-Gallery-Category-QA-Wide.png"
                 },
                 { "roleId": "production-scheduler", "roleName": "Scheduler", 
-                    "headerText": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nunc nibh, mollis sed augue vitae, sagittis placerat magna. Sed ultrices nibh eget ante bibendum fringilla. Nulla at tellus mi. Donec enim massa, ultrices in magna et, mollis ullamcorper est. Integer volutpat quam sed nunc aliquam, sit amet dapibus lacus tristique. Maecenas aliquet in ante eget molestie. Integer quis velit id ante mattis elementum in quis elit. Integer molestie, augue vel facilisis sagittis, dolor dui bibendum ipsum, id lacinia nulla tellus sed nunc. Quisque massa nibh, dignissim sit amet imperdiet non, commodo varius erat. Mauris congue in arcu ac consequat. In gravida efficitur enim, sed mollis diam tempor eu. Praesent id ex aliquam, tincidunt ipsum eget, facilisis nisl. Sed efficitur, magna eget pharetra volutpat, ante diam blandit libero, id eleifend est urna sit amet dolor. Morbi et dui dolor.",
-                    "headerImage": "https://static1.squarespace.com/static/57eacb7e197aea92a6bb9682/t/598b63a6197aea4997ae8a46/1502307282396/?format=750w"
+                    "headerText": "",
+                    "headerImage": "https://cdn.rawgit.com/bezlio/bezlio-gallery/master/images/Bezlio-Gallery-Category-ProductionScheduler-Wide.png"
                 },
                 { "roleId": "production-team-leader", "roleName": "Production Team Leader", 
-                    "headerText": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nunc nibh, mollis sed augue vitae, sagittis placerat magna. Sed ultrices nibh eget ante bibendum fringilla. Nulla at tellus mi. Donec enim massa, ultrices in magna et, mollis ullamcorper est. Integer volutpat quam sed nunc aliquam, sit amet dapibus lacus tristique. Maecenas aliquet in ante eget molestie. Integer quis velit id ante mattis elementum in quis elit. Integer molestie, augue vel facilisis sagittis, dolor dui bibendum ipsum, id lacinia nulla tellus sed nunc. Quisque massa nibh, dignissim sit amet imperdiet non, commodo varius erat. Mauris congue in arcu ac consequat. In gravida efficitur enim, sed mollis diam tempor eu. Praesent id ex aliquam, tincidunt ipsum eget, facilisis nisl. Sed efficitur, magna eget pharetra volutpat, ante diam blandit libero, id eleifend est urna sit amet dolor. Morbi et dui dolor.",
-                    "headerImage": "https://static1.squarespace.com/static/57eacb7e197aea92a6bb9682/t/598b63a6197aea4997ae8a46/1502307282396/?format=750w"
+                    "headerText": "",
+                    "headerImage": "https://cdn.rawgit.com/bezlio/bezlio-gallery/master/images/Bezlio-Gallery-Category-ProductionTeamLeader-Wide.png"
                 },
                 { "roleId": "production-worker", "roleName": "Production Worker", 
-                    "headerText": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nunc nibh, mollis sed augue vitae, sagittis placerat magna. Sed ultrices nibh eget ante bibendum fringilla. Nulla at tellus mi. Donec enim massa, ultrices in magna et, mollis ullamcorper est. Integer volutpat quam sed nunc aliquam, sit amet dapibus lacus tristique. Maecenas aliquet in ante eget molestie. Integer quis velit id ante mattis elementum in quis elit. Integer molestie, augue vel facilisis sagittis, dolor dui bibendum ipsum, id lacinia nulla tellus sed nunc. Quisque massa nibh, dignissim sit amet imperdiet non, commodo varius erat. Mauris congue in arcu ac consequat. In gravida efficitur enim, sed mollis diam tempor eu. Praesent id ex aliquam, tincidunt ipsum eget, facilisis nisl. Sed efficitur, magna eget pharetra volutpat, ante diam blandit libero, id eleifend est urna sit amet dolor. Morbi et dui dolor.",
-                    "headerImage": "https://static1.squarespace.com/static/57eacb7e197aea92a6bb9682/t/598b63a6197aea4997ae8a46/1502307282396/?format=750w"
+                    "headerText": "",
+                    "headerImage": "https://cdn.rawgit.com/bezlio/bezlio-gallery/master/images/Bezlio-Gallery-Category-ProductionWorker-Wide.png"
                 }
             ]
         },
         { "roleId": "sales", "roleName": "Sales",
             "roles": [
                 { "roleId": "sales-rep", "roleName": "Sales Rep", 
-                    "headerText": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nunc nibh, mollis sed augue vitae, sagittis placerat magna. Sed ultrices nibh eget ante bibendum fringilla. Nulla at tellus mi. Donec enim massa, ultrices in magna et, mollis ullamcorper est. Integer volutpat quam sed nunc aliquam, sit amet dapibus lacus tristique. Maecenas aliquet in ante eget molestie. Integer quis velit id ante mattis elementum in quis elit. Integer molestie, augue vel facilisis sagittis, dolor dui bibendum ipsum, id lacinia nulla tellus sed nunc. Quisque massa nibh, dignissim sit amet imperdiet non, commodo varius erat. Mauris congue in arcu ac consequat. In gravida efficitur enim, sed mollis diam tempor eu. Praesent id ex aliquam, tincidunt ipsum eget, facilisis nisl. Sed efficitur, magna eget pharetra volutpat, ante diam blandit libero, id eleifend est urna sit amet dolor. Morbi et dui dolor.",
-                    "headerImage": "https://static1.squarespace.com/static/57eacb7e197aea92a6bb9682/t/598b63a6197aea4997ae8a46/1502307282396/?format=750w"
+                    "headerText": "",
+                    "headerImage": "https://cdn.rawgit.com/bezlio/bezlio-gallery/master/images/Bezlio-Gallery-Category-SalesRep-Wide.png"
                 },
                 { "roleId": "sales-manager", "roleName": "Sales Manager", 
-                    "headerText": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nunc nibh, mollis sed augue vitae, sagittis placerat magna. Sed ultrices nibh eget ante bibendum fringilla. Nulla at tellus mi. Donec enim massa, ultrices in magna et, mollis ullamcorper est. Integer volutpat quam sed nunc aliquam, sit amet dapibus lacus tristique. Maecenas aliquet in ante eget molestie. Integer quis velit id ante mattis elementum in quis elit. Integer molestie, augue vel facilisis sagittis, dolor dui bibendum ipsum, id lacinia nulla tellus sed nunc. Quisque massa nibh, dignissim sit amet imperdiet non, commodo varius erat. Mauris congue in arcu ac consequat. In gravida efficitur enim, sed mollis diam tempor eu. Praesent id ex aliquam, tincidunt ipsum eget, facilisis nisl. Sed efficitur, magna eget pharetra volutpat, ante diam blandit libero, id eleifend est urna sit amet dolor. Morbi et dui dolor.",
-                    "headerImage": "https://static1.squarespace.com/static/57eacb7e197aea92a6bb9682/t/598b63a6197aea4997ae8a46/1502307282396/?format=750w"
+                    "headerText": "",
+                    "headerImage": "https://cdn.rawgit.com/bezlio/bezlio-gallery/master/images/Bezlio-Gallery-Category-SalesManager-Wide.png"
                 }
             ]
         },
         { "roleId": "shipping", "roleName": "Shipping",
             "roles": [
                 { "roleId": "shipping-worker", "roleName": "Shipping Worker", 
-                    "headerText": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nunc nibh, mollis sed augue vitae, sagittis placerat magna. Sed ultrices nibh eget ante bibendum fringilla. Nulla at tellus mi. Donec enim massa, ultrices in magna et, mollis ullamcorper est. Integer volutpat quam sed nunc aliquam, sit amet dapibus lacus tristique. Maecenas aliquet in ante eget molestie. Integer quis velit id ante mattis elementum in quis elit. Integer molestie, augue vel facilisis sagittis, dolor dui bibendum ipsum, id lacinia nulla tellus sed nunc. Quisque massa nibh, dignissim sit amet imperdiet non, commodo varius erat. Mauris congue in arcu ac consequat. In gravida efficitur enim, sed mollis diam tempor eu. Praesent id ex aliquam, tincidunt ipsum eget, facilisis nisl. Sed efficitur, magna eget pharetra volutpat, ante diam blandit libero, id eleifend est urna sit amet dolor. Morbi et dui dolor.",
-                    "headerImage": "https://static1.squarespace.com/static/57eacb7e197aea92a6bb9682/t/598b63a6197aea4997ae8a46/1502307282396/?format=750w"
+                    "headerText": "",
+                    "headerImage": "https://cdn.rawgit.com/bezlio/bezlio-gallery/master/images/Bezlio-Gallery-Category-Shipping-Wide.png"
                 },
                 { "roleId": "shipping-manager", "roleName": "Shipping Manager", 
-                    "headerText": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nunc nibh, mollis sed augue vitae, sagittis placerat magna. Sed ultrices nibh eget ante bibendum fringilla. Nulla at tellus mi. Donec enim massa, ultrices in magna et, mollis ullamcorper est. Integer volutpat quam sed nunc aliquam, sit amet dapibus lacus tristique. Maecenas aliquet in ante eget molestie. Integer quis velit id ante mattis elementum in quis elit. Integer molestie, augue vel facilisis sagittis, dolor dui bibendum ipsum, id lacinia nulla tellus sed nunc. Quisque massa nibh, dignissim sit amet imperdiet non, commodo varius erat. Mauris congue in arcu ac consequat. In gravida efficitur enim, sed mollis diam tempor eu. Praesent id ex aliquam, tincidunt ipsum eget, facilisis nisl. Sed efficitur, magna eget pharetra volutpat, ante diam blandit libero, id eleifend est urna sit amet dolor. Morbi et dui dolor.",
-                    "headerImage": "https://static1.squarespace.com/static/57eacb7e197aea92a6bb9682/t/598b63a6197aea4997ae8a46/1502307282396/?format=750w"
+                    "headerText": "",
+                    "headerImage": "https://cdn.rawgit.com/bezlio/bezlio-gallery/master/images/Bezlio-Gallery-Category-ShippingManager-Wide.png"
                 }
             ]
         }
