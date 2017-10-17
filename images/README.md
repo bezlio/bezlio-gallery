@@ -1,0 +1,1 @@
+This folder is only for generic gallery images (like the category headers).  For gallery items, please store related images within their respective subfolders.
