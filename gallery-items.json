@@ -5,32 +5,32 @@
             "itemName": "Inventory Valuation By Age",
             "featured": true,
             "itemDescription": "This Bezl uses a tree map to help visualize both the cost and age of inventory by warehouse into a single view.  Each warehouse is represented as a container with boxes within for each item in that warehouse.  The larger the box for a given item, the greater the cost associated.  And the color of the box goes from white to red based on relative age.  This clever visualization allows a user to instantly guage and compare the health of warehouses by how 'red' they are and then dig deeper by hovering over the biggest, reddest boxes to find the problems.",
-            "thumbnailPath": "https://rawgit.com/bezlio/bezlio-apps/Bezlio-Gallery-Implementation-%23387/gallery/inventory-valuation-by-age/images/thumb.png",
+            "thumbnailPath": "https://cdn.rawgit.com/bezlio/bezlio-gallery/master/inventory-valuation-by-age/images/thumb.png",
             "thumbnailAltText": "Screenshot showing inventory valuation over 4 fictional warehouses",
             "itemImages": [
                 {
-                    "imagePath": "https://rawgit.com/bezlio/bezlio-apps/Bezlio-Gallery-Implementation-%23387/gallery/inventory-valuation-by-age/images/main.png",
+                    "imagePath": "https://cdn.rawgit.com/bezlio/bezlio-gallery/master/inventory-valuation-by-age/images/main.png",
                     "imageAltText": "Screenshot showing inventory valuation over 4 fictional warehouses"
                 }
             ],
             "itemVideos": [],
             "roles": ["executive", "executive-ceo", "executive-cfo", "purchasing", "production", "production-plant-manager", "sales", "sales-manager"],
             "platforms": ["excel","epicor905","epicor10","inforVisual70","inforVisual80"],
-            "path": "gallery/inventory-valuation-by-age",
+            "path": "inventory-valuation-by-age",
             "additionalFiles": [
                 {
                     "fileName": "inventory.xlsx",
-                    "filePath": "https://rawgit.com/bezlio/bezlio-apps/Bezlio-Gallery-Implementation-%23387/gallery/inventory-valuation-by-age/data/inventory.xlsx",
+                    "filePath": "https://cdn.rawgit.com/bezlio/bezlio-gallery/master/inventory-valuation-by-age/data/inventory.xlsx",
                     "description": "Sample Excel data source for this Bezl.  Installed by default with latest version of BRDB."
                 },
                 {
                     "fileName": "Epicor10.sql",
-                    "filePath": "https://rawgit.com/bezlio/bezlio-apps/Bezlio-Gallery-Implementation-%23387/gallery/inventory-valuation-by-age/queries/Epicor10.sql",
+                    "filePath": "https://cdn.rawgit.com/bezlio/bezlio-gallery/master/inventory-valuation-by-age/queries/Epicor10.sql",
                     "description": "SQL Server query for Epicor ERP 10.X."
                 },
                 {
                     "fileName": "Epicor905.sql",
-                    "filePath": "https://rawgit.com/bezlio/bezlio-apps/Bezlio-Gallery-Implementation-%23387/gallery/inventory-valuation-by-age/queries/Epicor905.sql",
+                    "filePath": "https://cdn.rawgit.com/bezlio/bezlio-gallery/master/inventory-valuation-by-age/queries/Epicor905.sql",
                     "description": "SQL Server query for Epicor ERP 9.05 and prior."
                 }
             ]
