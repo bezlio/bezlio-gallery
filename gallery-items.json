@@ -33,7 +33,28 @@
                     "filePath": "https://cdn.rawgit.com/bezlio/bezlio-gallery/master/inventory-valuation-by-age/queries/Epicor905.sql",
                     "description": "SQL Server query for Epicor ERP 9.05 and prior."
                 }
-            ]
+            ],
+            "installationNotes": {
+                "intro": "When you install this Bezl it will by default point to inventory.xlsx which should already be present on your BRDB server.  If you wish to point to a different data source, follow these steps:",
+                "steps": [
+                    {
+                        "stepText": "Create a query, Excel file, or other data source that returns the columns Location, Product, Age, and Cost.  If you are using SQL Server or an ODBC compliant database, place this .SQL file into your appropriate query directory for Bezlio and name it InventoryValuationByAge.sql.  See https://github.com/bezlio/bezlio-plugins/tree/master/Plugins/SQLServer or https://github.com/bezlio/bezlio-plugins/tree/master/Plugins/ODBC for more details.  Contributed queries are under the Supplemental Files section.",
+                        "stepImage": "https://cdn.rawgit.com/bezlio/bezlio-gallery/master/inventory-valuation-by-age/images/step1.png"
+                    },
+                    {
+                        "stepText": "While viewing the Bezl on screen, go to the Edit menu and select Edit Data.",
+                        "stepImage": "https://cdn.rawgit.com/bezlio/bezlio-gallery/master/inventory-valuation-by-age/images/step2.png"
+                    },
+                    {
+                        "stepText": "On the Edit Data screen, pick the appropriate settings for your data.",
+                        "stepImage": "https://cdn.rawgit.com/bezlio/bezlio-gallery/master/inventory-valuation-by-age/images/step3.png"
+                    },
+                    {
+                        "stepText": "Verify and save.",
+                        "stepImage": ""
+                    }
+                ] 
+            }
         }
     ]
 }
