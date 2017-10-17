@@ -15,26 +15,23 @@
             ],
             "itemVideos": [],
             "roles": ["executive", "executive-ceo", "executive-cfo", "purchasing", "production", "production-plant-manager", "sales", "sales-manager"],
-            "platforms": ["excel","epicor905","epicor10","inforVisual70","inforVisual80"],
+            "platforms": ["excel","epicor905","epicor10"],
             "path": "inventory-valuation-by-age",
             "additionalFiles": [
                 {
                     "fileName": "inventory.xlsx",
                     "filePath": "https://cdn.rawgit.com/bezlio/bezlio-gallery/master/inventory-valuation-by-age/data/inventory.xlsx",
-                    "description": "Sample Excel data source for this Bezl.  Installed by default with latest version of BRDB.",
-                    "downloadName": "inventory.xlsx"
+                    "description": "Sample Excel data source for this Bezl.  Installed by default with latest version of BRDB."
                 },
                 {
                     "fileName": "Epicor10.sql",
                     "filePath": "https://cdn.rawgit.com/bezlio/bezlio-gallery/master/inventory-valuation-by-age/queries/Epicor10.sql",
-                    "description": "SQL Server query for Epicor ERP 10.X.",
-                    "downloadName": "InventoryValuationByAge.sql"
+                    "description": "SQL Server query for Epicor ERP 10.X."
                 },
                 {
                     "fileName": "Epicor905.sql",
                     "filePath": "https://cdn.rawgit.com/bezlio/bezlio-gallery/master/inventory-valuation-by-age/queries/Epicor905.sql",
-                    "description": "SQL Server query for Epicor ERP 9.05 and prior.",
-                    "downloadName": "InventoryValuationByAge.sql"
+                    "description": "SQL Server query for Epicor ERP 9.05 and prior."
                 }
             ]
         }
