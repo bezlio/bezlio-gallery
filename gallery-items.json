@@ -39,15 +39,15 @@
                 "steps": [
                     {
                         "stepText": "Create a query, Excel file, or other data source that returns the columns Location, Product, Age, and Cost.  If you are using SQL Server or an ODBC compliant database, place this .SQL file into your appropriate query directory for Bezlio and name it InventoryValuationByAge.sql.  See https://github.com/bezlio/bezlio-plugins/tree/master/Plugins/SQLServer or https://github.com/bezlio/bezlio-plugins/tree/master/Plugins/ODBC for more details.  Contributed queries are under the Supplemental Files section.",
-                        "stepImage": "https://cdn.rawgit.com/bezlio/bezlio-gallery/master/inventory-valuation-by-age/images/step1.png"
+                        "stepImage": "https://cdn.rawgit.com/bezlio/bezlio-gallery/master/inventory-valuation-by-age/images/step1.gif"
                     },
                     {
                         "stepText": "While viewing the Bezl on screen, go to the Edit menu and select Edit Data.",
-                        "stepImage": "https://cdn.rawgit.com/bezlio/bezlio-gallery/master/inventory-valuation-by-age/images/step2.png"
+                        "stepImage": "https://cdn.rawgit.com/bezlio/bezlio-gallery/master/inventory-valuation-by-age/images/step2.gif"
                     },
                     {
                         "stepText": "On the Edit Data screen, pick the appropriate settings for your data.",
-                        "stepImage": "https://cdn.rawgit.com/bezlio/bezlio-gallery/master/inventory-valuation-by-age/images/step3.png"
+                        "stepImage": "https://cdn.rawgit.com/bezlio/bezlio-gallery/master/inventory-valuation-by-age/images/step3.gif"
                     },
                     {
                         "stepText": "Verify and save.",
