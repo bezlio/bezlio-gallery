@@ -1,0 +1,2 @@
+# Crystal Reports Viewer
+The Crystal Reports Viewer app will allow you to view your Crystal Reports from anywhere on any device. Repoers can also be exported to PDF, Microsoft Excel, Microsoft Word, and other formats. Please make sure that you have the latest version of the [Crystal Report Plugin](https://github.com/bezlio/bezlio-plugins/tree/master/Plugins/CrystalReports) installed on your BRDB server in order to support all of the features.

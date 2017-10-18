@@ -1,15 +1,45 @@
 {
     "items": [
         {
+            "itemId": "crystal-reports-viewer-web-mobile-iphone-ipad-android",
+            "itemName": "Crystal Reports Viewer",
+            "featured": true,
+            "itemDescription": "This Bezl allows you to run any Crystal Reports with fresh data directly within Bezlio.  Regardless of your device (iPhone, iPad, Android, PC, or Mac) you will be able to run your Crystal Reports from anywhere with refreshed data.  Reports have parameters?  No problem!  When the reports are published to Bezlio (as simple putting them in a folder in your network) we dynamically look for parameters and will prompt for them using mobile-friendly inputs.  Once you are viewing the report in Bezlio you can then export it to a variety of formats including Excel and PDF.",
+            "thumbnailPath": "http://bezlio-gallery.azurewebsites.net/crystal-reports-viewer/images/thumb.png",
+            "thumbnailAltText": "Screenshot showing a Crystal Report presented within Bezlio.",
+            "itemImages": [
+                {
+                    "imagePath": "http://bezlio-gallery.azurewebsites.net/crystal-reports-viewer/images/main.png",
+                    "imageAltText": "Screenshot showing a Crystal Report presented within Bezlio."
+                },
+                {
+                    "imagePath": "http://bezlio-gallery.azurewebsites.net/crystal-reports-viewer/images/parameters.png",
+                    "imageAltText": "Screenshot showing report listing."
+                },
+                {
+                    "imagePath": "http://bezlio-gallery.azurewebsites.net/crystal-reports-viewer/images/export.png",
+                    "imageAltText": "Screenshot showing how you can export to Excel, PDF, Word all from within Bezlio."
+                }
+            ],
+            "itemVideos": [],
+            "roles": ["common"],
+            "platforms": [],
+            "path": "crystal-reports-viewer",
+            "additionalFiles": [],
+            "installationNotes": {
+                "intro": "The default installation of BRDB with the Crystal Reports plugin expects your published reports to be placed at C:\\Program Files (x86)\\Bezlio Remote Data Broker\\CrystalReports\\ and not require credentials.  To change these settings or understand more about the plugin, review it's documentation <a href=\"https://github.com/bezlio/bezlio-plugins/tree/master/Plugins/CrystalReports\"><u>here</u></a>."
+            }
+        },
+        {
             "itemId": "inventory-valuation-by-age",
             "itemName": "Inventory Valuation By Age",
             "featured": true,
             "itemDescription": "This Bezl uses a tree map to help visualize both the cost and age of inventory by warehouse into a single view.  Each warehouse is represented as a container with boxes within for each item in that warehouse.  The larger the box for a given item, the greater the cost associated.  And the color of the box goes from white to red based on relative age.  This clever visualization allows a user to instantly guage and compare the health of warehouses by how 'red' they are and then dig deeper by hovering over the biggest, reddest boxes to find the problems.",
-            "thumbnailPath": "https://cdn.rawgit.com/bezlio/bezlio-gallery/master/inventory-valuation-by-age/images/thumb.png",
+            "thumbnailPath": "http://bezlio-gallery.azurewebsites.net/inventory-valuation-by-age/images/thumb.png",
             "thumbnailAltText": "Screenshot showing inventory valuation over 4 fictional warehouses",
             "itemImages": [
                 {
-                    "imagePath": "https://cdn.rawgit.com/bezlio/bezlio-gallery/master/inventory-valuation-by-age/images/main.png",
+                    "imagePath": "http://bezlio-gallery.azurewebsites.net/inventory-valuation-by-age/images/main.png",
                     "imageAltText": "Screenshot showing inventory valuation over 4 fictional warehouses"
                 }
             ],
@@ -20,17 +50,17 @@
             "additionalFiles": [
                 {
                     "fileName": "inventory.xlsx",
-                    "filePath": "https://cdn.rawgit.com/bezlio/bezlio-gallery/master/inventory-valuation-by-age/data/inventory.xlsx",
+                    "filePath": "http://bezlio-gallery.azurewebsites.net/inventory-valuation-by-age/data/inventory.xlsx",
                     "description": "Sample Excel data source for this Bezl.  Installed by default with latest version of BRDB."
                 },
                 {
                     "fileName": "Epicor10.sql",
-                    "filePath": "https://cdn.rawgit.com/bezlio/bezlio-gallery/master/inventory-valuation-by-age/queries/Epicor10.sql",
+                    "filePath": "http://bezlio-gallery.azurewebsites.net/inventory-valuation-by-age/queries/Epicor10.sql",
                     "description": "SQL Server query for Epicor ERP 10.X."
                 },
                 {
                     "fileName": "Epicor905.sql",
-                    "filePath": "https://cdn.rawgit.com/bezlio/bezlio-gallery/master/inventory-valuation-by-age/queries/Epicor905.sql",
+                    "filePath": "http://bezlio-gallery.azurewebsites.net/inventory-valuation-by-age/queries/Epicor905.sql",
                     "description": "SQL Server query for Epicor ERP 9.05 and prior."
                 }
             ],
