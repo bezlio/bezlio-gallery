@@ -23,7 +23,7 @@
             ],
             "itemVideos": [],
             "roles": ["common"],
-            "platforms": [],
+            "platforms": ["universal"],
             "path": "crystal-reports-viewer",
             "additionalFiles": [],
             "installationNotes": {
