@@ -35,7 +35,7 @@
                 }
             ],
             "installationNotes": {
-                "intro": "When you install this Bezl it will by default point to inventory.xlsx which should already be present on your BRDB server.  If you wish to point to a different data source, refer to our <a href=\"https://github.com/bezlio/bezlio-gallery/wiki/Changing-Data-Connections-on-Bezls\">standard steps</a> for changing data connections.  Required columns names are Location, Product, Age, and Cost."
+                "intro": "When you install this Bezl it will by default point to inventory.xlsx which should already be present on your BRDB server.  If you wish to point to a different data source, refer to our <a href=\"https://github.com/bezlio/bezlio-gallery/wiki/Changing-Data-Connections-on-Bezls\" target=\"_blank\"><u>standard steps</u></a> for changing data connections.  Required columns names are Location, Product, Age, and Cost."
             }
         }
     ]
