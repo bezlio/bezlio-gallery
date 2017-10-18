@@ -13,6 +13,10 @@
                     "imageAltText": "Screenshot showing a Crystal Report presented within Bezlio."
                 },
                 {
+                    "imagePath": "http://bezlio-gallery.azurewebsites.net/crystal-reports-viewer/images/iphone.png",
+                    "imageAltText": "Screenshot showing Crystal Reports on an iPhone."
+                }
+                {
                     "imagePath": "http://bezlio-gallery.azurewebsites.net/crystal-reports-viewer/images/parameters.png",
                     "imageAltText": "Screenshot showing report listing."
                 },
@@ -27,7 +31,7 @@
             "path": "crystal-reports-viewer",
             "additionalFiles": [],
             "installationNotes": {
-                "intro": "The default installation of BRDB with the Crystal Reports plugin expects your published reports to be placed at C:\\Program Files (x86)\\Bezlio Remote Data Broker\\CrystalReports\\ and not require credentials.  To change these settings or understand more about the plugin, review it's documentation <a href=\"https://github.com/bezlio/bezlio-plugins/tree/master/Plugins/CrystalReports\"><u>here</u></a>."
+                "intro": "The default installation of BRDB with the Crystal Reports plugin expects your published reports to be placed at C:\\Program Files (x86)\\Bezlio Remote Data Broker\\CrystalReports\\ and not require credentials.  To change these settings or understand more about the plugin, review it's documentation <a href=\"https://github.com/bezlio/bezlio-plugins/tree/master/Plugins/CrystalReports\" target=\"_blank\"><u>here</u></a>."
             }
         },
         {
