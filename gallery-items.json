@@ -5,23 +5,23 @@
             "itemName": "Crystal Reports Viewer",
             "featured": true,
             "itemDescription": "This Bezl allows you to run any Crystal Reports with fresh data directly within Bezlio.  Regardless of your device (iPhone, iPad, Android, PC, or Mac) you will be able to run your Crystal Reports from anywhere with refreshed data.  Reports have parameters?  No problem!  When the reports are published to Bezlio (as simple putting them in a folder in your network) we dynamically look for parameters and will prompt for them using mobile-friendly inputs.  Once you are viewing the report in Bezlio you can then export it to a variety of formats including Excel and PDF.",
-            "thumbnailPath": "http://bezlio-gallery.azurewebsites.net/crystal-reports-viewer/images/thumb.png",
+            "thumbnailPath": "https://bezlio-gallery.azurewebsites.net/crystal-reports-viewer/images/thumb.png",
             "thumbnailAltText": "Screenshot showing a Crystal Report presented within Bezlio.",
             "itemImages": [
                 {
-                    "imagePath": "http://bezlio-gallery.azurewebsites.net/crystal-reports-viewer/images/main.png",
+                    "imagePath": "https://bezlio-gallery.azurewebsites.net/crystal-reports-viewer/images/main.png",
                     "imageAltText": "Screenshot showing a Crystal Report presented within Bezlio."
                 },
                 {
-                    "imagePath": "http://bezlio-gallery.azurewebsites.net/crystal-reports-viewer/images/iphone.png",
+                    "imagePath": "https://bezlio-gallery.azurewebsites.net/crystal-reports-viewer/images/iphone.png",
                     "imageAltText": "Screenshot showing Crystal Reports on an iPhone."
                 },
                 {
-                    "imagePath": "http://bezlio-gallery.azurewebsites.net/crystal-reports-viewer/images/parameters.png",
+                    "imagePath": "https://bezlio-gallery.azurewebsites.net/crystal-reports-viewer/images/parameters.png",
                     "imageAltText": "Screenshot showing report listing."
                 },
                 {
-                    "imagePath": "http://bezlio-gallery.azurewebsites.net/crystal-reports-viewer/images/export.png",
+                    "imagePath": "https://bezlio-gallery.azurewebsites.net/crystal-reports-viewer/images/export.png",
                     "imageAltText": "Screenshot showing how you can export to Excel, PDF, Word all from within Bezlio."
                 }
             ],
@@ -39,11 +39,11 @@
             "itemName": "Inventory Valuation By Age",
             "featured": true,
             "itemDescription": "This Bezl uses a tree map to help visualize both the cost and age of inventory by warehouse into a single view.  Each warehouse is represented as a container with boxes within for each item in that warehouse.  The larger the box for a given item, the greater the cost associated.  And the color of the box goes from white to red based on relative age.  This clever visualization allows a user to instantly guage and compare the health of warehouses by how 'red' they are and then dig deeper by hovering over the biggest, reddest boxes to find the problems.",
-            "thumbnailPath": "http://bezlio-gallery.azurewebsites.net/inventory-valuation-by-age/images/thumb.png",
+            "thumbnailPath": "https://bezlio-gallery.azurewebsites.net/inventory-valuation-by-age/images/thumb.png",
             "thumbnailAltText": "Screenshot showing inventory valuation over 4 fictional warehouses",
             "itemImages": [
                 {
-                    "imagePath": "http://bezlio-gallery.azurewebsites.net/inventory-valuation-by-age/images/main.png",
+                    "imagePath": "https://bezlio-gallery.azurewebsites.net/inventory-valuation-by-age/images/main.png",
                     "imageAltText": "Screenshot showing inventory valuation over 4 fictional warehouses"
                 }
             ],
@@ -54,17 +54,17 @@
             "additionalFiles": [
                 {
                     "fileName": "inventory.xlsx",
-                    "filePath": "http://bezlio-gallery.azurewebsites.net/inventory-valuation-by-age/data/inventory.xlsx",
+                    "filePath": "https://bezlio-gallery.azurewebsites.net/inventory-valuation-by-age/data/inventory.xlsx",
                     "description": "Sample Excel data source for this Bezl.  Installed by default with latest version of BRDB."
                 },
                 {
                     "fileName": "Epicor10.sql",
-                    "filePath": "http://bezlio-gallery.azurewebsites.net/inventory-valuation-by-age/queries/Epicor10.sql",
+                    "filePath": "https://bezlio-gallery.azurewebsites.net/inventory-valuation-by-age/queries/Epicor10.sql",
                     "description": "SQL Server query for Epicor ERP 10.X."
                 },
                 {
                     "fileName": "Epicor905.sql",
-                    "filePath": "http://bezlio-gallery.azurewebsites.net/inventory-valuation-by-age/queries/Epicor905.sql",
+                    "filePath": "https://bezlio-gallery.azurewebsites.net/inventory-valuation-by-age/queries/Epicor905.sql",
                     "description": "SQL Server query for Epicor ERP 9.05 and prior."
                 }
             ],
@@ -77,11 +77,11 @@
             "itemName": "Production Scheduling Board",
             "featured": true,
             "itemDescription": "This Bezl allows a production scheduler to assign / prioritize jobs across shop resources in real time.  The drag and drop interface works on any device, so put an iPad in your schedulers hands and let them schedule directly on the shop floor!",
-            "thumbnailPath": "http://bezlio-gallery.azurewebsites.net/production-scheduling-board/images/thumb.png",
+            "thumbnailPath": "https://bezlio-gallery.azurewebsites.net/production-scheduling-board/images/thumb.png",
             "thumbnailAltText": "Screenshot showing a selected work center and the various resources to schedule across",
             "itemImages": [
                 {
-                    "imagePath": "http://bezlio-gallery.azurewebsites.net/production-scheduling-board/images/main.png",
+                    "imagePath": "https://bezlio-gallery.azurewebsites.net/production-scheduling-board/images/main.png",
                     "imageAltText": "Screenshot showing a selected work center and the various resources to schedule across"
                 }
             ],
@@ -92,7 +92,7 @@
             "additionalFiles": [
                 {
                     "fileName": "production.xlsx",
-                    "filePath": "http://bezlio-gallery.azurewebsites.net/production-scheduling-board/data/production.xlsx",
+                    "filePath": "https://bezlio-gallery.azurewebsites.net/production-scheduling-board/data/production.xlsx",
                     "description": "Sample Excel data source for this Bezl.  Installed by default with latest version of BRDB."
                 }
             ],
