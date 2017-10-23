@@ -1,6 +1,44 @@
 {
     "items": [
         {
+            "itemId": "ap-summary-by-category",
+            "itemName": "AP Summary By Category",
+            "featured": true,
+            "itemDescription": "This Bezl uses a multi-level pie chart to help visualize the AP aging by category in a single view.  The first level of the pie chart breaks down accounts payable by the number of days they are due within while the second level breaks down by category (for example, raw materials, subcontract labor, etc).",
+            "thumbnailPath": "https://bezlio-gallery.azurewebsites.net/ap-summary-by-category/images/thumb.png",
+            "thumbnailAltText": "Screenshot showing the current AP breakdown by age and category.",
+            "itemImages": [
+                {
+                    "imagePath": "https://bezlio-gallery.azurewebsites.net/ap-summary-by-category/images/main.png",
+                    "imageAltText": "Screenshot showing the current AP breakdown by age and category."
+                }
+            ],
+            "itemVideos": [],
+            "roles": [ "accounting-accounts-payable", "executive-cfo" ],
+            "platforms": ["excel","epicor905","epicor10"],
+            "path": "ap-summary-by-category",
+            "additionalFiles": [
+                {
+                    "fileName": "accounts-payable.xlsx",
+                    "filePath": "https://bezlio-gallery.azurewebsites.net/inventory-valuation-by-age/data/accounts-payable.xlsx",
+                    "description": "Sample Excel data source for this Bezl.  Installed by default with latest version of BRDB."
+                },
+                {
+                    "fileName": "Epicor10.sql",
+                    "filePath": "https://bezlio-gallery.azurewebsites.net/accounts-payable/queries/Epicor10.sql",
+                    "description": "SQL Server query for Epicor ERP 10.X."
+                },
+                {
+                    "fileName": "Epicor905.sql",
+                    "filePath": "https://bezlio-gallery.azurewebsites.net/accounts-payable/queries/Epicor905.sql",
+                    "description": "SQL Server query for Epicor ERP 9.05 and prior."
+                }
+            ],
+            "installationNotes": {
+                "intro": "When you install this Bezl it will by default point to accounts-payable.xlsx which should already be present on your BRDB server.  If you wish to point to a different data source, refer to our <a href=\"https://github.com/bezlio/bezlio-gallery/wiki/Changing-Data-Connections-on-Bezls\" target=\"_blank\"><u>standard steps</u></a> for changing data connections.  Required columns names are Category, AmountDue, and DueDate."
+            }
+        },
+        {
             "itemId": "crystal-reports-viewer-web-mobile-iphone-ipad-android",
             "itemName": "Crystal Reports Viewer",
             "featured": true,
