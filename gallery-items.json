@@ -109,7 +109,7 @@
             "path": "ar-aging-summary",
             "additionalFiles": [
                 {
-                    "fileName": "accounts-payable.xlsx",
+                    "fileName": "ar-aging-summary.xlsx",
                     "filePath": "https://bezlio-gallery.azurewebsites.net/ar-aging-summary/data/ar-aging-summary.xlsx",
                     "description": "Sample Excel data source for this Bezl.  Installed by default with latest version of BRDB."
                 }
