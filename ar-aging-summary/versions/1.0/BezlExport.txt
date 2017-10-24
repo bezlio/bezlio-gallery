@@ -1,0 +1,102 @@
+﻿{
+  "id": "9bbd96c6-1da7-4d7b-9b27-29b39e73dbcf",
+  "name": "AR Aging Summary",
+  "template": "custom",
+  "owner": "bellis@saberlogic.com",
+  "shares": [],
+  "vars": [],
+  "dataSubscriptions": [
+    {
+      "name": "SummaryData",
+      "connectionId": "a2d174a1-7c29-45fd-8f39-2d62f2727e8f",
+      "dataSource": "brdb",
+      "plugin": "ExcelPlugin",
+      "method": "GetData",
+      "args": {
+        "FileName": "C:\\Program Files (x86)\\Bezlio Remote Data Broker\\Data\\ar-aging-summary.xlsx",
+        "SheetName": "AR Aging",
+        "FirstRowColumnNames": "Yes"
+      },
+      "data": null,
+      "refreshInverval": 0,
+      "lastRefresh": null
+    }
+  ],
+  "markup": [
+    "<div class=\"row\">",
+    "  <h3>",
+    "    AR Aging Summary  ",
+    "    <i *ngIf=\"bezl.vars.refreshing === false\" style=\"cursor: pointer; cursor: hand;\" class=\"fa fa-refresh\" (click)=\"bezl.functions['refresh']()\"></i>",
+    "    <i *ngIf=\"bezl.vars.refreshing === true\" style=\"cursor: not-allowed;\" class=\"fa fa-refresh fa-spin\"></i>",
+    "  </h3>",
+    "</div>",
+    "<div class=\"row\">",
+    "  <table class=\"table table-hover\">",
+    "    <tbody>",
+    "      <tr>",
+    "        <td><h4>Current</h4></td>",
+    "        <td><h4>{{bezl.vars.summary.current | currency: 'USD':true}}</h4></td>",
+    "      </tr>",
+    "      <tr>",
+    "        <td><h4>30-60</h4></td>",
+    "        <td><h4>{{bezl.vars.summary.thirty | currency: 'USD':true}}</h4></td>",
+    "      </tr>",
+    "      <tr>",
+    "        <td><h4>60-90</h4></td>",
+    "        <td><h4>{{bezl.vars.summary.sixty | currency: 'USD':true}}</h4></td>",
+    "      </tr>",
+    "      <tr>",
+    "        <td><h4>90-120</h4></td>",
+    "        <td><h4>{{bezl.vars.summary.ninety | currency: 'USD':true}}</h4></td>",
+    "      </tr>",
+    "      <tr>",
+    "        <td><h4>120+</h4></td>",
+    "        <td><h4>{{bezl.vars.summary.onetwenty | currency: 'USD':true}}</h4></td>",
+    "      </tr>",
+    "    </tbody>",
+    "  </table>",
+    "</div>"
+  ],
+  "functions": [
+    {
+      "method": "ngOnInit",
+      "code": "bezl.vars.summary = {current: 0, thirty: 0, sixty: 0, ninety: 0, onetwenty: 0};\nbezl.vars.refreshing = true;",
+      "declares": [
+        "$",
+        "parm",
+        "bezl",
+        "dataResp",
+        "require",
+        "FusionCharts"
+      ],
+      "compiled": "bezl.vars.summary = { current: 0, thirty: 0, sixty: 0, ninety: 0, onetwenty: 0 };\r\nbezl.vars.refreshing = true;\r\n"
+    },
+    {
+      "method": "onDataChange",
+      "code": "bezl.data = dataResp;\n\nif (bezl.data.SummaryData) {\n  bezl.vars.summary = {current: 0, thirty: 0, sixty: 0, ninety: 0, onetwenty: 0};\n  var today = new Date();\n  \n  bezl.data.SummaryData.forEach(ar => {\n    var dueDate = new Date(ar.DueDate);\n    var ms = (<any>today) - (<any>dueDate);\n  \tvar days = ms / (1000*60*60*24);\n    if (days < 30) {\n      bezl.vars.summary.current += ar.InvoiceBal;\n    } else if (days >= 30 && days < 60) {\n      bezl.vars.summary.thirty += ar.InvoiceBal;\n    } else if (days >= 60 && days < 90) {\n      bezl.vars.summary.sixty += ar.InvoiceBal;\n    } else if (days >= 90 && days < 120) {\n      bezl.vars.summary.ninety += ar.InvoiceBal;\n    } else {\n      bezl.vars.summary.onetwenty += ar.InvoiceBal;\n    }\n  });\n  bezl.vars.refreshing = false;\n}",
+      "declares": [
+        "$",
+        "parm",
+        "bezl",
+        "dataResp",
+        "require",
+        "FusionCharts"
+      ],
+      "compiled": "bezl.data = dataResp;\r\nif (bezl.data.SummaryData) {\r\n    bezl.vars.summary = { current: 0, thirty: 0, sixty: 0, ninety: 0, onetwenty: 0 };\r\n    var today = new Date();\r\n    bezl.data.SummaryData.forEach(function (ar) {\r\n        var dueDate = new Date(ar.DueDate);\r\n        var ms = today - dueDate;\r\n        var days = ms / (1000 * 60 * 60 * 24);\r\n        if (days < 30) {\r\n            bezl.vars.summary.current += ar.InvoiceBal;\r\n        }\r\n        else if (days >= 30 && days < 60) {\r\n            bezl.vars.summary.thirty += ar.InvoiceBal;\r\n        }\r\n        else if (days >= 60 && days < 90) {\r\n            bezl.vars.summary.sixty += ar.InvoiceBal;\r\n        }\r\n        else if (days >= 90 && days < 120) {\r\n            bezl.vars.summary.ninety += ar.InvoiceBal;\r\n        }\r\n        else {\r\n            bezl.vars.summary.onetwenty += ar.InvoiceBal;\r\n        }\r\n    });\r\n    bezl.vars.refreshing = false;\r\n}\r\n"
+    },
+    {
+      "method": "refresh",
+      "code": "bezl.vars.refreshing = true;\nbezl.dataService.process('SummaryData');",
+      "declares": [
+        "$",
+        "parm",
+        "bezl",
+        "dataResp",
+        "require",
+        "FusionCharts"
+      ],
+      "compiled": "bezl.vars.refreshing = true;\r\nbezl.dataService.process('SummaryData');\r\n"
+    }
+  ],
+  "data": ""
+}
