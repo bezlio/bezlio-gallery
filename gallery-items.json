@@ -1,6 +1,58 @@
 {
     "items": [
         {
+            "itemId": "accounts-view-crm",
+            "itemName": "Accounts View",
+            "featured": false,
+            "itemDescription": "This Bezl provides a bit of a CRM view to your customer information, allowing you to see your assigned accounts, drill in for more details, and even record call logs.  A great way to make your non-mobile CRM available on devices like iPhone, iPad, Android, etc.",
+            "thumbnailPath": "https://bezlio-gallery.azurewebsites.net/accounts-view-crm/images/thumb.png",
+            "thumbnailAltText": "Thumbnail showing small segment of accounts view.",
+            "itemImages": [
+                {
+                    "imagePath": "https://bezlio-gallery.azurewebsites.net/accounts-view-crm/images/main.png",
+                    "imageAltText": "Full image showing accounts view drilled into a specific account."
+                },
+                {
+                    "imagePath": "https://bezlio-gallery.azurewebsites.net/accounts-view-crm/images/call-log.png",
+                    "imageAltText": "Screenshot showing where you can record a call log."
+                }
+            ],
+            "itemVideos": [],
+            "roles": [ "sales-rep" ],
+            "platforms": ["epicor905","epicor10","p21","visual7","visual8"],
+            "path": "accounts-view-crm",
+            "additionalFiles": [
+                {
+                    "fileName": "Queries.zip (Epicor 10.X)",
+                    "filePath": "https://bezlio-gallery.azurewebsites.net/accounts-payable/queries/Epicor10/Queries.zip",
+                    "description": "All queries for Epicor 10.X"
+                },
+                {
+                    "fileName": "Queries.zip (Epicor 9.05)",
+                    "filePath": "https://bezlio-gallery.azurewebsites.net/accounts-payable/queries/Epicor905/Queries.zip",
+                    "description": "All queries for Epicor 9.05"
+                },
+                {
+                    "fileName": "Queries.zip (Prophet21)",
+                    "filePath": "https://bezlio-gallery.azurewebsites.net/accounts-payable/queries/Prophet21/Queries.zip",
+                    "description": "All queries for Prophet21"
+                },
+                {
+                    "fileName": "Queries.zip (Visual 7.0)",
+                    "filePath": "https://bezlio-gallery.azurewebsites.net/accounts-payable/queries/Visual7/Queries.zip",
+                    "description": "All queries for Infor VISUAL 7.0 or below"
+                },
+                {
+                    "fileName": "Queries.zip (Visual 8.0)",
+                    "filePath": "https://bezlio-gallery.azurewebsites.net/accounts-payable/queries/Visual8/Queries.zip",
+                    "description": "All queries for Infor VISUAL 7.1 or above"
+                }
+            ],
+            "installationNotes": {
+                "intro": "This Bezl does not yet conform to the standard steps to change data sources (this is onb the roadmap).  For now, in order to use this Bezl you must create a plugin instance called sales-rep-queries and point it to a SQL Server query folder containing the .SQL files from one of the atatched ZIP files.  Please contact support if you wish to activate this Bezl in your account and are having difficulties."
+            }
+        },
+        {
             "itemId": "ap-summary-by-category",
             "itemName": "AP Summary By Category",
             "featured": true,
@@ -24,13 +76,13 @@
                     "description": "Sample Excel data source for this Bezl.  Installed by default with latest version of BRDB."
                 },
                 {
-                    "fileName": "Epicor10.sql",
-                    "filePath": "https://bezlio-gallery.azurewebsites.net/accounts-payable/queries/Epicor10.sql",
+                    "fileName": "APSummaryByCategory.sql (Epicor 10.X)",
+                    "filePath": "https://bezlio-gallery.azurewebsites.net/accounts-payable/queries/Epicor10/APSummaryByCategory.sql",
                     "description": "SQL Server query for Epicor ERP 10.X."
                 },
                 {
-                    "fileName": "Epicor905.sql",
-                    "filePath": "https://bezlio-gallery.azurewebsites.net/accounts-payable/queries/Epicor905.sql",
+                    "fileName": "APSummaryByCategory.sql (Epicor 9.05)",
+                    "filePath": "https://bezlio-gallery.azurewebsites.net/accounts-payable/queries/Epicor905/APSummaryByCategory.sql",
                     "description": "SQL Server query for Epicor ERP 9.05 and prior."
                 }
             ],
@@ -96,13 +148,13 @@
                     "description": "Sample Excel data source for this Bezl.  Installed by default with latest version of BRDB."
                 },
                 {
-                    "fileName": "Epicor10.sql",
-                    "filePath": "https://bezlio-gallery.azurewebsites.net/inventory-valuation-by-age/queries/Epicor10.sql",
+                    "fileName": "InventoryValuationByAge.sql (Epicor 10.X)",
+                    "filePath": "https://bezlio-gallery.azurewebsites.net/inventory-valuation-by-age/queries/Epicor10/InventoryValuationByAge.sql",
                     "description": "SQL Server query for Epicor ERP 10.X."
                 },
                 {
-                    "fileName": "Epicor905.sql",
-                    "filePath": "https://bezlio-gallery.azurewebsites.net/inventory-valuation-by-age/queries/Epicor905.sql",
+                    "fileName": "InventoryValuationByAge.sql (Epicor 9.05)",
+                    "filePath": "https://bezlio-gallery.azurewebsites.net/inventory-valuation-by-age/queries/Epicor905/InventoryValuationByAge.sql",
                     "description": "SQL Server query for Epicor ERP 9.05 and prior."
                 }
             ],
