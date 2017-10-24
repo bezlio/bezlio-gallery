@@ -91,6 +91,38 @@
             }
         },
         {
+            "itemId": "comparative-sales-breakdown",
+            "itemName": "Comparative Sales Breakdown",
+            "featured": true,
+            "itemDescription": "This Bezl starts off with two spark boxes showing YTD sales and MTD sales along with a comparison to the previous time period.  From there the user can drill-down to see a per-product and per month breakdown of these values.",
+            "thumbnailPath": "https://bezlio-gallery.azurewebsites.net/comparative-sales-breakdown/images/thumb.png",
+            "thumbnailAltText": "Screenshot showing the spark boxes for YTD sales and MTD sales",
+            "itemImages": [
+                {
+                    "imagePath": "https://bezlio-gallery.azurewebsites.net/comparative-sales-breakdown/images/main.png",
+                    "imageAltText": "Screenshot showing the spark boxes for YTD sales and MTD sales"
+                },
+                {
+                    "imagePath": "https://bezlio-gallery.azurewebsites.net/comparative-sales-breakdown/images/drill-down.png",
+                    "imageAltText": "Screenshot showing the drill-down data"
+                }
+            ],
+            "itemVideos": [],
+            "roles": [ "executive-ceo", "executive-cfo", "sales-manager"],
+            "platforms": ["excel"],
+            "path": "comparative-sales-breakdown",
+            "additionalFiles": [
+                {
+                    "fileName": "sales.xlsx",
+                    "filePath": "https://bezlio-gallery.azurewebsites.net/inventory-valuation-by-age/data/sales.xlsx",
+                    "description": "Sample Excel data source for this Bezl.  Installed by default with latest version of BRDB."
+                }
+            ],
+            "installationNotes": {
+                "intro": "This Bezl does not yet conform to the standard steps for changing data connections (on the roadmap).  For the time being, please contact support if you wish to connect this to your own datasource."
+            }
+        },
+        {
             "itemId": "crystal-reports-viewer-web-mobile-iphone-ipad-android",
             "itemName": "Crystal Reports Viewer",
             "featured": true,
