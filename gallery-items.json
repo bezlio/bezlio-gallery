@@ -95,7 +95,7 @@
             "itemName": "AR Aging Summary",
             "featured": false,
             "itemDescription": "This Bezl is a simple summary of outstanding accounts receivable categorized in date buckets.",
-            "thumbnailPath": "https://bezlio-gallery.azurewebsites.net/ap-summary-by-category/images/thumb.png",
+            "thumbnailPath": "https://bezlio-gallery.azurewebsites.net/ar-aging-summary/images/thumb.png",
             "thumbnailAltText": "Screenshot showing the current AR aging summary.",
             "itemImages": [
                 {
