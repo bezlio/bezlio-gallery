@@ -277,6 +277,34 @@
             "installationNotes": {
                 "intro": "This Bezl does not yet conform to the standard steps for changing data connections (on the roadmap).  For the time being, please contact support if you wish to connect this to your own datasource."
             }
+        },
+        {
+            "itemId": "visualized-cash-flow",
+            "itemName": "Visualized Cash Flow",
+            "featured": false,
+            "itemDescription": "This Bezl uses a waterfall chart to show a graphical representation in changes to cash flow. Values pulled from the GL representing changes to cash flow are plotted to provide a quick glance view how cash position has changed from one month to the next.",
+            "thumbnailPath": "https://bezlio-gallery.azurewebsites.net/visualized-cash-flow/images/thumb.png",
+            "thumbnailAltText": "Screenshot showing visualized cash flow",
+            "itemImages": [
+                {
+                    "imagePath": "https://bezlio-gallery.azurewebsites.net/visualized-cash-flow/images/main.png",
+                    "imageAltText": "Screenshot showing visualized cash flow"
+                }
+            ],
+            "itemVideos": [],
+            "roles": [ "executive-ceo", "executive-cfo", "accounting"],
+            "platforms": ["excel"],
+            "path": "visualized-cash-flow",
+            "additionalFiles": [
+                {
+                    "fileName": "visualized-cash-flow.xlsx",
+                    "filePath": "https://bezlio-gallery.azurewebsites.net/visualized-cash-flow/data/visualized-cash-flow.xlsx",
+                    "description": "Sample Excel data source for this Bezl.  Installed by default with latest version of BRDB."
+                }
+            ],
+            "installationNotes": {
+                "intro": "When you install this Bezl it will by default point to visualized-cash-flow.xlsx which should already be present on your BRDB server.  If you wish to point to a different data source, refer to our <a href=\"https://github.com/bezlio/bezlio-gallery/wiki/Changing-Data-Connections-on-Bezls\" target=\"_blank\"><u>standard steps</u></a> for changing data connections.  Required columns names are Year, Period, Order (starting at 0 for ordering columns), Description, and Value."
+            }
         }
     ]
 }

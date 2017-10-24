@@ -1,0 +1,114 @@
+﻿{
+  "id": "2148f283-62af-4568-8861-f520d964d6b7",
+  "name": "Visualized Cash Flow",
+  "template": "custom",
+  "owner": "bellis@saberlogic.com",
+  "shares": [],
+  "vars": [],
+  "dataSubscriptions": [
+    {
+      "name": "cashflow",
+      "connectionId": "a2d174a1-7c29-45fd-8f39-2d62f2727e8f",
+      "dataSource": "brdb",
+      "plugin": "ExcelPlugin",
+      "method": "GetData",
+      "args": {
+        "FileName": "\\\\dev-epicor10\\c$\\Program Files (x86)\\Bezlio Remote Data Broker\\Data\\visualized-cash-flow.xlsx",
+        "SheetName": "Cash Flow",
+        "FirstRowColumnNames": "Yes"
+      },
+      "data": null,
+      "refreshInverval": 0,
+      "lastRefresh": null
+    }
+  ],
+  "markup": [
+    "<div class=\"btn-group mar-bot\">",
+    "  <button type=\"button\" class=\"btn btn-default dropdown-toggle\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">",
+    "    {{bezl.vars.year}} <span class=\"caret\"></span>",
+    "  </button>",
+    "  <ul class=\"dropdown-menu\">",
+    "    <li *ngFor=\"let year of bezl.vars.years\"><a (click)=\"bezl.functions['changeYear'](year)\">{{year}}</a></li>",
+    "  </ul>",
+    "</div>",
+    "<div class=\"btn-group mar-bot\">",
+    "  <button type=\"button\" class=\"btn btn-default dropdown-toggle\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">",
+    "    {{bezl.vars.period}} <span class=\"caret\"></span>",
+    "  </button>",
+    "  <ul class=\"dropdown-menu\">",
+    "    <li *ngFor=\"let period of bezl.vars.periods\"><a (click)=\"bezl.functions['changePeriod'](period)\">{{period}}</a></li>",
+    "  </ul>",
+    "</div>",
+    "<div id=\"chartContainer\" class=\"mar-top\">",
+    "</div>"
+  ],
+  "functions": [
+    {
+      "method": "ngOnInit",
+      "code": "bezl.vars.year = new Date().getFullYear();\n// Javascript starts months at 0 -_-\nbezl.vars.period = new Date().getMonth()+1;\n\nbezl.vars.years = [];\nbezl.vars.periods = [];",
+      "declares": [
+        "$",
+        "parm",
+        "bezl",
+        "dataResp",
+        "require",
+        "FusionCharts",
+        "dimple"
+      ],
+      "compiled": "bezl.vars.year = new Date().getFullYear();\r\n// Javascript starts months at 0 -_-\r\nbezl.vars.period = new Date().getMonth() + 1;\r\nbezl.vars.years = [];\r\nbezl.vars.periods = [];\r\n"
+    },
+    {
+      "method": "onDataChange",
+      "code": "bezl.data = dataResp;\n\nif (bezl.data.cashflow) {\n  bezl.vars.years = [];\n  bezl.vars.periods = [];\n  \n  // Find the years and periods\n  bezl.data.cashflow.forEach(ds => {\n  \tif (bezl.vars.years.findIndex(y => ds.Year == y) == -1) {\n      bezl.vars.years.push(ds.Year);\n    }\n    if (bezl.vars.periods.findIndex(p => ds.Period == p) == -1) {\n      bezl.vars.periods.push(ds.Period);\n    }\n  });\n  \n  // Sort them out\n  bezl.vars.years = bezl.vars.years.sort();\n  bezl.vars.periods = bezl.vars.periods.sort(function compare(a,b) {return Number(a) - Number(b);});\n  \n  // Grab the last   \n  bezl.vars.year = bezl.vars.years[bezl.vars.years.length-1];\n  bezl.vars.period = bezl.vars.periods[bezl.vars.periods.length-1];\n  \n  FusionCharts.ready(function(){\n    // First build data\n    bezl.vars.data = [];\n    bezl.data.cashflow.filter(cf => cf.Year == bezl.vars.year && cf.Period == bezl.vars.period).sort(function compare(a,b) {return a.Order - b.Order;}).forEach(ds => {\n      bezl.vars.data.push({\n        label: ds.Description,\n        value: ds.Value\n      });\n    });\n\n    bezl.vars.chart = new FusionCharts({\n      type: 'waterfall2d',\n      renderAt: $(bezl.container.nativeElement).find(\"#chartContainer\")[0],\n      width: '100%',\n      height: (($(bezl.container.nativeElement)[0].clientHeight > 300) ? $(bezl.container.nativeElement)[0].clientHeight - 85 : 300),\n      dataFormat: 'json',\n      dataSource: {\n        chart: {\n          caption: \"Visualized Cash Flow\",\n          subcaption: \"\",\n          yAxisname: \"Amount (In USD)\",\n          numberprefix: \"$\",\n          connectordashed: \"1\",\n          sumlabel: \"Change in Cash Flow\",\n          positiveColor: \"#6baa01\",\n          negativeColor: \"#e44a00\",\n\n          //Cosmetics\n          paletteColors: \"#0075c2,#1aaf5d,#f2c500\",\n          baseFontColor: \"#333333\",\n          baseFont: \"Helvetica Neue,Arial\",\n          captionFontSize: \"14\",\n          subcaptionFontSize: \"14\",\n          subcaptionFontBold: \"0\",\n          showBorder: \"0\",\n          bgColor: \"#ffffff\",\n          showShadow: \"0\",\n          canvasBgColor: \"#ffffff\",\n          canvasBorderAlpha: \"0\",\n          divlineAlpha: \"100\",\n          divlineColor: \"#999999\",\n          divlineThickness: \"1\",\n          divLineIsDashed: \"1\",\n          divLineDashLen: \"1\",\n          divLineGapLen: \"1\",\n          usePlotGradientColor: \"0\",\n          showplotborder: \"0\",\n          showXAxisLine: \"1\",\n          xAxisLineThickness: \"1\",\n          xAxisLineColor: \"#999999\",\n          showAlternateHGridColor: \"0\",\n        },\n        data: bezl.vars.data\n      }\n    });\n\n    bezl.vars.chart.render();\n  }); \n}",
+      "declares": [
+        "$",
+        "parm",
+        "bezl",
+        "dataResp",
+        "require",
+        "FusionCharts"
+      ],
+      "compiled": "bezl.data = dataResp;\r\nif (bezl.data.cashflow) {\r\n    bezl.vars.years = [];\r\n    bezl.vars.periods = [];\r\n    // Find the years and periods\r\n    bezl.data.cashflow.forEach(function (ds) {\r\n        if (bezl.vars.years.findIndex(function (y) { return ds.Year == y; }) == -1) {\r\n            bezl.vars.years.push(ds.Year);\r\n        }\r\n        if (bezl.vars.periods.findIndex(function (p) { return ds.Period == p; }) == -1) {\r\n            bezl.vars.periods.push(ds.Period);\r\n        }\r\n    });\r\n    // Sort them out\r\n    bezl.vars.years = bezl.vars.years.sort();\r\n    bezl.vars.periods = bezl.vars.periods.sort(function compare(a, b) {\r\n        return Number(a) - Number(b);\r\n    });\r\n    // Grab the last   \r\n    bezl.vars.year = bezl.vars.years[bezl.vars.years.length - 1];\r\n    bezl.vars.period = bezl.vars.periods[bezl.vars.periods.length - 1];\r\n    FusionCharts.ready(function () {\r\n        // First build data\r\n        bezl.vars.data = [];\r\n        bezl.data.cashflow.filter(function (cf) { return cf.Year == bezl.vars.year && cf.Period == bezl.vars.period; }).sort(function compare(a, b) {\r\n            return a.Order - b.Order;\r\n        }).forEach(function (ds) {\r\n            bezl.vars.data.push({\r\n                label: ds.Description,\r\n                value: ds.Value\r\n            });\r\n        });\r\n        bezl.vars.chart = new FusionCharts({\r\n            type: 'waterfall2d',\r\n            renderAt: $(bezl.container.nativeElement).find(\"#chartContainer\")[0],\r\n            width: '100%',\r\n            height: (($(bezl.container.nativeElement)[0].clientHeight > 300) ? $(bezl.container.nativeElement)[0].clientHeight - 85 : 300),\r\n            dataFormat: 'json',\r\n            dataSource: {\r\n                chart: {\r\n                    caption: \"Visualized Cash Flow\",\r\n                    subcaption: \"\",\r\n                    yAxisname: \"Amount (In USD)\",\r\n                    numberprefix: \"$\",\r\n                    connectordashed: \"1\",\r\n                    sumlabel: \"Change in Cash Flow\",\r\n                    positiveColor: \"#6baa01\",\r\n                    negativeColor: \"#e44a00\",\r\n                    //Cosmetics\r\n                    paletteColors: \"#0075c2,#1aaf5d,#f2c500\",\r\n                    baseFontColor: \"#333333\",\r\n                    baseFont: \"Helvetica Neue,Arial\",\r\n                    captionFontSize: \"14\",\r\n                    subcaptionFontSize: \"14\",\r\n                    subcaptionFontBold: \"0\",\r\n                    showBorder: \"0\",\r\n                    bgColor: \"#ffffff\",\r\n                    showShadow: \"0\",\r\n                    canvasBgColor: \"#ffffff\",\r\n                    canvasBorderAlpha: \"0\",\r\n                    divlineAlpha: \"100\",\r\n                    divlineColor: \"#999999\",\r\n                    divlineThickness: \"1\",\r\n                    divLineIsDashed: \"1\",\r\n                    divLineDashLen: \"1\",\r\n                    divLineGapLen: \"1\",\r\n                    usePlotGradientColor: \"0\",\r\n                    showplotborder: \"0\",\r\n                    showXAxisLine: \"1\",\r\n                    xAxisLineThickness: \"1\",\r\n                    xAxisLineColor: \"#999999\",\r\n                    showAlternateHGridColor: \"0\",\r\n                },\r\n                data: bezl.vars.data\r\n            }\r\n        });\r\n        bezl.vars.chart.render();\r\n    });\r\n}\r\n"
+    },
+    {
+      "method": "refreshChart",
+      "code": "bezl.vars.data = [];\nbezl.data.cashflow.filter(cf => cf.Year == bezl.vars.year && cf.Period == bezl.vars.period).sort(function compare(a,b) {return a.Order - b.Order;}).forEach(ds => {\n  bezl.vars.data.push({\n    label: ds.Description,\n    value: ds.Value\n  });\n});\nvar chart = bezl.vars.chart.getChartData('json');\nchart.data = bezl.vars.data;\nbezl.vars.chart.setChartData(chart);",
+      "declares": [
+        "$",
+        "parm",
+        "bezl",
+        "dataResp",
+        "require",
+        "FusionCharts"
+      ],
+      "compiled": "bezl.vars.data = [];\r\nbezl.data.cashflow.filter(function (cf) { return cf.Year == bezl.vars.year && cf.Period == bezl.vars.period; }).sort(function compare(a, b) {\r\n    return a.Order - b.Order;\r\n}).forEach(function (ds) {\r\n    bezl.vars.data.push({\r\n        label: ds.Description,\r\n        value: ds.Value\r\n    });\r\n});\r\nvar chart = bezl.vars.chart.getChartData('json');\r\nchart.data = bezl.vars.data;\r\nbezl.vars.chart.setChartData(chart);\r\n"
+    },
+    {
+      "method": "changeYear",
+      "code": "bezl.vars.year = parm;\nbezl.functions['refreshChart']();",
+      "declares": [
+        "$",
+        "parm",
+        "bezl",
+        "dataResp",
+        "require",
+        "FusionCharts"
+      ],
+      "compiled": "bezl.vars.year = parm;\r\nbezl.functions['refreshChart']();\r\n"
+    },
+    {
+      "method": "changePeriod",
+      "code": "bezl.vars.period = parm;\nbezl.functions['refreshChart']();",
+      "declares": [
+        "$",
+        "parm",
+        "bezl",
+        "dataResp",
+        "require",
+        "FusionCharts"
+      ],
+      "compiled": "bezl.vars.period = parm;\r\nbezl.functions['refreshChart']();\r\n"
+    }
+  ],
+  "data": ""
+}
