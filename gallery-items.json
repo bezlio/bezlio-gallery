@@ -292,7 +292,7 @@
                 }
             ],
             "itemVideos": [],
-            "roles": [ "executive-ceo", "executive-cfo", "accounting"],
+            "roles": [ "executive-ceo", "executive-cfo", "accounting-general"],
             "platforms": ["excel"],
             "path": "visualized-cash-flow",
             "additionalFiles": [

@@ -9,6 +9,10 @@
                 { "roleId": "accounting-accounts-receivable", "roleName": "Accounts Receivable", 
                     "headerText": "",
                     "headerImage": "https://cdn.rawgit.com/bezlio/bezlio-gallery/master/images/Bezlio-Gallery-Category-AccountsReceivable-Wide.png"
+                },
+                { "roleId": "accounting-general", "roleName": "General", 
+                    "headerText": "",
+                    "headerImage": "https://cdn.rawgit.com/bezlio/bezlio-gallery/master/images/Bezlio-Gallery-Category-Accounting-Wide.png"
                 }
             ]
         },
