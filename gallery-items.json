@@ -287,11 +287,11 @@
             "thumbnailAltText": "Screenshot showing virtual warehouse",
             "itemImages": [
                 {
-                    "imagePath": "https://bezlio-gallery.azurewebsites.net/virtual-warehouse/images/main.png",
+                    "imagePath": "https://bezlio-gallery.azurewebsites.net/virtual-warehouse/images/main.gif",
                     "imageAltText": "Screenshot showing virtual warehouse on iPhone"
                 },
                 {
-                    "imagePath": "https://bezlio-gallery.azurewebsites.net/virtual-warehouse/images/main2.png",
+                    "imagePath": "https://bezlio-gallery.azurewebsites.net/virtual-warehouse/images/main2.gif",
                     "imageAltText": "Screenshot showing virtual warehouse on iPad"
                 }
             ],
