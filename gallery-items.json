@@ -279,6 +279,43 @@
             }
         },
         {
+            "itemId": "virtual-warehouse",
+            "itemName": "Virtual Warehouse",
+            "featured": true,
+            "itemDescription": "This Bezl uses the latest in mobile 3d technology to enable your users to find inventory in the warehouse faster. A spreadsheet defines the shape and structure of the warehouse and real time queries against the database provide users with a real time visualization of where inventory can be found in the warehouse. On mobile devices users can look from side to side and navigate through the warehouse virtually to assist in the picking process.",
+            "thumbnailPath": "https://bezlio-gallery.azurewebsites.net/visualized-cash-flow/images/thumb.png",
+            "thumbnailAltText": "Screenshot showing virtual warehouse",
+            "itemImages": [
+                {
+                    "imagePath": "https://bezlio-gallery.azurewebsites.net/visualized-cash-flow/images/main.png",
+                    "imageAltText": "Screenshot showing virtual warehouse on iPhone"
+                },
+                {
+                    "imagePath": "https://bezlio-gallery.azurewebsites.net/visualized-cash-flow/images/main2.png",
+                    "imageAltText": "Screenshot showing virtual warehouse on iPad"
+                }
+            ],
+            "itemVideos": [],
+            "roles": [ "common", "production-worker", "production-team-leader", "shipping-worker", "shipping-manager"],
+            "platforms": ["excel"],
+            "path": "virtual-warehouse",
+            "additionalFiles": [
+                {
+                    "fileName": "warehouse-layout.xlsx",
+                    "filePath": "https://bezlio-gallery.azurewebsites.net/virtual-warehouse/data/warehouse-layout.xlsx",
+                    "description": "Sample Excel data source for this Bezl.  Installed by default with latest version of BRDB.  This defines the structure of the warehouse. xxx are for spaces and bins are ~ seperated."
+                },
+                {
+                    "fileName": "warehouse-parts.xlsx",
+                    "filePath": "https://bezlio-gallery.azurewebsites.net/virtual-warehouse/data/warehouse-parts.xlsx",
+                    "description": "Sample Excel data source for this Bezl.  Installed by default with latest version of BRDB.  This provides inventory in the bin locations."
+                }
+            ],
+            "installationNotes": {
+                "intro": "When you install this Bezl it will by default point to warehouse-parts.xlsx which should already be present on your BRDB server.  If you wish to point to a different data source, refer to our <a href=\"https://github.com/bezlio/bezlio-gallery/wiki/Changing-Data-Connections-on-Bezls\" target=\"_blank\"><u>standard steps</u></a> for changing data connections.  Required columns names are Part Id, Description, and the Bin matching the layout."
+            }
+        },
+        {
             "itemId": "visualized-cash-flow",
             "itemName": "Visualized Cash Flow",
             "featured": false,
