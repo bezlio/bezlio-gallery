@@ -227,12 +227,20 @@
             "itemName": "Part Lookup",
             "featured": false,
             "itemDescription": "This simple bezl provides a typeahead box that searches the id and description. It then builds a table of all of the values included in the query. The dynamic nature of the table allows you to customize the user experience simply by updating the query.",
-            "thumbnailPath": "https://bezlio-gallery.azurewebsites.net/visualized-cash-flow/images/thumb.png",
-            "thumbnailAltText": "Screenshot showing visualized cash flow",
+            "thumbnailPath": "https://bezlio-gallery.azurewebsites.net/part-lookup/images/thumb.png",
+            "thumbnailAltText": "Screenshot showing part lookup",
             "itemImages": [
                 {
-                    "imagePath": "https://bezlio-gallery.azurewebsites.net/visualized-cash-flow/images/main.png",
-                    "imageAltText": "Screenshot showing visualized cash flow"
+                    "imagePath": "https://bezlio-gallery.azurewebsites.net/part-lookup/images/main.gif",
+                    "imageAltText": "GIF showing part lookup function"
+                },
+                {
+                    "imagePath": "https://bezlio-gallery.azurewebsites.net/part-lookup/images/main.png",
+                    "imageAltText": "Screenshot of typeahead search"
+                },
+                {
+                    "imagePath": "https://bezlio-gallery.azurewebsites.net/part-lookup/images/main2.png",
+                    "imageAltText": "Screenshot of results view"
                 }
             ],
             "itemVideos": [],
