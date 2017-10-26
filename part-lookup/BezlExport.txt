@@ -1,0 +1,121 @@
+﻿{
+  "id": "9d785cf7-65fb-4a8e-8060-30dbf012e745",
+  "name": "Part Lookup",
+  "template": "custom",
+  "owner": "bellis@saberlogic.com",
+  "shares": [],
+  "vars": [
+    {
+      "name": "typeAheadData",
+      "value": "[]"
+    },
+    {
+      "name": "properties",
+      "value": "\"\""
+    },
+    {
+      "name": "data",
+      "value": "[]"
+    }
+  ],
+  "dataSubscriptions": [
+    {
+      "name": "partInfoData",
+      "connectionId": "66aede27-9d2e-4ab0-b501-d0f4384fa6ae",
+      "dataSource": "brdb",
+      "plugin": "ExcelPlugin",
+      "method": "GetData",
+      "args": {
+        "FileName": "C:\\Program Files (x86)\\Bezlio Remote Data Broker\\Data\\part-lookup.xlsx",
+        "SheetName": "Parts",
+        "FirstRowColumnNames": "Yes"
+      },
+      "data": null,
+      "refreshInverval": 0,
+      "lastRefresh": null
+    }
+  ],
+  "markup": [
+    "<div class=\"typeahead__container\">",
+    "  <div class=\"typeahead__field\">",
+    "    <span class=\"typeahead__query\">",
+    "      <input id=\"partLookup\" class=\"js-typeahead\" #partLookup name=\"partLookup\" type=\"search\" autocomplete=\"off\">",
+    "    </span>",
+    "    <span class=\"typeahead__button\">",
+    "      <button style=\"padding-left: 2px; padding-right: 2px;\">",
+    "        <i *ngIf=\"bezl.vars.refreshing === false\" style=\"width:20px; height: 20px; font-size:20px; cursor: pointer; cursor: hand;\" class=\"fa fa-refresh\" (click)=\"bezl.functions['refresh']()\"></i>",
+    "        <i *ngIf=\"bezl.vars.refreshing === true\" style=\"width:20px; height: 20px; font-size:20px; cursor: not-allowed;\" class=\"fa fa-refresh fa-spin\"></i>",
+    "      </button>",
+    "    </span>",
+    "  </div>",
+    "</div>",
+    "<br/>",
+    "<table class=\"table table-hover\">",
+    "  <thead>",
+    "    <tr>",
+    "      <th *ngFor=\"let property of bezl.vars['properties']\">{{property}}</th>",
+    "    </tr>",
+    "  </thead>",
+    "  <tbody>",
+    "    <tr>",
+    "      <td *ngFor=\"let property of bezl.vars['properties']\">{{bezl.vars['data'][property]}}</td>",
+    "    </tr>",
+    "  </tbody>",
+    "</table>"
+  ],
+  "functions": [
+    {
+      "method": "ngOnInit",
+      "code": "bezl.vars.refreshing = true;\n\n\n($(bezl.container.nativeElement).find(\".js-typeahead\")).typeahead({\n  order: \"asc\",\n  maxItem: 8,\n  source: {\n    data: function() { return bezl.vars['typeAheadData']; }\n  },\n  display: [\"id\", \"description\"],\n  callback: {\n    onClick: function (node, a, item, event) {\n      bezl.functions['typeAheadSelect'](item);              \n    },\n    onCancel: function () {\n      bezl.vars['properties'] = [];\n      bezl.vars['data'] = [];\n    }\n  }\n});",
+      "declares": [
+        "$",
+        "parm",
+        "bezl",
+        "dataResp",
+        "require",
+        "FusionCharts"
+      ],
+      "compiled": "bezl.vars.refreshing = true;\r\n($(bezl.container.nativeElement).find(\".js-typeahead\")).typeahead({\r\n    order: \"asc\",\r\n    maxItem: 8,\r\n    source: {\r\n        data: function () {\r\n            return bezl.vars['typeAheadData'];\r\n        }\r\n    },\r\n    display: [\"id\", \"description\"],\r\n    callback: {\r\n        onClick: function (node, a, item, event) {\r\n            bezl.functions['typeAheadSelect'](item);\r\n        },\r\n        onCancel: function () {\r\n            bezl.vars['properties'] = [];\r\n            bezl.vars['data'] = [];\r\n        }\r\n    }\r\n});\r\n"
+    },
+    {
+      "method": "onDataChange",
+      "code": "bezl.data = dataResp;\n\nif(bezl.data.partInfoData){\n  bezl.vars['typeAheadData'] = [];\n  \n  bezl.data.partInfoData.forEach(p => {\n  \tbezl.vars['typeAheadData'].push({id: p.Id, description: p.Description, data: p});\n  });\n  bezl.vars.refreshing = false;\n}\n\n",
+      "declares": [
+        "$",
+        "parm",
+        "bezl",
+        "dataResp",
+        "require",
+        "FusionCharts"
+      ],
+      "compiled": "bezl.data = dataResp;\r\nif (bezl.data.partInfoData) {\r\n    bezl.vars['typeAheadData'] = [];\r\n    bezl.data.partInfoData.forEach(function (p) {\r\n        bezl.vars['typeAheadData'].push({ id: p.Id, description: p.Description, data: p });\r\n    });\r\n    bezl.vars.refreshing = false;\r\n}\r\n"
+    },
+    {
+      "method": "typeAheadSelect",
+      "code": "if(parm != null)\n{\n  bezl.vars['properties'] = [];\n  bezl.vars['data'] = parm.data;\n  for (var key in parm.data) {  \n      bezl.vars['properties'].push(key);\n  }\n}",
+      "declares": [
+        "$",
+        "parm",
+        "bezl",
+        "dataResp",
+        "require",
+        "FusionCharts"
+      ],
+      "compiled": "if (parm != null) {\r\n    bezl.vars['properties'] = [];\r\n    bezl.vars['data'] = parm.data;\r\n    for (var key in parm.data) {\r\n        bezl.vars['properties'].push(key);\r\n    }\r\n}\r\n"
+    },
+    {
+      "method": "refresh",
+      "code": "bezl.vars['typeAheadData'] = [];\nbezl.vars['properties'] = [];\nbezl.vars['data'] = [];\nbezl.vars.refreshing = true;\nbezl.dataService.process('partInfoData');",
+      "declares": [
+        "$",
+        "parm",
+        "bezl",
+        "dataResp",
+        "require",
+        "FusionCharts"
+      ],
+      "compiled": "bezl.vars['typeAheadData'] = [];\r\nbezl.vars['properties'] = [];\r\nbezl.vars['data'] = [];\r\nbezl.vars.refreshing = true;\r\nbezl.dataService.process('partInfoData');\r\n"
+    }
+  ],
+  "data": ""
+}

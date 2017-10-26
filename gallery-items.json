@@ -223,6 +223,34 @@
             }
         },
         {
+            "itemId": "part-lookup",
+            "itemName": "Part Lookup",
+            "featured": false,
+            "itemDescription": "This simple bezl provides a typeahead box that searches the id and description. It then builds a table of all of the values included in the query. The dynamic nature of the table allows you to customize the user experience simply by updating the query.",
+            "thumbnailPath": "https://bezlio-gallery.azurewebsites.net/visualized-cash-flow/images/thumb.png",
+            "thumbnailAltText": "Screenshot showing visualized cash flow",
+            "itemImages": [
+                {
+                    "imagePath": "https://bezlio-gallery.azurewebsites.net/visualized-cash-flow/images/main.png",
+                    "imageAltText": "Screenshot showing visualized cash flow"
+                }
+            ],
+            "itemVideos": [],
+            "roles": ["accounting-general", "common", "customer-service", "engineering", "executive-ceo", "executive-cfo", "purchasing", "production-plant-manager", "production-qa", "production-scheduler", "production-team-leader", "production-worker", "sales-manager", "sales-rep", "shipping-manager", "shipping-worker"],
+            "platforms": ["universal"],
+            "path": "part-lookup",
+            "additionalFiles": [
+                {
+                    "fileName": "part-lookup.xlsx",
+                    "filePath": "https://bezlio-gallery.azurewebsites.net/part-lookup/data/part-lookup.xlsx",
+                    "description": "Sample Excel data source for this Bezl.  Installed by default with latest version of BRDB."
+                }
+            ],
+            "installationNotes": {
+                "intro": "When you install this Bezl it will by default point to part-lookup.xlsx which should already be present on your BRDB server.  If you wish to point to a different data source, refer to our <a href=\"https://github.com/bezlio/bezlio-gallery/wiki/Changing-Data-Connections-on-Bezls\" target=\"_blank\"><u>standard steps</u></a> for changing data connections.  Required columns names are Id and Description. Other columns will be displayed automatically."
+            }
+        },
+        {
             "itemId": "production-scheduling-board-web-mobile-iphone-ipad-android",
             "itemName": "Production Scheduling Board",
             "featured": true,
