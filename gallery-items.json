@@ -283,15 +283,15 @@
             "itemName": "Virtual Warehouse",
             "featured": true,
             "itemDescription": "This Bezl uses the latest in mobile 3d technology to enable your users to find inventory in the warehouse faster. A spreadsheet defines the shape and structure of the warehouse and real time queries against the database provide users with a real time visualization of where inventory can be found in the warehouse. On mobile devices users can look from side to side and navigate through the warehouse virtually to assist in the picking process.",
-            "thumbnailPath": "https://bezlio-gallery.azurewebsites.net/visualized-cash-flow/images/thumb.png",
+            "thumbnailPath": "https://bezlio-gallery.azurewebsites.net/virtual-warehouse/images/thumb.png",
             "thumbnailAltText": "Screenshot showing virtual warehouse",
             "itemImages": [
                 {
-                    "imagePath": "https://bezlio-gallery.azurewebsites.net/visualized-cash-flow/images/main.png",
+                    "imagePath": "https://bezlio-gallery.azurewebsites.net/virtual-warehouse/images/main.png",
                     "imageAltText": "Screenshot showing virtual warehouse on iPhone"
                 },
                 {
-                    "imagePath": "https://bezlio-gallery.azurewebsites.net/visualized-cash-flow/images/main2.png",
+                    "imagePath": "https://bezlio-gallery.azurewebsites.net/virtual-warehouse/images/main2.png",
                     "imageAltText": "Screenshot showing virtual warehouse on iPad"
                 }
             ],
