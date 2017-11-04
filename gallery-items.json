@@ -77,12 +77,12 @@
                 },
                 {
                     "fileName": "APSummaryByCategory.sql (Epicor 10.X)",
-                    "filePath": "https://bezlio-gallery.azurewebsites.net/accounts-payable/queries/Epicor10/APSummaryByCategory.sql",
+                    "filePath": "https://bezlio-gallery.azurewebsites.net/ap-summary-by-category/queries/Epicor10/APSummaryByCategory.sql",
                     "description": "SQL Server query for Epicor ERP 10.X."
                 },
                 {
                     "fileName": "APSummaryByCategory.sql (Epicor 9.05)",
-                    "filePath": "https://bezlio-gallery.azurewebsites.net/accounts-payable/queries/Epicor905/APSummaryByCategory.sql",
+                    "filePath": "https://bezlio-gallery.azurewebsites.net/ap-summary-by-category/queries/Epicor905/APSummaryByCategory.sql",
                     "description": "SQL Server query for Epicor ERP 9.05 and prior."
                 }
             ],
