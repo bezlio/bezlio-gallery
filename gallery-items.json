@@ -72,7 +72,7 @@
             "additionalFiles": [
                 {
                     "fileName": "accounts-payable.xlsx",
-                    "filePath": "https://bezlio-gallery.azurewebsites.net/inventory-valuation-by-age/data/accounts-payable.xlsx",
+                    "filePath": "https://bezlio-gallery.azurewebsites.net/ap-summary-by-category/data/accounts-payable.xlsx",
                     "description": "Sample Excel data source for this Bezl.  Installed by default with latest version of BRDB."
                 },
                 {
