@@ -1,0 +1,22 @@
+SELECT
+	p.VOUCHER_ID
+	, pl.LINE_NO
+	, a.DESCRIPTION AS Category
+	, pl.AMOUNT AS AmountDue
+	, p.INVOICE_DATE + p.TERMS_NET_DAYS AS DueDate
+FROM
+	PAYABLE p with(nolock)
+
+	INNER JOIN VENDOR v with(nolock) ON
+	v.ID = p.VENDOR_ID
+
+	INNER JOIN PAYABLE_LINE pl with(nolock) ON
+	pl.VOUCHER_ID = p.VOUCHER_ID
+
+	INNER JOIN ACCOUNT a with(nolock) ON
+	a.ID = pl.GL_ACCOUNT_ID
+WHERE
+	p.TOTAL_AMOUNT > p.PAID_AMOUNT
+	AND pl.AMOUNT > 0
+ORDER BY
+	a.DESCRIPTION

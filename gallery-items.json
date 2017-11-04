@@ -67,7 +67,7 @@
             ],
             "itemVideos": [],
             "roles": [ "accounting-accounts-payable", "executive-cfo" ],
-            "platforms": ["excel","epicor905","epicor10"],
+            "platforms": ["excel","epicor905","epicor10","visual7","visual8"],
             "path": "ap-summary-by-category",
             "additionalFiles": [
                 {
@@ -84,6 +84,11 @@
                     "fileName": "APSummaryByCategory.sql (Epicor 9.05)",
                     "filePath": "https://bezlio-gallery.azurewebsites.net/ap-summary-by-category/queries/Epicor905/APSummaryByCategory.sql",
                     "description": "SQL Server query for Epicor ERP 9.05 and prior."
+                },
+                {
+                    "fileName": "APSummaryByCategory.sql (Infor VISUAL all versions)",
+                    "filePath": "https://bezlio-gallery.azurewebsites.net/ap-summary-by-category/queries/Visual/APSummaryByCategory.sql",
+                    "description": "SQL Server query for all versions of INFOR Visual."
                 }
             ],
             "installationNotes": {
