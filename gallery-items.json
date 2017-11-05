@@ -68,26 +68,26 @@
             "itemVideos": [],
             "roles": [ "accounting-accounts-payable", "executive-cfo" ],
             "platforms": ["excel","epicor905","epicor10","visual7","visual8"],
-            "path": "ap-summary-by-category",
+            "path": "ap-summary",
             "additionalFiles": [
                 {
                     "fileName": "accounts-payable.xlsx",
-                    "filePath": "https://bezlio-gallery.azurewebsites.net/ap-summary-by-category/data/accounts-payable.xlsx",
+                    "filePath": "https://bezlio-gallery.azurewebsites.net/ap-summary/data/accounts-payable.xlsx",
                     "description": "Sample Excel data source for this Bezl.  Installed by default with latest version of BRDB."
                 },
                 {
-                    "fileName": "APSummaryByCategory.sql (Epicor 10.X)",
-                    "filePath": "https://bezlio-gallery.azurewebsites.net/ap-summary-by-category/queries/Epicor10/APSummaryByCategory.sql",
+                    "fileName": "APSummary.sql (Epicor 10.X)",
+                    "filePath": "https://bezlio-gallery.azurewebsites.net/ap-summary/queries/Epicor10/APSummary.sql",
                     "description": "SQL Server query for Epicor ERP 10.X."
                 },
                 {
-                    "fileName": "APSummaryByCategory.sql (Epicor 9.05)",
-                    "filePath": "https://bezlio-gallery.azurewebsites.net/ap-summary-by-category/queries/Epicor905/APSummaryByCategory.sql",
+                    "fileName": "APSummary.sql (Epicor 9.05)",
+                    "filePath": "https://bezlio-gallery.azurewebsites.net/ap-summary/queries/Epicor905/APSummary.sql",
                     "description": "SQL Server query for Epicor ERP 9.05 and prior."
                 },
                 {
-                    "fileName": "APSummaryByCategory.sql (Infor VISUAL all versions)",
-                    "filePath": "https://bezlio-gallery.azurewebsites.net/ap-summary-by-category/queries/Visual/APSummaryByCategory.sql",
+                    "fileName": "APSummary.sql (Infor VISUAL all versions)",
+                    "filePath": "https://bezlio-gallery.azurewebsites.net/ap-summary/queries/Visual/APSummary.sql",
                     "description": "SQL Server query for all versions of INFOR Visual."
                 }
             ],
