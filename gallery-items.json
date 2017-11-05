@@ -53,6 +53,49 @@
             }
         },
         {
+            "itemId": "ap-summary",
+            "itemName": "AP Summary",
+            "featured": true,
+            "itemDescription": "Gives a simple current AP total with a refresh button.  Designed to be used on pages with many other Bezls so it is tiny and runs fast.",
+            "thumbnailPath": "https://bezlio-gallery.azurewebsites.net/ap-summary/images/thumb.png",
+            "thumbnailAltText": "Screenshot showing the current total AP.",
+            "itemImages": [
+                {
+                    "imagePath": "https://bezlio-gallery.azurewebsites.net/ap-summary/images/main.png",
+                    "imageAltText": "Screenshot showing the current total AP."
+                }
+            ],
+            "itemVideos": [],
+            "roles": [ "accounting-accounts-payable", "executive-cfo" ],
+            "platforms": ["excel","epicor905","epicor10","visual7","visual8"],
+            "path": "ap-summary-by-category",
+            "additionalFiles": [
+                {
+                    "fileName": "accounts-payable.xlsx",
+                    "filePath": "https://bezlio-gallery.azurewebsites.net/ap-summary-by-category/data/accounts-payable.xlsx",
+                    "description": "Sample Excel data source for this Bezl.  Installed by default with latest version of BRDB."
+                },
+                {
+                    "fileName": "APSummaryByCategory.sql (Epicor 10.X)",
+                    "filePath": "https://bezlio-gallery.azurewebsites.net/ap-summary-by-category/queries/Epicor10/APSummaryByCategory.sql",
+                    "description": "SQL Server query for Epicor ERP 10.X."
+                },
+                {
+                    "fileName": "APSummaryByCategory.sql (Epicor 9.05)",
+                    "filePath": "https://bezlio-gallery.azurewebsites.net/ap-summary-by-category/queries/Epicor905/APSummaryByCategory.sql",
+                    "description": "SQL Server query for Epicor ERP 9.05 and prior."
+                },
+                {
+                    "fileName": "APSummaryByCategory.sql (Infor VISUAL all versions)",
+                    "filePath": "https://bezlio-gallery.azurewebsites.net/ap-summary-by-category/queries/Visual/APSummaryByCategory.sql",
+                    "description": "SQL Server query for all versions of INFOR Visual."
+                }
+            ],
+            "installationNotes": {
+                "intro": "When you install this Bezl it will by default point to accounts-payable.xlsx which should already be present on your BRDB server.  If you wish to point to a different data source, refer to our <a href=\"https://github.com/bezlio/bezlio-gallery/wiki/Changing-Data-Connections-on-Bezls\" target=\"_blank\"><u>standard steps</u></a> for changing data connections.  Only required column is AmountDue."
+            }
+        },
+        {
             "itemId": "ap-summary-by-category",
             "itemName": "AP Summary By Category",
             "featured": true,
