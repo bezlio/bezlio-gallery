@@ -49,7 +49,7 @@
                 }
             ],
             "installationNotes": {
-                "intro": "This Bezl does not yet conform to the standard steps to change data sources (this is onb the roadmap).  For now, in order to use this Bezl you must create a plugin instance called sales-rep-queries and point it to a SQL Server query folder containing the .SQL files from one of the atatched ZIP files.  Please contact support if you wish to activate this Bezl in your account and are having difficulties."
+                "intro": "This Bezl does not yet conform to the standard steps to change data sources (this is on the roadmap).  For now, in order to use this Bezl you must create a plugin instance called sales-rep-queries and point it to a SQL Server query folder containing the .SQL files from one of the atatched ZIP files.  Please contact support if you wish to activate this Bezl in your account and are having difficulties."
             }
         },
         {
