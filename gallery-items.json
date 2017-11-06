@@ -24,27 +24,27 @@
             "additionalFiles": [
                 {
                     "fileName": "Queries.zip (Epicor 10.X)",
-                    "filePath": "https://bezlio-gallery.azurewebsites.net/accounts-payable/queries/Epicor10/Queries.zip",
+                    "filePath": "https://bezlio-gallery.azurewebsites.net/accounts-view-crm/queries/Epicor10/Queries.zip",
                     "description": "All queries for Epicor 10.X"
                 },
                 {
                     "fileName": "Queries.zip (Epicor 9.05)",
-                    "filePath": "https://bezlio-gallery.azurewebsites.net/accounts-payable/queries/Epicor905/Queries.zip",
+                    "filePath": "https://bezlio-gallery.azurewebsites.net/accounts-view-crm/queries/Epicor905/Queries.zip",
                     "description": "All queries for Epicor 9.05"
                 },
                 {
                     "fileName": "Queries.zip (Prophet21)",
-                    "filePath": "https://bezlio-gallery.azurewebsites.net/accounts-payable/queries/Prophet21/Queries.zip",
+                    "filePath": "https://bezlio-gallery.azurewebsites.net/accounts-view-crm/queries/Prophet21/Queries.zip",
                     "description": "All queries for Prophet21"
                 },
                 {
                     "fileName": "Queries.zip (Visual 7.0)",
-                    "filePath": "https://bezlio-gallery.azurewebsites.net/accounts-payable/queries/Visual7/Queries.zip",
+                    "filePath": "https://bezlio-gallery.azurewebsites.net/accounts-view-crm/queries/Visual7/Queries.zip",
                     "description": "All queries for Infor VISUAL 7.0 or below"
                 },
                 {
                     "fileName": "Queries.zip (Visual 8.0)",
-                    "filePath": "https://bezlio-gallery.azurewebsites.net/accounts-payable/queries/Visual8/Queries.zip",
+                    "filePath": "https://bezlio-gallery.azurewebsites.net/accounts-view-crm/queries/Visual8/Queries.zip",
                     "description": "All queries for Infor VISUAL 7.1 or above"
                 }
             ],
