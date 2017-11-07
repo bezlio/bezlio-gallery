@@ -271,6 +271,39 @@
             }
         },
         {
+            "itemId": "issue-materials",
+            "itemName": "Issue Materials",
+            "featured": true,
+            "itemDescription": "This Bezl allows a production worker to issue materials to a job / work order from mobile devices (iPhone, iPad, Android, etc.)  Currently it is only configured for Epicor, but will be ported to other systems in the weeks to come.  Bezl is intended to be very touch and barcode friendly.  User starts by entering their employee ID.  Next they input the job and optionally assembly / operation.  They are then presented with a list of buttons per material requirement that they can tap on (or scan) where they are then presented with inventory on hand.  From there they tap the warehouse / bin they wish to pull from, indicate the quantity, and move onto the next material.  When all materials inventory selections have been made, the user clicks the 'Issue Materials' button and all transactions are processed in real time.  This Bezl supports dynamically adding new requirements to a job, although that could be disabled as desired.",
+            "thumbnailPath": "https://bezlio-gallery.azurewebsites.net/issue-materials/images/thumb.png",
+            "thumbnailAltText": "Screenshot showing a selected job, it's materials, and inventory available for a selected material.",
+            "itemImages": [
+                {
+                    "imagePath": "https://bezlio-gallery.azurewebsites.net/issue-materials/images/main.png",
+                    "imageAltText": "Screenshot showing a selected job, it's materials, and inventory available for a selected material."
+                }
+            ],
+            "itemVideos": [],
+            "roles": [ "production-team-leader", "production-worker" ],
+            "platforms": [ "epicor905","epicor10"],
+            "path": "issue-materials",
+            "additionalFiles": [
+                {
+                    "fileName": "Queries.zip (Epicor 10.X)",
+                    "filePath": "https://bezlio-gallery.azurewebsites.net/issue-materials/queries/Epicor10/Queries.zip",
+                    "description": "SQL Server queries for Epicor ERP 10.X."
+                },
+                {
+                    "fileName": "Queries.zip (Epicor 9.05)",
+                    "filePath": "https://bezlio-gallery.azurewebsites.net/issue-materials/queries/Epicor905/Queries.zip",
+                    "description": "SQL Server queries for Epicor ERP 9.05 and prior."
+                }
+            ],
+            "installationNotes": {
+                "intro": "This Bezl involves more installation steps than typical due to the fact it is transactional with the ERP.  If you are an Epicor user and wish to utilize this gallery item, please contact support and we will help you get it set up."
+            }
+        },
+        {
             "itemId": "part-lookup",
             "itemName": "Part Lookup",
             "featured": false,
