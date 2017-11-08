@@ -486,11 +486,11 @@
             "itemName": "Sales Funnel",
             "featured": false,
             "itemDescription": "This Bezl uses a funnel chart, which consists of multiple segments, each segment representing a data point. The chart lets you slice out a funnel slice to highlight important data.",
-            "thumbnailPath": "https://raw.githubusercontent.com/bezlio/bezlio-gallery/sales-funnel/sales-funnel/images/thumb.png",
+            "thumbnailPath": "https://bezlio-gallery.azurewebsites.net/sales-funnel/images/thumb.png",
             "thumbnailAltText": "Thumbnail showing a sample sales funnel.",
             "itemImages": [
                 {
-                    "imagePath": "https://raw.githubusercontent.com/bezlio/bezlio-gallery/sales-funnel/sales-funnel/images/main.png",
+                    "imagePath": "https://bezlio-gallery.azurewebsites.net/sales-funnel/images/main.png",
                     "imageAltText": "Full image showing a quote to order sales funnel sliced out."
                 }
             ],
