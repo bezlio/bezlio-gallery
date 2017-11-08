@@ -522,7 +522,7 @@
                 }
             ],
             "installationNotes": {
-                "intro": "This Bezl is setup by default to point to the funnel.xlsx data source. This come standard with your BRDB install, but if you are missing this file (located in C:\\Program Files (x86)\\Bezlio Remote Data Broker\\Data\\), you can download below to install."
+                "intro": "This Bezl is setup by default to point to the funnel.xlsx data source. This comes standard with your BRDB install, but if you are missing this file (located in C:\\Program Files (x86)\\Bezlio Remote Data Broker\\Data\\), you can download below to install."
             }
         },
         {
