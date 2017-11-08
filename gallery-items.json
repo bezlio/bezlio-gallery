@@ -485,13 +485,13 @@
             "itemId": "sales-funnel",
             "itemName": "Sales Funnel",
             "featured": false,
-            "itemDescription": "A funnel chart consists of multiple segments, each segment representing a data point. The chart lets you slice out a funnel slice to highlight important data.",
+            "itemDescription": "This Bezl uses a funnel chart, which consists of multiple segments, each segment representing a data point. The chart lets you slice out a funnel slice to highlight important data.",
             "thumbnailPath": "https://raw.githubusercontent.com/bezlio/bezlio-gallery/sales-funnel/sales-funnel/images/thumb.png",
             "thumbnailAltText": "Thumbnail showing a sample sales funnel.",
             "itemImages": [
                 {
                     "imagePath": "https://raw.githubusercontent.com/bezlio/bezlio-gallery/sales-funnel/sales-funnel/images/main.png",
-                    "imageAltText": "Full image showing a quote to order sales funnel."
+                    "imageAltText": "Full image showing a quote to order sales funnel sliced out."
                 }
             ],
             "itemVideos": [],
@@ -522,7 +522,7 @@
                 }
             ],
             "installationNotes": {
-                "intro": "This Bezl does not yet conform to the standard steps to change data sources (this is on the roadmap).  For now, in order to use this Bezl you must create a plugin instance called sales-rep-queries and point it to a SQL Server query folder containing the .SQL files from one of the atatched ZIP files.  Please contact support if you wish to activate this Bezl in your account and are having difficulties."
+                "intro": "This Bezl is setup by default to point to the funnel.xlsx data source. This come standard with your BRDB install, but if you are missing this file (located in C:\\Program Files (x86)\\Bezlio Remote Data Broker\\Data\\), you can download below to install."
             }
         },
         {
