@@ -1,66 +1,6 @@
 {
     "items": [
         {
-            "itemId": "test-crm-test",
-            "itemName": "Test CRM",
-            "featured": false,
-            "itemDescription": "This Bezl provides a bit of a CRM view to your customer information, allowing you to see your assigned accounts, drill in for more details, and even record call logs.  A great way to make your non-mobile CRM available on devices like iPhone, iPad, Android, etc.",
-            "thumbnailPath": "https://bezlio-gallery.azurewebsites.net/accounts-view-crm/images/thumb.png",
-            "thumbnailAltText": "Thumbnail showing small segment of accounts view.",
-            "itemImages": [
-                {
-                    "imagePath": "https://bezlio-gallery.azurewebsites.net/accounts-view-crm/images/main.png",
-                    "imageAltText": "Full image showing accounts view drilled into a specific account."
-                },
-                {
-                    "imagePath": "https://bezlio-gallery.azurewebsites.net/accounts-view-crm/images/call-log.png",
-                    "imageAltText": "Screenshot showing where you can record a call log."
-                }
-            ],
-            "itemVideos": [],
-            "roles": [
-                "sales-rep"
-            ],
-            "platforms": [
-                "epicor905",
-                "epicor10",
-                "p21",
-                "visual7",
-                "visual8"
-            ],
-            "path": "accounts-view-crm",
-            "additionalFiles": [
-                {
-                    "fileName": "Queries.zip (Epicor 10.X)",
-                    "filePath": "https://bezlio-gallery.azurewebsites.net/accounts-view-crm/queries/Epicor10/Queries.zip",
-                    "description": "All queries for Epicor 10.X"
-                },
-                {
-                    "fileName": "Queries.zip (Epicor 9.05)",
-                    "filePath": "https://bezlio-gallery.azurewebsites.net/accounts-view-crm/queries/Epicor905/Queries.zip",
-                    "description": "All queries for Epicor 9.05"
-                },
-                {
-                    "fileName": "Queries.zip (Prophet21)",
-                    "filePath": "https://bezlio-gallery.azurewebsites.net/accounts-view-crm/queries/Prophet21/Queries.zip",
-                    "description": "All queries for Prophet21"
-                },
-                {
-                    "fileName": "Queries.zip (Visual 7.0)",
-                    "filePath": "https://bezlio-gallery.azurewebsites.net/accounts-view-crm/queries/Visual7/Queries.zip",
-                    "description": "All queries for Infor VISUAL 7.0 or below"
-                },
-                {
-                    "fileName": "Queries.zip (Visual 8.0)",
-                    "filePath": "https://bezlio-gallery.azurewebsites.net/accounts-view-crm/queries/Visual8/Queries.zip",
-                    "description": "All queries for Infor VISUAL 7.1 or above"
-                }
-            ],
-            "installationNotes": {
-                "intro": "This Bezl does not yet conform to the standard steps to change data sources (this is on the roadmap).  For now, in order to use this Bezl you must create a plugin instance called sales-rep-queries and point it to a SQL Server query folder containing the .SQL files from one of the atatched ZIP files.  Please contact support if you wish to activate this Bezl in your account and are having difficulties."
-            }
-        },
-        {
             "itemId": "accounts-view-crm",
             "itemName": "Accounts View",
             "featured": false,
@@ -539,6 +479,50 @@
             ],
             "installationNotes": {
                 "intro": "This Bezl does not yet conform to the standard steps for changing data connections (on the roadmap).  For the time being, please contact support if you wish to connect this to your own datasource."
+            }
+        },
+        {
+            "itemId": "sales-funnel",
+            "itemName": "Sales Funnel",
+            "featured": false,
+            "itemDescription": "A funnel chart consists of multiple segments, each segment representing a data point. The chart lets you slice out a funnel slice to highlight important data.",
+            "thumbnailPath": "https://bezlio-gallery.azurewebsites.net/sales-funnel/images/thumb.png",
+            "thumbnailAltText": "Thumbnail showing a sample sales funnel.",
+            "itemImages": [
+                {
+                    "imagePath": "https://bezlio-gallery.azurewebsites.net/sales-funnel/images/main.png",
+                    "imageAltText": "Full image showing a quote to order sales funnel."
+                }
+            ],
+            "itemVideos": [],
+            "roles": [
+                "sales-rep"
+            ],
+            "platforms": [
+                "epicor905",
+                "epicor10",
+                "excel"
+            ],
+            "path": "sales-funnel",
+            "additionalFiles": [
+                {
+                    "fileName": "GetSalesFunnel.sql",
+                    "filePath": "https://bezlio-gallery.azurewebsites.net/sales-funnel/queries/Epicor10/GetSalesFunnel.sql",
+                    "description": "SQL query for Epicor 10.X"
+                },
+                {
+                    "fileName": "GetSalesFunnel.sql",
+                    "filePath": "https://bezlio-gallery.azurewebsites.net/sales-funnel/queries/Epicor905/GetSalesFunnel.sql",
+                    "description": "SQL query for Epicor 9.05"
+                },
+                {
+                    "fileName": "funnel.xlsx",
+                    "filePath": "https://bezlio-gallery.azurewebsites.net/sales-funnel/data/funnel.xlsx",
+                    "description": "Sample Excel file"
+                }
+            ],
+            "installationNotes": {
+                "intro": "This Bezl does not yet conform to the standard steps to change data sources (this is on the roadmap).  For now, in order to use this Bezl you must create a plugin instance called sales-rep-queries and point it to a SQL Server query folder containing the .SQL files from one of the atatched ZIP files.  Please contact support if you wish to activate this Bezl in your account and are having difficulties."
             }
         },
         {
