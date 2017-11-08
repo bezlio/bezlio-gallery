@@ -1,6 +1,66 @@
 {
     "items": [
         {
+            "itemId": "test-crm-test",
+            "itemName": "Test CRM",
+            "featured": false,
+            "itemDescription": "This Bezl provides a bit of a CRM view to your customer information, allowing you to see your assigned accounts, drill in for more details, and even record call logs.  A great way to make your non-mobile CRM available on devices like iPhone, iPad, Android, etc.",
+            "thumbnailPath": "https://bezlio-gallery.azurewebsites.net/accounts-view-crm/images/thumb.png",
+            "thumbnailAltText": "Thumbnail showing small segment of accounts view.",
+            "itemImages": [
+                {
+                    "imagePath": "https://bezlio-gallery.azurewebsites.net/accounts-view-crm/images/main.png",
+                    "imageAltText": "Full image showing accounts view drilled into a specific account."
+                },
+                {
+                    "imagePath": "https://bezlio-gallery.azurewebsites.net/accounts-view-crm/images/call-log.png",
+                    "imageAltText": "Screenshot showing where you can record a call log."
+                }
+            ],
+            "itemVideos": [],
+            "roles": [
+                "sales-rep"
+            ],
+            "platforms": [
+                "epicor905",
+                "epicor10",
+                "p21",
+                "visual7",
+                "visual8"
+            ],
+            "path": "accounts-view-crm",
+            "additionalFiles": [
+                {
+                    "fileName": "Queries.zip (Epicor 10.X)",
+                    "filePath": "https://bezlio-gallery.azurewebsites.net/accounts-view-crm/queries/Epicor10/Queries.zip",
+                    "description": "All queries for Epicor 10.X"
+                },
+                {
+                    "fileName": "Queries.zip (Epicor 9.05)",
+                    "filePath": "https://bezlio-gallery.azurewebsites.net/accounts-view-crm/queries/Epicor905/Queries.zip",
+                    "description": "All queries for Epicor 9.05"
+                },
+                {
+                    "fileName": "Queries.zip (Prophet21)",
+                    "filePath": "https://bezlio-gallery.azurewebsites.net/accounts-view-crm/queries/Prophet21/Queries.zip",
+                    "description": "All queries for Prophet21"
+                },
+                {
+                    "fileName": "Queries.zip (Visual 7.0)",
+                    "filePath": "https://bezlio-gallery.azurewebsites.net/accounts-view-crm/queries/Visual7/Queries.zip",
+                    "description": "All queries for Infor VISUAL 7.0 or below"
+                },
+                {
+                    "fileName": "Queries.zip (Visual 8.0)",
+                    "filePath": "https://bezlio-gallery.azurewebsites.net/accounts-view-crm/queries/Visual8/Queries.zip",
+                    "description": "All queries for Infor VISUAL 7.1 or above"
+                }
+            ],
+            "installationNotes": {
+                "intro": "This Bezl does not yet conform to the standard steps to change data sources (this is on the roadmap).  For now, in order to use this Bezl you must create a plugin instance called sales-rep-queries and point it to a SQL Server query folder containing the .SQL files from one of the atatched ZIP files.  Please contact support if you wish to activate this Bezl in your account and are having difficulties."
+            }
+        },
+        {
             "itemId": "accounts-view-crm",
             "itemName": "Accounts View",
             "featured": false,
@@ -18,8 +78,16 @@
                 }
             ],
             "itemVideos": [],
-            "roles": [ "sales-rep" ],
-            "platforms": ["epicor905","epicor10","p21","visual7","visual8"],
+            "roles": [
+                "sales-rep"
+            ],
+            "platforms": [
+                "epicor905",
+                "epicor10",
+                "p21",
+                "visual7",
+                "visual8"
+            ],
             "path": "accounts-view-crm",
             "additionalFiles": [
                 {
@@ -66,8 +134,17 @@
                 }
             ],
             "itemVideos": [],
-            "roles": [ "accounting-accounts-payable", "executive-cfo" ],
-            "platforms": ["excel","epicor905","epicor10","visual7","visual8"],
+            "roles": [
+                "accounting-accounts-payable",
+                "executive-cfo"
+            ],
+            "platforms": [
+                "excel",
+                "epicor905",
+                "epicor10",
+                "visual7",
+                "visual8"
+            ],
             "path": "ap-summary",
             "additionalFiles": [
                 {
@@ -109,8 +186,17 @@
                 }
             ],
             "itemVideos": [],
-            "roles": [ "accounting-accounts-payable", "executive-cfo" ],
-            "platforms": ["excel","epicor905","epicor10","visual7","visual8"],
+            "roles": [
+                "accounting-accounts-payable",
+                "executive-cfo"
+            ],
+            "platforms": [
+                "excel",
+                "epicor905",
+                "epicor10",
+                "visual7",
+                "visual8"
+            ],
             "path": "ap-summary-by-category",
             "additionalFiles": [
                 {
@@ -152,8 +238,13 @@
                 }
             ],
             "itemVideos": [],
-            "roles": [ "accounting-accounts-receivable", "executive-cfo" ],
-            "platforms": ["excel"],
+            "roles": [
+                "accounting-accounts-receivable",
+                "executive-cfo"
+            ],
+            "platforms": [
+                "excel"
+            ],
             "path": "ar-aging-summary",
             "additionalFiles": [
                 {
@@ -184,8 +275,14 @@
                 }
             ],
             "itemVideos": [],
-            "roles": [ "executive-ceo", "executive-cfo", "sales-manager"],
-            "platforms": ["excel"],
+            "roles": [
+                "executive-ceo",
+                "executive-cfo",
+                "sales-manager"
+            ],
+            "platforms": [
+                "excel"
+            ],
             "path": "comparative-sales-breakdown",
             "additionalFiles": [
                 {
@@ -224,8 +321,12 @@
                 }
             ],
             "itemVideos": [],
-            "roles": ["common"],
-            "platforms": ["universal"],
+            "roles": [
+                "common"
+            ],
+            "platforms": [
+                "universal"
+            ],
             "path": "crystal-reports-viewer",
             "additionalFiles": [],
             "installationNotes": {
@@ -246,8 +347,18 @@
                 }
             ],
             "itemVideos": [],
-            "roles": [ "executive-ceo", "executive-cfo", "purchasing", "production-plant-manager", "sales-manager"],
-            "platforms": ["excel","epicor905","epicor10"],
+            "roles": [
+                "executive-ceo",
+                "executive-cfo",
+                "purchasing",
+                "production-plant-manager",
+                "sales-manager"
+            ],
+            "platforms": [
+                "excel",
+                "epicor905",
+                "epicor10"
+            ],
             "path": "inventory-valuation-by-age",
             "additionalFiles": [
                 {
@@ -284,8 +395,14 @@
                 }
             ],
             "itemVideos": [],
-            "roles": [ "production-team-leader", "production-worker" ],
-            "platforms": [ "epicor905","epicor10"],
+            "roles": [
+                "production-team-leader",
+                "production-worker"
+            ],
+            "platforms": [
+                "epicor905",
+                "epicor10"
+            ],
             "path": "issue-materials",
             "additionalFiles": [
                 {
@@ -325,8 +442,27 @@
                 }
             ],
             "itemVideos": [],
-            "roles": ["accounting-general", "common", "customer-service", "engineering", "executive-ceo", "executive-cfo", "purchasing", "production-plant-manager", "production-qa", "production-scheduler", "production-team-leader", "production-worker", "sales-manager", "sales-rep", "shipping-manager", "shipping-worker"],
-            "platforms": ["universal"],
+            "roles": [
+                "accounting-general",
+                "common",
+                "customer-service",
+                "engineering",
+                "executive-ceo",
+                "executive-cfo",
+                "purchasing",
+                "production-plant-manager",
+                "production-qa",
+                "production-scheduler",
+                "production-team-leader",
+                "production-worker",
+                "sales-manager",
+                "sales-rep",
+                "shipping-manager",
+                "shipping-worker"
+            ],
+            "platforms": [
+                "universal"
+            ],
             "path": "part-lookup",
             "additionalFiles": [
                 {
@@ -353,8 +489,13 @@
                 }
             ],
             "itemVideos": [],
-            "roles": [ "production-plant-manager", "production-scheduler" ],
-            "platforms": [ "excel" ],
+            "roles": [
+                "production-plant-manager",
+                "production-scheduler"
+            ],
+            "platforms": [
+                "excel"
+            ],
             "path": "production-scheduling-board",
             "additionalFiles": [
                 {
@@ -381,8 +522,13 @@
                 }
             ],
             "itemVideos": [],
-            "roles": [ "executive-ceo", "production-plant-manager"],
-            "platforms": ["excel"],
+            "roles": [
+                "executive-ceo",
+                "production-plant-manager"
+            ],
+            "platforms": [
+                "excel"
+            ],
             "path": "production-throughput",
             "additionalFiles": [
                 {
@@ -413,8 +559,16 @@
                 }
             ],
             "itemVideos": [],
-            "roles": [ "common", "production-worker", "production-team-leader", "shipping-worker", "shipping-manager"],
-            "platforms": ["excel"],
+            "roles": [
+                "common",
+                "production-worker",
+                "production-team-leader",
+                "shipping-worker",
+                "shipping-manager"
+            ],
+            "platforms": [
+                "excel"
+            ],
             "path": "virtual-warehouse",
             "additionalFiles": [
                 {
@@ -446,8 +600,14 @@
                 }
             ],
             "itemVideos": [],
-            "roles": [ "executive-ceo", "executive-cfo", "accounting-general"],
-            "platforms": ["excel"],
+            "roles": [
+                "executive-ceo",
+                "executive-cfo",
+                "accounting-general"
+            ],
+            "platforms": [
+                "excel"
+            ],
             "path": "visualized-cash-flow",
             "additionalFiles": [
                 {
