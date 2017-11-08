@@ -1,0 +1,95 @@
+﻿{
+  "id": "5da68353-3e36-48b8-8be3-46dcc456a486",
+  "name": "Sales Funnel",
+  "template": "custom",
+  "owner": "rschnable@saberlogic.com",
+  "shares": [],
+  "vars": [],
+  "dataSubscriptions": [
+    {
+      "name": "sales",
+      "connectionId": "f1be529f-a135-47a3-8143-ef7e0023787a",
+      "dataSource": "brdb",
+      "plugin": "sales-rep-queries",
+      "method": "ExecuteQuery",
+      "args": {
+        "QueryName": "GetSalesFunnel"
+      },
+      "data": null,
+      "refreshInverval": 0,
+      "lastRefresh": null
+    },
+    {
+      "name": "salesExcel",
+      "connectionId": "f1be529f-a135-47a3-8143-ef7e0023787a",
+      "dataSource": "brdb",
+      "plugin": "ExcelPlugin",
+      "method": "GetData",
+      "args": {
+        "FileName": "C:\\Program Files (x86)\\Bezlio Remote Data Broker\\Data\\funnel.xlsx",
+        "SheetName": "Sales",
+        "FirstRowColumnNames": "Yes"
+      },
+      "data": null,
+      "refreshInverval": 0,
+      "lastRefresh": null
+    }
+  ],
+  "markup": [
+    "<div class=\"panel\">",
+    "  <div class=\"pad-all\">",
+    "    <p class=\"text-lg text-semibold\">",
+    "      <i class=\"fa {{bezl.vars['config'].icon}}\"></i> ",
+    "      {{bezl.vars.config.description}} ",
+    "      <i *ngIf=\"bezl.vars['config'].refreshing == false\" style=\"cursor: pointer; cursor: hand;\" class=\"fa fa-refresh\" (click)=\"bezl.functions['refresh']()\"></i>",
+    "      <i *ngIf=\"bezl.vars['config'].refreshing == true\" style=\"cursor: not-allowed;\" class=\"fa fa-refresh fa-spin\"></i>",
+    "    </p>",
+    "  </div>",
+    "  <div class=\"pad-all\">",
+    "    <div id=\"chartContainer\"></div>",
+    "  </div>",
+    "</div>"
+  ],
+  "functions": [
+    {
+      "method": "ngOnInit",
+      "code": "bezl.vars.config = {};\nbezl.vars.config.refreshing = true;\nbezl.vars.config.description = \"Sales Funnel\";",
+      "declares": [
+        "$",
+        "parm",
+        "bezl",
+        "dataResp",
+        "require",
+        "FusionCharts"
+      ],
+      "compiled": "bezl.vars.config = {};\r\nbezl.vars.config.refreshing = true;\r\nbezl.vars.config.description = \"Sales Funnel\";\r\n"
+    },
+    {
+      "method": "onDataChange",
+      "code": "bezl.data = dataResp;\n\nif (bezl.data.salesExcel) {\n  \tvar data = [];\n  \tbezl.data.salesExcel.forEach(salesCat => {\n    \tdata.push({\"label\": salesCat.Stage, \"value\": salesCat.Value});\n    });\n\n    bezl.vars.config.chart = new FusionCharts({\n        type: \"funnel\",\n        renderAt: $(bezl.container.nativeElement).find(\"#chartContainer\")[0],\n        width: '100%',\n        height: (($(bezl.container.nativeElement)[0].clientHeight > 300) ? $(bezl.container.nativeElement)[0].clientHeight - 85 : 300),\n        id: \"cc71162b-2bd3-5863-329b\",\n        dataFormat: 'json',\n        dataSource: {\n            \"chart\": {\n                \"caption\": \"Sales\",\n                \"subcaption\": \"Converted Sales\",\n                \"decimals\": \"1\",\n                \"is2D\": \"0\",\n                \"streamlinedData\": \"0\",\n\n                //Show legend\n                \"showLegend\": \"1\",\n                \"showLabels\": \"0\",\n\n                \"theme\": \"fint\"\n            },\n            \"data\": data\n        }\n    }).render();\n  \t\n  bezl.vars.config.refreshing = false;\n}",
+      "declares": [
+        "$",
+        "parm",
+        "bezl",
+        "dataResp",
+        "require",
+        "FusionCharts"
+      ],
+      "compiled": "bezl.data = dataResp;\r\nif (bezl.data.salesExcel) {\r\n    var data = [];\r\n    bezl.data.salesExcel.forEach(function (salesCat) {\r\n        data.push({ \"label\": salesCat.Stage, \"value\": salesCat.Value });\r\n    });\r\n    bezl.vars.config.chart = new FusionCharts({\r\n        type: \"funnel\",\r\n        renderAt: $(bezl.container.nativeElement).find(\"#chartContainer\")[0],\r\n        width: '100%',\r\n        height: (($(bezl.container.nativeElement)[0].clientHeight > 300) ? $(bezl.container.nativeElement)[0].clientHeight - 85 : 300),\r\n        id: \"cc71162b-2bd3-5863-329b\",\r\n        dataFormat: 'json',\r\n        dataSource: {\r\n            \"chart\": {\r\n                \"caption\": \"Sales\",\r\n                \"subcaption\": \"Converted Sales\",\r\n                \"decimals\": \"1\",\r\n                \"is2D\": \"0\",\r\n                \"streamlinedData\": \"0\",\r\n                //Show legend\r\n                \"showLegend\": \"1\",\r\n                \"showLabels\": \"0\",\r\n                \"theme\": \"fint\"\r\n            },\r\n            \"data\": data\r\n        }\r\n    }).render();\r\n    bezl.vars.config.refreshing = false;\r\n}\r\n"
+    },
+    {
+      "method": "refresh",
+      "code": "bezl.vars.config.refreshing = true;\nbezl.dataService.process('salesExcel');",
+      "declares": [
+        "$",
+        "parm",
+        "bezl",
+        "dataResp",
+        "require",
+        "FusionCharts"
+      ],
+      "compiled": "bezl.vars.config.refreshing = true;\r\nbezl.dataService.process('salesExcel');\r\n"
+    }
+  ],
+  "data": ""
+}
