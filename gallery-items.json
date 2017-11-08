@@ -304,6 +304,63 @@
             }
         },
         {
+            "itemId": "labor-entry",
+            "itemName": "Labor Entry",
+            "featured": true,
+            "itemDescription": "This Bezl allows a production worker to track time from mobile devices (iPhone, iPad, Android, etc.)  Currently it is only configured for Epicor, but will be ported to other systems in the weeks to come.  Bezl is intended to be very barcode friendly.  User starts by entering their employee ID.  From there, they can clock in, clock out, start / stop production activities, and start / stop indirect activities.  The end activity screen for production activities allows for the input of completed quantities as well as scrap.  When clocked onto a production activity, if any attachments were defined at the job level they are presented as buttons that can be tapped to load up into a built-in PDF viewer.",
+            "thumbnailPath": "https://bezlio-gallery.azurewebsites.net/labor-entry/images/thumb.png",
+            "thumbnailAltText": "Screenshot showing an employee clocked in and logged onto a job.",
+            "itemImages": [
+                {
+                    "imagePath": "https://bezlio-gallery.azurewebsites.net/labor-entry/images/main.png",
+                    "imageAltText": "Screenshot showing an employee clocked in and logged onto a job."
+                },
+                {
+                    "imagePath": "https://bezlio-gallery.azurewebsites.net/labor-entry/images/clock-in.gif",
+                    "imageAltText": "GIF showing the process of clocking an employee in."
+                },
+                {
+                    "imagePath": "https://bezlio-gallery.azurewebsites.net/labor-entry/images/start-job.gif",
+                    "imageAltText": "GIF showing the process of clocking onto a job."
+                },
+                {
+                    "imagePath": "https://bezlio-gallery.azurewebsites.net/labor-entry/images/view-attachment.gif",
+                    "imageAltText": "GIF showing a user viewing a job attachment."
+                },
+                {
+                    "imagePath": "https://bezlio-gallery.azurewebsites.net/labor-entry/images/end-job.gif",
+                    "imageAltText": "GIF showing the process of clocking off a job."
+                },
+                {
+                    "imagePath": "https://bezlio-gallery.azurewebsites.net/labor-entry/images/start-indirect.gif",
+                    "imageAltText": "GIF showing the process of clocking onto an indirect."
+                },
+                {
+                    "imagePath": "https://bezlio-gallery.azurewebsites.net/labor-entry/images/end-indirect.gif",
+                    "imageAltText": "GIF showing the process of clocking off of an indirect."
+                }
+            ],
+            "itemVideos": [],
+            "roles": [ "production-team-leader", "production-worker" ],
+            "platforms": [ "epicor905","epicor10"],
+            "path": "labor-entry",
+            "additionalFiles": [
+                {
+                    "fileName": "Queries.zip (Epicor 10.X)",
+                    "filePath": "https://bezlio-gallery.azurewebsites.net/labor-entry/queries/Epicor10/Queries.zip",
+                    "description": "SQL Server queries for Epicor ERP 10.X."
+                },
+                {
+                    "fileName": "Queries.zip (Epicor 9.05)",
+                    "filePath": "https://bezlio-gallery.azurewebsites.net/labor-entry/queries/Epicor905/Queries.zip",
+                    "description": "SQL Server queries for Epicor ERP 9.05 and prior."
+                }
+            ],
+            "installationNotes": {
+                "intro": "This Bezl involves more installation steps than typical due to the fact it is transactional with the ERP.  If you are an Epicor user and wish to utilize this gallery item, please contact support and we will help you get it set up."
+            }
+        },
+        {
             "itemId": "part-lookup",
             "itemName": "Part Lookup",
             "featured": false,
