@@ -18,8 +18,16 @@
                 }
             ],
             "itemVideos": [],
-            "roles": [ "sales-rep" ],
-            "platforms": ["epicor905","epicor10","p21","visual7","visual8"],
+            "roles": [
+                "sales-rep"
+            ],
+            "platforms": [
+                "epicor905",
+                "epicor10",
+                "p21",
+                "visual7",
+                "visual8"
+            ],
             "path": "accounts-view-crm",
             "additionalFiles": [
                 {
@@ -66,8 +74,17 @@
                 }
             ],
             "itemVideos": [],
-            "roles": [ "accounting-accounts-payable", "executive-cfo" ],
-            "platforms": ["excel","epicor905","epicor10","visual7","visual8"],
+            "roles": [
+                "accounting-accounts-payable",
+                "executive-cfo"
+            ],
+            "platforms": [
+                "excel",
+                "epicor905",
+                "epicor10",
+                "visual7",
+                "visual8"
+            ],
             "path": "ap-summary",
             "additionalFiles": [
                 {
@@ -109,8 +126,17 @@
                 }
             ],
             "itemVideos": [],
-            "roles": [ "accounting-accounts-payable", "executive-cfo" ],
-            "platforms": ["excel","epicor905","epicor10","visual7","visual8"],
+            "roles": [
+                "accounting-accounts-payable",
+                "executive-cfo"
+            ],
+            "platforms": [
+                "excel",
+                "epicor905",
+                "epicor10",
+                "visual7",
+                "visual8"
+            ],
             "path": "ap-summary-by-category",
             "additionalFiles": [
                 {
@@ -152,8 +178,13 @@
                 }
             ],
             "itemVideos": [],
-            "roles": [ "accounting-accounts-receivable", "executive-cfo" ],
-            "platforms": ["excel"],
+            "roles": [
+                "accounting-accounts-receivable",
+                "executive-cfo"
+            ],
+            "platforms": [
+                "excel"
+            ],
             "path": "ar-aging-summary",
             "additionalFiles": [
                 {
@@ -184,8 +215,14 @@
                 }
             ],
             "itemVideos": [],
-            "roles": [ "executive-ceo", "executive-cfo", "sales-manager"],
-            "platforms": ["excel"],
+            "roles": [
+                "executive-ceo",
+                "executive-cfo",
+                "sales-manager"
+            ],
+            "platforms": [
+                "excel"
+            ],
             "path": "comparative-sales-breakdown",
             "additionalFiles": [
                 {
@@ -224,8 +261,12 @@
                 }
             ],
             "itemVideos": [],
-            "roles": ["common"],
-            "platforms": ["universal"],
+            "roles": [
+                "common"
+            ],
+            "platforms": [
+                "universal"
+            ],
             "path": "crystal-reports-viewer",
             "additionalFiles": [],
             "installationNotes": {
@@ -246,8 +287,18 @@
                 }
             ],
             "itemVideos": [],
-            "roles": [ "executive-ceo", "executive-cfo", "purchasing", "production-plant-manager", "sales-manager"],
-            "platforms": ["excel","epicor905","epicor10"],
+            "roles": [
+                "executive-ceo",
+                "executive-cfo",
+                "purchasing",
+                "production-plant-manager",
+                "sales-manager"
+            ],
+            "platforms": [
+                "excel",
+                "epicor905",
+                "epicor10"
+            ],
             "path": "inventory-valuation-by-age",
             "additionalFiles": [
                 {
@@ -284,8 +335,14 @@
                 }
             ],
             "itemVideos": [],
-            "roles": [ "production-team-leader", "production-worker" ],
-            "platforms": [ "epicor905","epicor10"],
+            "roles": [
+                "production-team-leader",
+                "production-worker"
+            ],
+            "platforms": [
+                "epicor905",
+                "epicor10"
+            ],
             "path": "issue-materials",
             "additionalFiles": [
                 {
@@ -382,8 +439,27 @@
                 }
             ],
             "itemVideos": [],
-            "roles": ["accounting-general", "common", "customer-service", "engineering", "executive-ceo", "executive-cfo", "purchasing", "production-plant-manager", "production-qa", "production-scheduler", "production-team-leader", "production-worker", "sales-manager", "sales-rep", "shipping-manager", "shipping-worker"],
-            "platforms": ["universal"],
+            "roles": [
+                "accounting-general",
+                "common",
+                "customer-service",
+                "engineering",
+                "executive-ceo",
+                "executive-cfo",
+                "purchasing",
+                "production-plant-manager",
+                "production-qa",
+                "production-scheduler",
+                "production-team-leader",
+                "production-worker",
+                "sales-manager",
+                "sales-rep",
+                "shipping-manager",
+                "shipping-worker"
+            ],
+            "platforms": [
+                "universal"
+            ],
             "path": "part-lookup",
             "additionalFiles": [
                 {
@@ -410,8 +486,13 @@
                 }
             ],
             "itemVideos": [],
-            "roles": [ "production-plant-manager", "production-scheduler" ],
-            "platforms": [ "excel" ],
+            "roles": [
+                "production-plant-manager",
+                "production-scheduler"
+            ],
+            "platforms": [
+                "excel"
+            ],
             "path": "production-scheduling-board",
             "additionalFiles": [
                 {
@@ -438,8 +519,13 @@
                 }
             ],
             "itemVideos": [],
-            "roles": [ "executive-ceo", "production-plant-manager"],
-            "platforms": ["excel"],
+            "roles": [
+                "executive-ceo",
+                "production-plant-manager"
+            ],
+            "platforms": [
+                "excel"
+            ],
             "path": "production-throughput",
             "additionalFiles": [
                 {
@@ -450,6 +536,50 @@
             ],
             "installationNotes": {
                 "intro": "This Bezl does not yet conform to the standard steps for changing data connections (on the roadmap).  For the time being, please contact support if you wish to connect this to your own datasource."
+            }
+        },
+        {
+            "itemId": "sales-funnel",
+            "itemName": "Sales Funnel",
+            "featured": false,
+            "itemDescription": "This Bezl uses a funnel chart, which consists of multiple segments, each segment representing a data point. The chart lets you slice out a funnel slice to highlight important data.",
+            "thumbnailPath": "https://bezlio-gallery.azurewebsites.net/sales-funnel/images/thumb.png",
+            "thumbnailAltText": "Thumbnail showing a sample sales funnel.",
+            "itemImages": [
+                {
+                    "imagePath": "https://bezlio-gallery.azurewebsites.net/sales-funnel/images/main.png",
+                    "imageAltText": "Full image showing a quote to order sales funnel sliced out."
+                }
+            ],
+            "itemVideos": [],
+            "roles": [
+                "sales-rep"
+            ],
+            "platforms": [
+                "epicor905",
+                "epicor10",
+                "excel"
+            ],
+            "path": "sales-funnel",
+            "additionalFiles": [
+                {
+                    "fileName": "GetSalesFunnel.sql",
+                    "filePath": "https://bezlio-gallery.azurewebsites.net/sales-funnel/queries/Epicor10/GetSalesFunnel.sql",
+                    "description": "SQL query for Epicor 10.X"
+                },
+                {
+                    "fileName": "GetSalesFunnel.sql",
+                    "filePath": "https://bezlio-gallery.azurewebsites.net/sales-funnel/queries/Epicor905/GetSalesFunnel.sql",
+                    "description": "SQL query for Epicor 9.05"
+                },
+                {
+                    "fileName": "funnel.xlsx",
+                    "filePath": "https://bezlio-gallery.azurewebsites.net/sales-funnel/data/funnel.xlsx",
+                    "description": "Sample Excel file"
+                }
+            ],
+            "installationNotes": {
+                "intro": "This Bezl is setup by default to point to the funnel.xlsx data source. This comes standard with your BRDB install, but if you are missing this file (located in C:\\Program Files (x86)\\Bezlio Remote Data Broker\\Data\\), you can download below to install."
             }
         },
         {
@@ -470,8 +600,16 @@
                 }
             ],
             "itemVideos": [],
-            "roles": [ "common", "production-worker", "production-team-leader", "shipping-worker", "shipping-manager"],
-            "platforms": ["excel"],
+            "roles": [
+                "common",
+                "production-worker",
+                "production-team-leader",
+                "shipping-worker",
+                "shipping-manager"
+            ],
+            "platforms": [
+                "excel"
+            ],
             "path": "virtual-warehouse",
             "additionalFiles": [
                 {
@@ -503,8 +641,14 @@
                 }
             ],
             "itemVideos": [],
-            "roles": [ "executive-ceo", "executive-cfo", "accounting-general"],
-            "platforms": ["excel"],
+            "roles": [
+                "executive-ceo",
+                "executive-cfo",
+                "accounting-general"
+            ],
+            "platforms": [
+                "excel"
+            ],
             "path": "visualized-cash-flow",
             "additionalFiles": [
                 {
