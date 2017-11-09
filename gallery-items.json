@@ -274,6 +274,49 @@
             }
         },
         {
+            "itemId": "customer-satisfaction",
+            "itemName": "Customer Satisfaction",
+            "featured": true,
+            "itemDescription": "This Bezl shows various customer satisfaction metrics on a scale of 0 to 5 with progress bars.  Metrics are automatically detected from the query / Excel file so simply edit the queries or file to suit your needs.  If you wish for metrics to be scored on a scale other than 0 to 5, simply edit the onDataChange function as needed.",
+            "thumbnailPath": "https://bezlio-gallery.azurewebsites.net/customer-satisfaction/images/thumb.png",
+            "thumbnailAltText": "Screenshot showing various customer satisfaction scores.",
+            "itemImages": [
+                {
+                    "imagePath": "https://bezlio-gallery.azurewebsites.net/customer-satisfaction/images/main.png",
+                    "imageAltText": "Screenshot showing various customer satisfaction scores."
+                }
+            ],
+            "itemVideos": [],
+            "roles": [ "customer-service", "executive-ceo", "sales-rep", "sales-manager" ],
+            "platforms": ["excel","epicor905","epicor10","visual7","visual8"],
+            "path": "customer-satisfaction",
+            "additionalFiles": [
+                {
+                    "fileName": "sales.xlsx",
+                    "filePath": "https://bezlio-gallery.azurewebsites.net/customer-satisfaction/data/sales.xlsx",
+                    "description": "Sample Excel data source for this Bezl.  Installed by default with latest version of BRDB."
+                },
+                {
+                    "fileName": "CustomerSatisfaction.sql (Epicor 10.X)",
+                    "filePath": "https://bezlio-gallery.azurewebsites.net/customer-satisfaction/queries/Epicor10/CustomerSatisfaction.sql",
+                    "description": "SQL Server query for Epicor ERP 10.X. This assumes Number01, Number02, and Number03 are used for sample metrics.  Edit as needed."
+                },
+                {
+                    "fileName": "CustomerSatisfaction.sql (Epicor 9.05)",
+                    "filePath": "https://bezlio-gallery.azurewebsites.net/customer-satisfaction/queries/Epicor905/CustomerSatisfaction.sql",
+                    "description": "SQL Server query for Epicor ERP 9.05 and prior. This assumes Number01, Number02, and Number03 are used for sample metrics.  Edit as needed."
+                },
+                {
+                    "fileName": "CustomerSatisfaction.sql (Infor VISUAL all versions)",
+                    "filePath": "https://bezlio-gallery.azurewebsites.net/customer-satisfaction/queries/Visual/CustomerSatisfaction.sql",
+                    "description": "SQL Server query for all versions of INFOR Visual. This assumes USER_1, USER_2, and USER_3 are used for sample metrics.  Edit as needed."
+                }
+            ],
+            "installationNotes": {
+                "intro": "When you install this Bezl it will by default point to accounts-payable.xlsx which should already be present on your BRDB server.  If you wish to point to a different data source, refer to our <a href=\"https://github.com/bezlio/bezlio-gallery/wiki/Changing-Data-Connections-on-Bezls\" target=\"_blank\"><u>standard steps</u></a> for changing data connections.  It is expected that a single row be returned with columns for each metric (dynamic)."
+            }
+        },
+        {
             "itemId": "inventory-valuation-by-age",
             "itemName": "Inventory Valuation By Age",
             "featured": true,
