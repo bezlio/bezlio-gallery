@@ -168,7 +168,7 @@
                 },
                 {
                     "fileName": "APSummaryByCategory.sql (Prophet21)",
-                    "filePath": "https://bezlio-gallery.azurewebsites.net/ap-summary/queries/Prophet21/APSummaryByCategory.sql",
+                    "filePath": "https://bezlio-gallery.azurewebsites.net/ap-summary-by-categor/queries/Prophet21/APSummaryByCategory.sql",
                     "description": "SQL Server query for Prophet21."
                 }
             ],
@@ -195,7 +195,12 @@
                 "executive-cfo"
             ],
             "platforms": [
-                "excel"
+                "excel",
+                "epicor10",
+                "epicor905",
+                "visual7",
+                "visual8",
+                "p21"
             ],
             "path": "ar-aging-summary",
             "additionalFiles": [
@@ -203,6 +208,26 @@
                     "fileName": "ar-aging-summary.xlsx",
                     "filePath": "https://bezlio-gallery.azurewebsites.net/ar-aging-summary/data/ar-aging-summary.xlsx",
                     "description": "Sample Excel data source for this Bezl.  Installed by default with latest version of BRDB."
+                },
+                {
+                    "fileName": "ARAgingSummary.sql (Epicor 10.X)",
+                    "filePath": "https://bezlio-gallery.azurewebsites.net/ar-aging-summary/queries/Epicor10/ARAgingSummary.sql",
+                    "description": "SQL Server query for Epicor ERP 10.X."
+                },
+                {
+                    "fileName": "ARAgingSummary.sql (Epicor 9.05)",
+                    "filePath": "https://bezlio-gallery.azurewebsites.net/ar-aging-summary/queries/Epicor905/ARAgingSummary.sql",
+                    "description": "SQL Server query for Epicor ERP 9.05 and prior."
+                },
+                {
+                    "fileName": "ARAgingSummary.sql (Infor VISUAL all versions)",
+                    "filePath": "https://bezlio-gallery.azurewebsites.net/ar-aging-summary/queries/Visual/ARAgingSummary.sql",
+                    "description": "SQL Server query for all versions of INFOR Visual."
+                },
+                {
+                    "fileName": "ARAgingSummary.sql (Prophet21)",
+                    "filePath": "https://bezlio-gallery.azurewebsites.net/ar-aging-summary/queries/Prophet21/ARAgingSummary.sql",
+                    "description": "SQL Server query for Prophet21."
                 }
             ],
             "installationNotes": {
