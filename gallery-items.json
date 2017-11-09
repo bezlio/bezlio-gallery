@@ -544,7 +544,12 @@
                 "shipping-worker"
             ],
             "platforms": [
-                "universal"
+                "excel",
+                "epicor905",
+                "epicor10",
+                "p21",
+                "visual7",
+                "visual8"
             ],
             "path": "part-lookup",
             "additionalFiles": [
@@ -552,6 +557,26 @@
                     "fileName": "part-lookup.xlsx",
                     "filePath": "https://bezlio-gallery.azurewebsites.net/part-lookup/data/part-lookup.xlsx",
                     "description": "Sample Excel data source for this Bezl.  Installed by default with latest version of BRDB."
+                },
+                {
+                    "fileName": "PartLookup.sql (Epicor 10.X)",
+                    "filePath": "https://bezlio-gallery.azurewebsites.net/part-lookup/queries/Epicor10/PartLookup.sql",
+                    "description": "SQL Server query for Epicor ERP 10.X."
+                },
+                {
+                    "fileName": "PartLookup.sql (Epicor 9.05)",
+                    "filePath": "https://bezlio-gallery.azurewebsites.net/part-lookup/queries/Epicor905/PartLookup.sql",
+                    "description": "SQL Server query for Epicor ERP 9.05 and prior."
+                },
+                {
+                    "fileName": "PartLookup.sql (Infor VISUAL all versions)",
+                    "filePath": "https://bezlio-gallery.azurewebsites.net/part-lookup/queries/Visual/PartLookup.sql",
+                    "description": "SQL Server query for all versions of INFOR Visual."
+                },
+                {
+                    "fileName": "PartLookup.sql (Prophet21)",
+                    "filePath": "https://bezlio-gallery.azurewebsites.net/part-lookup/queries/Prophet21/PartLookup.sql",
+                    "description": "SQL Server query for Prophet21."
                 }
             ],
             "installationNotes": {
