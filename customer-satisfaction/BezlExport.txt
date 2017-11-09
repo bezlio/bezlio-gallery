@@ -1,5 +1,5 @@
 ﻿{
-  "id": "9df2c04f-8dc4-4ead-bbb9-fa714de43d20",
+  "id": "e7d513d3-dc37-48f1-bdfd-117736738a7f",
   "name": "Customer Satisfaction",
   "template": "custom",
   "owner": "aellis@saberlogic.com",
@@ -10,10 +10,12 @@
       "name": "SummaryData",
       "connectionId": "b9084b1e-48b6-45e7-a5e3-d68fe28f7d70",
       "dataSource": "brdb",
-      "plugin": "customer-service-queries",
-      "method": "ExecuteQuery",
+      "plugin": "ExcelPlugin",
+      "method": "GetData",
       "args": {
-        "QueryName": "CustomerSatisfaction"
+        "FileName": "C:\\Program Files (x86)\\Bezlio Remote Data Broker\\Data\\sales.xlsx",
+        "SheetName": "Customer Satisfaction",
+        "FirstRowColumnNames": "Yes"
       },
       "data": null,
       "refreshInverval": 0,
