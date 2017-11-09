@@ -82,6 +82,7 @@
                 "excel",
                 "epicor905",
                 "epicor10",
+                "p21",
                 "visual7",
                 "visual8"
             ],
@@ -106,6 +107,11 @@
                     "fileName": "APSummary.sql (Infor VISUAL all versions)",
                     "filePath": "https://bezlio-gallery.azurewebsites.net/ap-summary/queries/Visual/APSummary.sql",
                     "description": "SQL Server query for all versions of INFOR Visual."
+                },
+                {
+                    "fileName": "APSummary.sql (Prophet21)",
+                    "filePath": "https://bezlio-gallery.azurewebsites.net/ap-summary/queries/Prophet21/APSummary.sql",
+                    "description": "SQL Server query for Prophet21."
                 }
             ],
             "installationNotes": {
@@ -134,6 +140,7 @@
                 "excel",
                 "epicor905",
                 "epicor10",
+                "p21",
                 "visual7",
                 "visual8"
             ],
@@ -158,6 +165,11 @@
                     "fileName": "APSummaryByCategory.sql (Infor VISUAL all versions)",
                     "filePath": "https://bezlio-gallery.azurewebsites.net/ap-summary-by-category/queries/Visual/APSummaryByCategory.sql",
                     "description": "SQL Server query for all versions of INFOR Visual."
+                },
+                {
+                    "fileName": "APSummaryByCategory.sql (Prophet21)",
+                    "filePath": "https://bezlio-gallery.azurewebsites.net/ap-summary/queries/Prophet21/APSummaryByCategory.sql",
+                    "description": "SQL Server query for Prophet21."
                 }
             ],
             "installationNotes": {
