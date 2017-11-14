@@ -720,7 +720,12 @@
                 "shipping-manager"
             ],
             "platforms": [
-                "excel"
+                "excel",
+                "epicor905",
+                "epicor10",
+                "visual7",
+                "visual8",
+                "p21"
             ],
             "path": "virtual-warehouse",
             "additionalFiles": [
@@ -733,10 +738,30 @@
                     "fileName": "warehouse-parts.xlsx",
                     "filePath": "https://bezlio-gallery.azurewebsites.net/virtual-warehouse/data/warehouse-parts.xlsx",
                     "description": "Sample Excel data source for this Bezl.  Installed by default with latest version of BRDB.  This provides inventory in the bin locations."
+                },
+                {
+                    "fileName": "VirtualWarehouseOnHand.sql (Epicor 10.X)",
+                    "filePath": "https://bezlio-gallery.azurewebsites.net/virtual-warehouse/queries/Epicor10/VirtualWarehouseOnHand.sql",
+                    "description": "SQL Server query for Epicor ERP 10.X."
+                },
+                {
+                    "fileName": "VirtualWarehouseOnHand.sql (Epicor 9.05)",
+                    "filePath": "https://bezlio-gallery.azurewebsites.net/virtual-warehouse/queries/Epicor905/VirtualWarehouseOnHand.sql",
+                    "description": "SQL Server query for Epicor ERP 9.05 and prior."
+                },
+                {
+                    "fileName": "VirtualWarehouseOnHand.sql (Infor VISUAL all versions)",
+                    "filePath": "https://bezlio-gallery.azurewebsites.net/virtual-warehouse/queries/Visual/VirtualWarehouseOnHand.sql",
+                    "description": "SQL Server query for all versions of INFOR Visual."
+                },
+                {
+                    "fileName": "VirtualWarehouseOnHand.sql (Prophet21)",
+                    "filePath": "https://bezlio-gallery.azurewebsites.net/virtual-warehouse/queries/Prophet21/VirtualWarehouseOnHand.sql",
+                    "description": "SQL Server query for Prophet21."
                 }
             ],
             "installationNotes": {
-                "intro": "When you install this Bezl it will by default point to warehouse-parts.xlsx which should already be present on your BRDB server.  If you wish to point to a different data source, refer to our <a href=\"https://github.com/bezlio/bezlio-gallery/wiki/Changing-Data-Connections-on-Bezls\" target=\"_blank\"><u>standard steps</u></a> for changing data connections.  Required columns names are Part Id, Description, and the Bin matching the layout."
+                "intro": "When you install this Bezl it will by default point to warehouse-parts.xlsx which should already be present on your BRDB server.  If you wish to point to a different data source, refer to our <a href=\"https://github.com/bezlio/bezlio-gallery/wiki/Changing-Data-Connections-on-Bezls\" target=\"_blank\"><u>standard steps</u></a> for changing data connections.  Required columns names are Id, Description, Bin, and OnHandQty matching the layout.  Note that for this Bezl the layout is solely provided in Excel so you will need to input your bin locations into that file."
             }
         },
         {
