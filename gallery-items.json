@@ -759,7 +759,11 @@
                 "accounting-general"
             ],
             "platforms": [
-                "excel"
+                "excel",
+                "epicor905",
+                "epicor10",
+                "visual7",
+                "visual8"
             ],
             "path": "visualized-cash-flow",
             "additionalFiles": [
@@ -767,6 +771,26 @@
                     "fileName": "visualized-cash-flow.xlsx",
                     "filePath": "https://bezlio-gallery.azurewebsites.net/visualized-cash-flow/data/visualized-cash-flow.xlsx",
                     "description": "Sample Excel data source for this Bezl.  Installed by default with latest version of BRDB."
+                },
+                {
+                    "fileName": "VisualizedCashFlow.sql (Epicor 10.X)",
+                    "filePath": "https://bezlio-gallery.azurewebsites.net/visualized-cash-flow/queries/Epicor10/VisualizedCashFlow.sql",
+                    "description": "SQL Server query for Epicor ERP 10.X."
+                },
+                {
+                    "fileName": "VisualizedCashFlow.sql (Epicor 9.05)",
+                    "filePath": "https://bezlio-gallery.azurewebsites.net/visualized-cash-flow/queries/Epicor905/VisualizedCashFlow.sql",
+                    "description": "SQL Server query for Epicor ERP 9.05 and prior."
+                },
+                {
+                    "fileName": "VisualizedCashFlow.sql (Infor VISUAL 7.0 and below)",
+                    "filePath": "https://bezlio-gallery.azurewebsites.net/visualized-cash-flow/queries/Visual70/VisualizedCashFlow.sql",
+                    "description": "SQL Server query for INFOR Visual 7.0 and below."
+                },
+                {
+                    "fileName": "VisualizedCashFlow.sql (Infor VISUAL 7.1 and above)",
+                    "filePath": "https://bezlio-gallery.azurewebsites.net/visualized-cash-flow/queries/Visual80/VisualizedCashFlow.sql",
+                    "description": "SQL Server query for INFOR Visual 7.1 and above."
                 }
             ],
             "installationNotes": {
