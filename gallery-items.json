@@ -441,6 +441,49 @@
             }
         },
         {
+            "itemId": "job-schedule-gantt-chart",
+            "itemName": "Job Schedule - Gantt Chart",
+            "featured": true,
+            "itemDescription": "This Bezl allows a user to view all operations associated to a job and displays this information in a gantt chart based on start and end dates.",
+            "thumbnailPath": "https://bezlio-gallery.azurewebsites.net/job-schedule-gantt-chart/images/main.png",
+            "thumbnailAltText": "Screen shot showing the search form of a job.",
+            "itemImages": [{
+                "imagePath": "https://bezlio-gallery.azurewebsites.net/job-schedule-gantt-charg/images/main2.png",
+                "imageAltText": "Screenshot showing a selected job and it's operations in a gantt chart."
+                }
+            ],
+            "itemVideos":[],
+            "roles":[
+                "production-team-leader",
+                "production-worker"
+            ],
+            "platforms": [
+                "excel",
+                "epicor905",
+                "epicor10"
+            ],
+            "additionalFiles": [
+                {
+                    "fileName": "job-operations.sql (Epicor 10.X)",
+                    "filePath": "https://bezlio-gallery.azurewebsites.net/job-schedule-gantt-chart/queries/Epicor10/job-operations.sql",
+                    "description": "SQL Server queries for Epicor ERP 10.X."
+                },
+                {
+                    "fileName": "job-operations.xlsx",
+                    "filePath": "https://bezlio-gallery.zurewebsites.net/job-schedule-gantt-chart/data/job-operations.xlsx",                    
+                    "description": "Sample Excel data source for this Bezl.  Installed by default with latest version of BRDB."
+                },
+                {
+                    "fileName": "job-operations.sql (Epicor 9.05)",
+                    "filePath": "https://bezlio-gallery.azurewebsites.net/job-schedule-gantt-chart/queries/Epicor905/job-operations.sql",
+                    "description": "SQL Server queries for Epicor ERP 9.05"
+                }
+            ],
+            "installationNotes": {
+                "intro": ""
+            }
+        },
+        {
             "itemId": "labor-entry",
             "itemName": "Labor Entry",
             "featured": true,
@@ -482,7 +525,7 @@
                 "production-team-leader",
                 "production-worker"
             ],
-            "platforms": [
+            "platforms": [                
                 "epicor905",
                 "epicor10"
             ],
