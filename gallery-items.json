@@ -448,7 +448,7 @@
             "thumbnailPath": "https://bezlio-gallery.azurewebsites.net/job-schedule-gantt-chart/images/main.png",
             "thumbnailAltText": "Screen shot showing the search form of a job.",
             "itemImages": [{
-                "imagePath": "https://bezlio-gallery.azurewebsites.net/job-schedule-gantt-charg/images/main2.png",
+                "imagePath": "https://bezlio-gallery.azurewebsites.net/job-schedule-gantt-chart/images/main2.png",
                 "imageAltText": "Screenshot showing a selected job and it's operations in a gantt chart."
                 }
             ],
@@ -462,6 +462,7 @@
                 "epicor905",
                 "epicor10"
             ],
+            "path": "job-schedule-gantt-chart",
             "additionalFiles": [
                 {
                     "fileName": "job-operations.sql (Epicor 10.X)",
