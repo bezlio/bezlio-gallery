@@ -1,0 +1,86 @@
+﻿{
+  "id": "cc17a247-f48e-4cff-928e-4fa6d6625131",
+  "name": "Top 10 Customers",
+  "template": "custom",
+  "owner": "aspak@saberlogic.com",
+  "shares": [],
+  "vars": [],
+  "dataSubscriptions": [
+    {
+      "name": "top10Data",
+      "connectionId": "66aede27-9d2e-4ab0-b501-d0f4384fa6ae",
+      "dataSource": "brdb",
+      "plugin": "ExcelPlugin",
+      "method": "GetData",
+      "args": {
+        "FileName": "C:\\Program Files (x86)\\Bezlio Remote Data Broker\\Data\\Top10Customers.xlsx",
+        "SheetName": "Top10",
+        "FirstRowColumnNames": "Yes"
+      },
+      "data": null,
+      "refreshInverval": 0,
+      "lastRefresh": null
+    }
+  ],
+  "markup": [
+    "<h1>Top 10 Customers</h1>",
+    "<button style=\"padding-left: 2px; padding-right: 2px;\">",
+    "\t<i *ngIf=\"bezl.vars.refreshing === false\" style=\"width:20px; height: 20px; font-size:20px; cursor: pointer; cursor: hand;\" class=\"fa fa-refresh\" (click)=\"bezl.functions['refresh']()\"></i>",
+    "    <i *ngIf=\"bezl.vars.refreshing === true\" style=\"width:20px; height: 20px; font-size:20px; cursor: not-allowed;\" class=\"fa fa-refresh fa-spin\"></i>",
+    "</button>",
+    "",
+    "  <div class=\"row\" *ngIf=\"bezl.data.top10Data\">",
+    "    <table class=\"table table-hover\">",
+    "      <thead>",
+    "        <tr>",
+    "          <th>ID</th>",
+    "          <th>Name</th>",
+    "          <th>Sales</th>",
+    "        </tr>",
+    "      </thead>",
+    "      <tbody>",
+    "          <tr *ngFor=\"let custData of bezl.data.top10Data\">",
+    "            <td>{{custData.CUSTOMERID}}</td>",
+    "            <td>{{custData.CUSTOMER_NAME}}</td>",
+    "            <td>{{custData.SALESVALUE | number}}</td>",
+    "          </tr>        ",
+    "      </tbody>",
+    "    </table>",
+    "  </div>"
+  ],
+  "functions": [
+    {
+      "method": "ngOnInit",
+      "code": "",
+      "declares": [],
+      "compiled": ""
+    },
+    {
+      "method": "onDataChange",
+      "code": "bezl.data = dataResp;\n\nif(bezl.data.top10Data)\n{  \n  bezl.vars.refreshing = false;\n}",
+      "declares": [
+        "$",
+        "parm",
+        "bezl",
+        "dataResp",
+        "require",
+        "FusionCharts"
+      ],
+      "compiled": "bezl.data = dataResp;\r\nif (bezl.data.top10Data) {\r\n    bezl.vars.refreshing = false;\r\n}\r\n"
+    },
+    {
+      "method": "refresh",
+      "code": "bezl.vars.refreshing = true;\nbezl.dataService.process(\"top10Data\");",
+      "declares": [
+        "$",
+        "parm",
+        "bezl",
+        "dataResp",
+        "require",
+        "FusionCharts"
+      ],
+      "compiled": "bezl.vars.refreshing = true;\r\nbezl.dataService.process(\"top10Data\");\r\n"
+    }
+  ],
+  "data": ""
+}

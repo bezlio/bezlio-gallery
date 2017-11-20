@@ -739,6 +739,50 @@
             }
         },
         {
+            "itemId": "top-10-customers",
+            "itemName": "Top 10 Customers",
+            "featured": true,
+            "itemDescription": "This Bezl displays the top 10 customers based on their sales.",
+            "thumbnailPath": "https://bezlio-gallery.azurewebsites.net/sales-manager-top-10-customers/images/main.png",
+            "thumbnailAltText": "Thumbnail showing a sample data.",
+            "itemImages": [
+                {
+                    "imagePath": "https://bezlio-gallery.azurewebsites.net/sales-manager-top-10-customers/images/main.png",
+                    "imageAltText": "Full image showing sample data."
+                }
+            ],
+            "itemVideos": [],
+            "roles": [
+                "sales-manager"
+            ],
+            "platforms": [
+                "epicor905",
+                "epicor10",
+                "excel"
+            ],
+            "path": "sales-manager-top-10-customers",
+            "additionalFiles": [
+                {
+                    "fileName": "Top10Customers.sql",
+                    "filePath": "https://bezlio-gallery.azurewebsites.net/sales-manager-top-10-customers/queries/Epicor10/Top10Customers.sql",
+                    "description": "SQL query for Epicor 10.X"
+                },
+                {
+                    "fileName": "Top10Cutomers.sql",
+                    "filePath": "https://bezlio-gallery.azurewebsites.net/sales-maanger-top-10-customers/queries/Epicor905/Top10Customers.sql",
+                    "description": "SQL query for Epicor 9.05"
+                },
+                {
+                    "fileName": "Top10Customers.xlsx",
+                    "filePath": "https://bezlio-gallery.azurewebsites.net/sales-manager-top-10-customers/data/Top10Customers.xlsx",
+                    "description": "Sample Excel file"
+                }
+            ],
+            "installationNotes": {
+                "intro": "This Bezl is setup by default to point to the Top10Cutomers.xlsx data source. This comes standard with your BRDB install, but if you are missing this file (located in C:\\Program Files (x86)\\Bezlio Remote Data Broker\\Data\\), you can download below to install."
+            }
+        },
+        {
             "itemId": "virtual-warehouse",
             "itemName": "Virtual Warehouse",
             "featured": true,
