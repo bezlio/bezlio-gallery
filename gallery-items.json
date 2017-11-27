@@ -755,16 +755,16 @@
             "itemName": "SSRS Report Viewer",
             "featured": true,
             "itemDescription": "This Bezl allows you to run any server based SSRS Report with fresh data directly within Bezlio. Regardless of your device (iPhone, iPad, Android, PC, or Mac) you will be able to run your SSRS Report from anywhere with refreshed data.",
-            "thumbnailPath": "https://bezlio-gallery.azurewebsites.net/crystal-reports-viewer/images/thumb.png", //change
-            "thumbnailAltText": "Screenshot showing a Crystal Report presented within Bezlio.", //change
+            "thumbnailPath": "https://bezlio-gallery.azurewebsites.net/crystal-reports-viewer/images/thumb.png",
+            "thumbnailAltText": "Screenshot showing a Crystal Report presented within Bezlio.",
             "itemImages": [
                 {
-                    "imagePath": "https://bezlio-gallery.azurewebsites.net/crystal-reports-viewer/images/main.png", //change
-                    "imageAltText": "Screenshot showing a Crystal Report presented within Bezlio." //change
+                    "imagePath": "https://bezlio-gallery.azurewebsites.net/crystal-reports-viewer/images/main.png",
+                    "imageAltText": "Screenshot showing a Crystal Report presented within Bezlio."
                 },
                 {
-                    "imagePath": "https://bezlio-gallery.azurewebsites.net/crystal-reports-viewer/images/iphone.png", //change
-                    "imageAltText": "Screenshot showing Crystal Reports on an iPhone." //change
+                    "imagePath": "https://bezlio-gallery.azurewebsites.net/crystal-reports-viewer/images/iphone.png",
+                    "imageAltText": "Screenshot showing Crystal Reports on an iPhone."
                 }
             ],
             "itemVideos": [],
@@ -777,7 +777,6 @@
             "path": "ssrs-report-viewer",
             "additionalFiles": [],
             "installationNotes": {
-                //change
                 "intro": "The default installation of BRDB with the Crystal Reports plugin expects your published reports to be placed at C:\\Program Files (x86)\\Bezlio Remote Data Broker\\CrystalReports\\ and not require credentials.  To change these settings or understand more about the plugin, review it's documentation <a href=\"https://github.com/bezlio/bezlio-plugins/tree/master/Plugins/CrystalReports\" target=\"_blank\"><u>here</u></a>."
             }
         },
