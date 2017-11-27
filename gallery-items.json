@@ -755,16 +755,12 @@
             "itemName": "SSRS Report Viewer",
             "featured": true,
             "itemDescription": "This Bezl allows you to run any server based SSRS Report with fresh data directly within Bezlio. Regardless of your device (iPhone, iPad, Android, PC, or Mac) you will be able to run your SSRS Report from anywhere with refreshed data.",
-            "thumbnailPath": "https://bezlio-gallery.azurewebsites.net/crystal-reports-viewer/images/thumb.png",
+            "thumbnailPath": "https://rawgit.com/bezlio/bezlio-gallery/ssrs-report-viewer/ssrs-report-viewer/images/thumb.png",
             "thumbnailAltText": "Screenshot showing a Crystal Report presented within Bezlio.",
             "itemImages": [
                 {
-                    "imagePath": "https://bezlio-gallery.azurewebsites.net/crystal-reports-viewer/images/main.png",
+                    "imagePath": "https://rawgit.com/bezlio/bezlio-gallery/ssrs-report-viewer/ssrs-report-viewer/images/main.png",
                     "imageAltText": "Screenshot showing a Crystal Report presented within Bezlio."
-                },
-                {
-                    "imagePath": "https://bezlio-gallery.azurewebsites.net/crystal-reports-viewer/images/iphone.png",
-                    "imageAltText": "Screenshot showing Crystal Reports on an iPhone."
                 }
             ],
             "itemVideos": [],
