@@ -773,7 +773,7 @@
             "path": "ssrs-report-viewer",
             "additionalFiles": [],
             "installationNotes": {
-                "intro": "Currently, the default BRDB setup does not include the new SSRS Plugin. You must download the latest version from <a href=\"https://github.com/bezlio/bezlio-plugins/tree/master/Plugins/SSRS\" target=\"_blank\"><u>here</u></a> and it should be placed at C:\\Program Files (x86)\\Bezlio Remote Data Broker\\Plugins\\."
+                "intro": "Currently, the default BRDB setup does not include the new SSRS Plugin. You must download the latest version from <a href=\"https://github.com/bezlio/bezlio-plugins/tree/master/Plugins\" target=\"_blank\"><u>here</u></a> and it should be placed at C:\\Program Files (x86)\\Bezlio Remote Data Broker\\Plugins\\, which is the default BRDB installation directory. There is also a starting folder parth variable in the Bezl itself, bezl.vars.startingPath, which will need to be modified to your environment."
             }
         },
         {
