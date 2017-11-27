@@ -754,13 +754,13 @@
             "itemId": "ssrs-report-viewer-web-mobile-iphone-ipad-android",
             "itemName": "SSRS Report Viewer",
             "featured": true,
-            "itemDescription": "This Bezl allows you to run any server based SSRS Report with fresh data directly within Bezlio. Regardless of your device (iPhone, iPad, Android, PC, or Mac) you will be able to run your SSRS Report from anywhere with refreshed data.",
+            "itemDescription": "This Bezl allows you to run any server based SSRS Report with fresh data directly within Bezlio. Regardless of your device (iPhone, iPad, Android, PC, or Mac) you will be able to run your SSRS Report from anywhere with refreshed data. Parameters are not currently supported, but will be featured in a future release!",
             "thumbnailPath": "https://rawgit.com/bezlio/bezlio-gallery/ssrs-report-viewer/ssrs-report-viewer/images/thumb.png",
-            "thumbnailAltText": "Screenshot showing a Crystal Report presented within Bezlio.",
+            "thumbnailAltText": "Screenshot showing an SSRS Report presented within Bezlio.",
             "itemImages": [
                 {
                     "imagePath": "https://rawgit.com/bezlio/bezlio-gallery/ssrs-report-viewer/ssrs-report-viewer/images/main.png",
-                    "imageAltText": "Screenshot showing a Crystal Report presented within Bezlio."
+                    "imageAltText": "Screenshot showing an SSRS Report presented within Bezlio."
                 }
             ],
             "itemVideos": [],
@@ -773,7 +773,7 @@
             "path": "ssrs-report-viewer",
             "additionalFiles": [],
             "installationNotes": {
-                "intro": "The default installation of BRDB with the Crystal Reports plugin expects your published reports to be placed at C:\\Program Files (x86)\\Bezlio Remote Data Broker\\CrystalReports\\ and not require credentials.  To change these settings or understand more about the plugin, review it's documentation <a href=\"https://github.com/bezlio/bezlio-plugins/tree/master/Plugins/CrystalReports\" target=\"_blank\"><u>here</u></a>."
+                "intro": "Currently, the default BRDB setup does not include the new SSRS Plugin. You must download the latest version from <a href=\"https://github.com/bezlio/bezlio-plugins/tree/master/Plugins/SSRS\" target=\"_blank\"><u>here</u></a> and it should be placed at C:\\Program Files (x86)\\Bezlio Remote Data Broker\\Plugins\\."
             }
         },
         {
