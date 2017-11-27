@@ -123,7 +123,7 @@
   "functions": [
     {
       "method": "ngOnInit",
-      "code": "bezl.functions.setConfig();\nbezl.vars.selectedReport = { \"ReportDetails\" : { \"ParameterFields\" : [] } };\n\nrequire([bezl.vars.config.baseJsUrl + 'onStartup.js'], function(functions) {\n\tfunctions.onStartup(bezl);\n});",
+      "code": "bezl.functions.setConfig();\nbezl.vars.selectedReport = { \"ReportDetails\" : { \"ParameterFields\" : [] } };\nbezl.vars.startingPath = \"/reports/customreports\";\n\nrequire([bezl.vars.config.baseJsUrl + 'onStartup.js'], function(functions) {\n\tfunctions.onStartup(bezl);\n});",
       "declares": [
         "$",
         "parm",
@@ -132,7 +132,7 @@
         "require",
         "FusionCharts"
       ],
-      "compiled": "bezl.functions.setConfig();\r\nbezl.vars.selectedReport = { \"ReportDetails\": { \"ParameterFields\": [] } };\r\nrequire([bezl.vars.config.baseJsUrl + 'onStartup.js'], function (functions) {\r\n    functions.onStartup(bezl);\r\n});\r\n"
+      "compiled": "bezl.functions.setConfig();\r\nbezl.vars.selectedReport = { \"ReportDetails\": { \"ParameterFields\": [] } };\r\nbezl.vars.startingPath = \"/reports/customreports\";\r\nrequire([bezl.vars.config.baseJsUrl + 'onStartup.js'], function (functions) {\r\n    functions.onStartup(bezl);\r\n});\r\n"
     },
     {
       "method": "onDataChange",
@@ -162,7 +162,7 @@
     },
     {
       "method": "runReport",
-      "code": "console.log(parm);\n\nrequire([bezl.vars.config.baseJsUrl + 'report.js'], function(functions) {\n  functions.runReport(bezl, parm);\n});",
+      "code": "require([bezl.vars.config.baseJsUrl + 'report.js'], function(functions) {\n  functions.runReport(bezl, parm);\n});",
       "declares": [
         "$",
         "parm",
@@ -171,7 +171,7 @@
         "require",
         "FusionCharts"
       ],
-      "compiled": "console.log(parm);\r\nrequire([bezl.vars.config.baseJsUrl + 'report.js'], function (functions) {\r\n    functions.runReport(bezl, parm);\r\n});\r\n"
+      "compiled": "require([bezl.vars.config.baseJsUrl + 'report.js'], function (functions) {\r\n    functions.runReport(bezl, parm);\r\n});\r\n"
     },
     {
       "method": "sort",
