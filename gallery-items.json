@@ -324,8 +324,19 @@
                 }
             ],
             "itemVideos": [],
-            "roles": [ "customer-service", "executive-ceo", "sales-rep", "sales-manager" ],
-            "platforms": ["excel","epicor905","epicor10","visual7","visual8"],
+            "roles": [
+                "customer-service",
+                "executive-ceo",
+                "sales-rep",
+                "sales-manager"
+            ],
+            "platforms": [
+                "excel",
+                "epicor905",
+                "epicor10",
+                "visual7",
+                "visual8"
+            ],
             "path": "customer-satisfaction",
             "additionalFiles": [
                 {
@@ -447,13 +458,14 @@
             "itemDescription": "This Bezl allows a user to view all operations associated to a job and displays this information in a gantt chart based on start and end dates.",
             "thumbnailPath": "https://bezlio-gallery.azurewebsites.net/job-schedule-gantt-chart/images/main.png",
             "thumbnailAltText": "Screen shot showing the search form of a job.",
-            "itemImages": [{
-                "imagePath": "https://bezlio-gallery.azurewebsites.net/job-schedule-gantt-chart/images/main2.png",
-                "imageAltText": "Screenshot showing a selected job and it's operations in a gantt chart."
+            "itemImages": [
+                {
+                    "imagePath": "https://bezlio-gallery.azurewebsites.net/job-schedule-gantt-chart/images/main2.png",
+                    "imageAltText": "Screenshot showing a selected job and it's operations in a gantt chart."
                 }
             ],
-            "itemVideos":[],
-            "roles":[
+            "itemVideos": [],
+            "roles": [
                 "production-team-leader",
                 "production-worker"
             ],
@@ -471,7 +483,7 @@
                 },
                 {
                     "fileName": "job-operations.xlsx",
-                    "filePath": "https://bezlio-gallery.zurewebsites.net/job-schedule-gantt-chart/data/job-operations.xlsx",                    
+                    "filePath": "https://bezlio-gallery.zurewebsites.net/job-schedule-gantt-chart/data/job-operations.xlsx",
                     "description": "Sample Excel data source for this Bezl.  Installed by default with latest version of BRDB."
                 },
                 {
@@ -526,7 +538,7 @@
                 "production-team-leader",
                 "production-worker"
             ],
-            "platforms": [                
+            "platforms": [
                 "epicor905",
                 "epicor10"
             ],
@@ -736,6 +748,37 @@
             ],
             "installationNotes": {
                 "intro": "This Bezl is setup by default to point to the funnel.xlsx data source. This comes standard with your BRDB install, but if you are missing this file (located in C:\\Program Files (x86)\\Bezlio Remote Data Broker\\Data\\), you can download below to install."
+            }
+        },
+        {
+            "itemId": "ssrs-report-viewer-web-mobile-iphone-ipad-android",
+            "itemName": "SSRS Report Viewer",
+            "featured": true,
+            "itemDescription": "This Bezl allows you to run any server based SSRS Report with fresh data directly within Bezlio. Regardless of your device (iPhone, iPad, Android, PC, or Mac) you will be able to run your SSRS Report from anywhere with refreshed data.",
+            "thumbnailPath": "https://bezlio-gallery.azurewebsites.net/crystal-reports-viewer/images/thumb.png", //change
+            "thumbnailAltText": "Screenshot showing a Crystal Report presented within Bezlio.", //change
+            "itemImages": [
+                {
+                    "imagePath": "https://bezlio-gallery.azurewebsites.net/crystal-reports-viewer/images/main.png", //change
+                    "imageAltText": "Screenshot showing a Crystal Report presented within Bezlio." //change
+                },
+                {
+                    "imagePath": "https://bezlio-gallery.azurewebsites.net/crystal-reports-viewer/images/iphone.png", //change
+                    "imageAltText": "Screenshot showing Crystal Reports on an iPhone." //change
+                }
+            ],
+            "itemVideos": [],
+            "roles": [
+                "common"
+            ],
+            "platforms": [
+                "universal"
+            ],
+            "path": "ssrs-report-viewer",
+            "additionalFiles": [],
+            "installationNotes": {
+                //change
+                "intro": "The default installation of BRDB with the Crystal Reports plugin expects your published reports to be placed at C:\\Program Files (x86)\\Bezlio Remote Data Broker\\CrystalReports\\ and not require credentials.  To change these settings or understand more about the plugin, review it's documentation <a href=\"https://github.com/bezlio/bezlio-plugins/tree/master/Plugins/CrystalReports\" target=\"_blank\"><u>here</u></a>."
             }
         },
         {
