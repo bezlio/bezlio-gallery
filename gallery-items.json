@@ -456,7 +456,7 @@
             "itemName": "Job Schedule - Gantt Chart",
             "featured": true,
             "itemDescription": "This Bezl allows a user to view all operations associated to a job and displays this information in a gantt chart based on start and end dates.",
-            "thumbnailPath": "https://rawgit.com/bezlio/bezlio-gallery/job-schedule-gantt-chart/images/thumb.png",
+            "thumbnailPath": "https://rawgit.com/bezlio/bezlio-gallery/ssrs-report-viewer/job-schedule-gantt-chart/images/thumb.png",
             "thumbnailAltText": "Screen shot showing the search form of a job.",
             "itemImages": [
                 {
