@@ -456,11 +456,11 @@
             "itemName": "Job Schedule - Gantt Chart",
             "featured": true,
             "itemDescription": "This Bezl allows a user to view all operations associated to a job and displays this information in a gantt chart based on start and end dates.",
-            "thumbnailPath": "https://bezlio-gallery.azurewebsites.net/job-schedule-gantt-chart/images/main.png",
+            "thumbnailPath": "https://bezlio-gallery.azurewebsites.net/job-schedule-gantt-chart/images/thumb.png",
             "thumbnailAltText": "Screen shot showing the search form of a job.",
             "itemImages": [
                 {
-                    "imagePath": "https://bezlio-gallery.azurewebsites.net/job-schedule-gantt-chart/images/main2.png",
+                    "imagePath": "https://bezlio-gallery.azurewebsites.net/job-schedule-gantt-chart/images/main.png",
                     "imageAltText": "Screenshot showing a selected job and it's operations in a gantt chart."
                 }
             ],
