@@ -324,8 +324,19 @@
                 }
             ],
             "itemVideos": [],
-            "roles": [ "customer-service", "executive-ceo", "sales-rep", "sales-manager" ],
-            "platforms": ["excel","epicor905","epicor10","visual7","visual8"],
+            "roles": [
+                "customer-service",
+                "executive-ceo",
+                "sales-rep",
+                "sales-manager"
+            ],
+            "platforms": [
+                "excel",
+                "epicor905",
+                "epicor10",
+                "visual7",
+                "visual8"
+            ],
             "path": "customer-satisfaction",
             "additionalFiles": [
                 {
@@ -445,15 +456,16 @@
             "itemName": "Job Schedule - Gantt Chart",
             "featured": true,
             "itemDescription": "This Bezl allows a user to view all operations associated to a job and displays this information in a gantt chart based on start and end dates.",
-            "thumbnailPath": "https://bezlio-gallery.azurewebsites.net/job-schedule-gantt-chart/images/main.png",
+            "thumbnailPath": "https://rawgit.com/bezlio/bezlio-gallery/ssrs-report-viewer/job-schedule-gantt-chart/images/thumb.png",
             "thumbnailAltText": "Screen shot showing the search form of a job.",
-            "itemImages": [{
-                "imagePath": "https://bezlio-gallery.azurewebsites.net/job-schedule-gantt-chart/images/main2.png",
-                "imageAltText": "Screenshot showing a selected job and it's operations in a gantt chart."
+            "itemImages": [
+                {
+                    "imagePath": "https://bezlio-gallery.azurewebsites.net/job-schedule-gantt-chart/images/main.png",
+                    "imageAltText": "Screenshot showing a selected job and it's operations in a gantt chart."
                 }
             ],
-            "itemVideos":[],
-            "roles":[
+            "itemVideos": [],
+            "roles": [
                 "production-team-leader",
                 "production-worker"
             ],
@@ -471,7 +483,7 @@
                 },
                 {
                     "fileName": "job-operations.xlsx",
-                    "filePath": "https://bezlio-gallery.zurewebsites.net/job-schedule-gantt-chart/data/job-operations.xlsx",                    
+                    "filePath": "https://bezlio-gallery.zurewebsites.net/job-schedule-gantt-chart/data/job-operations.xlsx",
                     "description": "Sample Excel data source for this Bezl.  Installed by default with latest version of BRDB."
                 },
                 {
@@ -526,7 +538,7 @@
                 "production-team-leader",
                 "production-worker"
             ],
-            "platforms": [                
+            "platforms": [
                 "epicor905",
                 "epicor10"
             ],
@@ -736,6 +748,32 @@
             ],
             "installationNotes": {
                 "intro": "This Bezl is setup by default to point to the funnel.xlsx data source. This comes standard with your BRDB install, but if you are missing this file (located in C:\\Program Files (x86)\\Bezlio Remote Data Broker\\Data\\), you can download below to install."
+            }
+        },
+        {
+            "itemId": "ssrs-report-viewer-web-mobile-iphone-ipad-android",
+            "itemName": "SSRS Report Viewer",
+            "featured": true,
+            "itemDescription": "This Bezl allows you to run any server based SSRS Report with fresh data directly within Bezlio. Regardless of your device (iPhone, iPad, Android, PC, or Mac) you will be able to run your SSRS Report from anywhere with refreshed data. Parameters are not currently supported, but will be featured in a future release!",
+            "thumbnailPath": "https://rawgit.com/bezlio/bezlio-gallery/ssrs-report-viewer/ssrs-report-viewer/images/thumb.png",
+            "thumbnailAltText": "Screenshot showing an SSRS Report presented within Bezlio.",
+            "itemImages": [
+                {
+                    "imagePath": "https://rawgit.com/bezlio/bezlio-gallery/ssrs-report-viewer/ssrs-report-viewer/images/main.png",
+                    "imageAltText": "Screenshot showing an SSRS Report presented within Bezlio."
+                }
+            ],
+            "itemVideos": [],
+            "roles": [
+                "common"
+            ],
+            "platforms": [
+                "universal"
+            ],
+            "path": "ssrs-report-viewer",
+            "additionalFiles": [],
+            "installationNotes": {
+                "intro": "Currently, the default BRDB setup does not include the new SSRS Plugin. You must download the latest version from <a href=\"https://github.com/bezlio/bezlio-plugins/tree/master/Plugins\" target=\"_blank\"><u>here</u></a> and it should be placed at C:\\Program Files (x86)\\Bezlio Remote Data Broker\\Plugins\\, which is the default BRDB installation directory. There is also a starting folder parth variable in the Bezl itself, bezl.vars.startingPath, which will need to be modified to your environment."
             }
         },
         {
