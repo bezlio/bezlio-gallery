@@ -264,7 +264,7 @@
             "additionalFiles": [
                 {
                     "fileName": "sales.xlsx",
-                    "filePath": "https://bezlio-gallery.azurewebsites.net/inventory-valuation-by-age/data/sales.xlsx",
+                    "filePath": "https://bezlio-gallery.azurewebsites.net/comparative-sales-breakdown/data/sales.xlsx",
                     "description": "Sample Excel data source for this Bezl.  Installed by default with latest version of BRDB."
                 }
             ],
