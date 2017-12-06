@@ -3,13 +3,7 @@
   "name": "Issue Material",
   "template": "custom",
   "owner": "crogers@mickeybody.com",
-  "shares": [
-    "Login:mtbepicorrdp@gmail.com",
-    "Login:mtbncrecontab1@gmail.com",
-    "Login:mtbncrecontab2@gmail.com",
-    "Login:mtbncrecontab3@gmail.com",
-    "Login:mtbncrecontab4@gmail.com"
-  ],
+  "shares": [],
   "vars": [
     {
       "name": "connection",
