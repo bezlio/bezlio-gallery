@@ -640,6 +640,43 @@
             }
         },
         {
+            "itemId": "pick-list",
+            "itemName": "Pick List",
+            "featured": true,
+            "itemDescription": "This simple bezl provides a part pick list from all open orders, filterable by date. The user can select a part from the table, and it will display bin locations where that part has available quantity. Currently the bezl is only configured for Epicor, but will be ported to other systems in the weeks to come. ",
+            "thumbnailPath": "https://bezlio-gallery.azurewebsites.net/pick-list/images/thumb.png",
+            "thumbnailAltText": "Screenshot showing pick list",
+            "itemImages": [
+                {
+                    "imagePath": "https://bezlio-gallery.azurewebsites.net/pick-list/images/main.gif",
+                    "imageAltText": "GIF showing bezl functionality"
+                }
+            ],
+            "itemVideos": [],
+            "roles": [
+                "shipping-worker"
+            ],
+            "platforms": [
+                "epicor10"
+            ],
+            "path": "pick-list",
+            "additionalFiles": [
+                {
+                    "fileName": "DigitalPicklist-AvailQty.sql (Epicor 10.X)",
+                    "filePath": "https://bezlio-gallery.azurewebsites.net/pick-list/queries/Epicor10/DigitalPicklist-AvailQty.sql",
+                    "description": "SQL Server query for Epicor ERP 10.X."
+                },
+                {
+                    "fileName": "DigitalPicklist-RequiredQty.sql (Epicor 10.X)",
+                    "filePath": "https://bezlio-gallery.azurewebsites.net/pick-list/queries/Epicor10/DigitalPicklist-RequiredQty.sql",
+                    "description": "SQL Server query for Epicor ERP 10.X."
+                }
+            ],
+            "installationNotes": {
+            "intro": "When you install this Bezl it will require you to point the data subscriptions to your data connection and SQL Server plugin. If you have any questions, please contact support and we will help you get it set up."
+            }
+        },
+        {
             "itemId": "production-scheduling-board-web-mobile-iphone-ipad-android",
             "itemName": "Production Scheduling Board",
             "featured": true,
