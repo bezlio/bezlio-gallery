@@ -3,9 +3,7 @@
   "name": "Virtual Warehouse",
   "template": "custom",
   "owner": "bellis@saberlogic.com",
-  "shares": [
-    "Login:kcleveland@saberlogic.com"
-  ],
+  "shares": [],
   "vars": [
     {
       "name": "dialogVisible",
