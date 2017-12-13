@@ -1,0 +1,209 @@
+{
+  "id": "5cd30d4b-da75-4650-8b8e-232777fc4b15",
+  "name": "Digital Picklist",
+  "template": "custom",
+  "owner": "nowens@saberlogic.com",
+  "shares": [],
+  "vars": [
+    {
+      "name": "PartAvail",
+      "value": "\"\""
+    },
+    {
+      "name": "PartReq",
+      "value": "\"\""
+    },
+    {
+      "name": "startDate",
+      "value": "\"\""
+    },
+    {
+      "name": "endDate",
+      "value": "\"\""
+    },
+    {
+      "name": "date",
+      "value": "\"\""
+    },
+    {
+      "name": "selectedRow",
+      "value": "{}"
+    }
+  ],
+  "dataSubscriptions": [
+    {
+      "name": "PartReq",
+      "connectionId": "a2d174a1-7c29-45fd-8f39-2d62f2727e8f",
+      "dataSource": "brdb",
+      "plugin": "SQLServer",
+      "method": "ExecuteQuery",
+      "args": "{\"Context\":\"epicor10\",\"Connection\":\"Epicor 10 AE\",\"QueryName\":\"DigitalPicklist-RequiredQty\"}",
+      "data": null,
+      "refreshInverval": 0,
+      "lastRefresh": null
+    },
+    {
+      "name": "PartAvail",
+      "connectionId": "a2d174a1-7c29-45fd-8f39-2d62f2727e8f",
+      "dataSource": "brdb",
+      "plugin": "SQLServer",
+      "method": "ExecuteQuery",
+      "args": "{\"Context\":\"epicor10\",\"Connection\":\"Epicor 10 AE\",\"QueryName\":\"DigitalPicklist-AvailQty\"}",
+      "data": null,
+      "refreshInverval": 0,
+      "lastRefresh": null
+    }
+  ],
+  "markup": [
+    "<style>",
+    "  tbody.picklist-hover:hover {",
+    "    cursor: pointer;",
+    "  }",
+    "  @media (max-width: 767px) {",
+    "    #fromDate, #toDate {",
+    "      display: block;",
+    "      width: 100%;",
+    "    }",
+    "    div.picklist-form {",
+    "      margin: 20px 0;",
+    "    }",
+    "    button.picklist-btn {",
+    "      display: block;",
+    "      width: 100%;",
+    "    }",
+    "    div.picklist-table {",
+    "      margin-bottom: 25px;",
+    "    }",
+    "    div.panel.picklist-panel {",
+    "      margin-bottom: 8px !important;",
+    "    }",
+    "",
+    "    div.picklist-panel {",
+    "      height: auto !important;",
+    "    }",
+    "  }",
+    "</style>",
+    "",
+    "<div class=\"col-sm-7\">",
+    "  <div class=\"panel picklist-panel\" style=\"background-color: #f5f5f5; padding: 20px 15px; margin-bottom: 15px;\">",
+    "    <h3 [style.width.%]=\"100\" style=\"margin-top: 0;\">Demand</h3>",
+    "    <div class=\"form-inline picklist-form\">",
+    "      <div class=\"form-group\">",
+    "        <label for=\"fromDate\" class=\"text-semibold\">From:</label>",
+    "        <input type=\"date\" id=\"fromDate\" [(ngModel)]=\"bezl.vars.startDate\" style=\"margin-right: 4px;\">",
+    "      </div>",
+    "      <div class=\"form-group\">",
+    "        <label for=\"toDate\" class=\"text-semibold\">To:</label>",
+    "        <input type=\"date\" id=\"toDate\" [(ngModel)]=\"bezl.vars.endDate\" style=\"margin-right: 4px;\">",
+    "      </div>",
+    "      <button (click)=\"bezl.functions['applyFilter']()\" class=\"btn btn-md btn-primary picklist-btn\" style=\"height: 24px; border-width: 0; padding-top: 1px; padding-bottom: 0;\">Filter</button>",
+    "    </div>",
+    "  </div>",
+    "  <div class=\"table-responsive picklist-table\">",
+    "    <table class=\"table table-hover\" style=\"padding: 1px; margin: 0 -1px;\" id=\"partTable\">",
+    "      <thead>",
+    "        <tr>",
+    "          <th>Part Number</th>",
+    "          <th>Line Description</th>",
+    "          <th>Required Date</th>",
+    "          <th>Qty Required</th>",
+    "        </tr>",
+    "      </thead>",
+    "      <tbody style=\"border-style: solid; border-color: rgb(233,233,233);",
+    "                    border-top-width: 1px; border-bottom-width: 1px; border-left-width: 3px; border-right-width: 1px;\" class=\"picklist-hover\" >",
+    "",
+    "        <tr *ngFor=\"let item of bezl.vars['PartReq']\" (click)=\"bezl.functions['lineClick'](item.refNum)\" id=\"row_{{item.refNum}}\" [ngClass]=\"{'active' : item.active}\">",
+    "          <td>{{item.PartNum}}</td>",
+    "          <td>{{item.LineDesc}}</td>",
+    "          <td>{{item.ReqDate | date}}</td>",
+    "          <td>{{item.Qty}}</td>",
+    "        </tr>",
+    "      </tbody>",
+    "    </table>",
+    "  </div><!-- END table-responsive -->",
+    "</div><!-- END col -->",
+    "",
+    "  <div class=\"col-sm-4\" *ngIf=\"bezl.vars.selectedRow.refNum > 0\">",
+    "      <div class=\"panel picklist-panel\" style=\"background-color: #f5f5f5; padding: 20px 15px; margin-bottom: 15px; height: 102px;\">",
+    "        <h3 [style.width.%]=\"100\" style=\"margin: 0;\">Supply</h3>",
+    "      </div>",
+    "      <div class=\"table-responsive picklist-table\">",
+    "        <table class=\"table table-hover\" style=\"margin: 0 -1px;\">",
+    "          <thead>",
+    "            <tr>",
+    "              <th>Warehouse</th>",
+    "              <th>Bin</th>",
+    "              <th>Avail Qty</th>",
+    "            </tr>",
+    "          </thead>",
+    "          <tbody style=\"border-style: solid; border-color: rgb(233,233,233);",
+    "                        border-top-width: 1px; border-bottom-width: 1px; border-left-width: 3px; border-right-width: 1px;\" *ngIf=\"bezl.vars.PartAvail.length > 0\">",
+    "            <tr class=\"read\" *ngFor=\"let item of bezl.vars['PartAvail']\" >",
+    "              <td>{{item.WarehouseCode}}</td>",
+    "              <td>{{item.BinNum}}</td>",
+    "              <td>{{item.AvailQty}}</td>",
+    "            </tr>",
+    "          </tbody>",
+    "          <tbody *ngIf=\"bezl.vars.PartAvail.length == 0\">",
+    "            No records found...",
+    "          </tbody>",
+    "        </table>",
+    "      </div><!-- END table-responsive -->",
+    "  </div><!-- END col -->"
+  ],
+  "functions": [
+    {
+      "method": "ngOnInit",
+      "code": "var date = new Date(), y = date.getFullYear(), m = date.getMonth();\nbezl.vars.startDate = new Date(y, m, 1);\nbezl.vars.endDate = new Date(y, m + 1, 0);",
+      "declares": [
+        "$",
+        "parm",
+        "bezl",
+        "dataResp",
+        "require",
+        "FusionCharts"
+      ],
+      "compiled": "var date = new Date(), y = date.getFullYear(), m = date.getMonth();\r\nbezl.vars.startDate = new Date(y, m, 1);\r\nbezl.vars.endDate = new Date(y, m + 1, 0);\r\n"
+    },
+    {
+      "method": "onDataChange",
+      "code": "bezl.data = dataResp;\n\nif (bezl.data.PartReq) {\n  // arbNum used later on to determine which row was selected\n  var arbNum = 0 ;\n  // Start by normalizing our dates\n  bezl.data.PartReq.forEach(p => {\n    var dateStr: string = p.ReqDate;\n    // Remove the time\n    dateStr = dateStr.split('T')[0];\n    // Replace the - with /\n    dateStr = dateStr.replace(/-/g,\"-\");\n    p.ReqDate = dateStr; //new Date(dateStr);\n    \n    // give 'active' prop and arbitrary number\n    p.active = false;\n    p.refNum = arbNum;\n    \n    arbNum++;\n  });\n  bezl.functions['applyFilter']();\n}",
+      "declares": [
+        "$",
+        "parm",
+        "bezl",
+        "dataResp",
+        "require",
+        "FusionCharts"
+      ],
+      "compiled": "bezl.data = dataResp;\r\nif (bezl.data.PartReq) {\r\n    // arbNum used later on to determine which row was selected\r\n    var arbNum = 0;\r\n    // Start by normalizing our dates\r\n    bezl.data.PartReq.forEach(function (p) {\r\n        var dateStr = p.ReqDate;\r\n        // Remove the time\r\n        dateStr = dateStr.split('T')[0];\r\n        // Replace the - with /\r\n        dateStr = dateStr.replace(/-/g, \"-\");\r\n        p.ReqDate = dateStr; //new Date(dateStr);\r\n        // give 'active' prop and arbitrary number\r\n        p.active = false;\r\n        p.refNum = arbNum;\r\n        arbNum++;\r\n    });\r\n    bezl.functions['applyFilter']();\r\n}\r\n"
+    },
+    {
+      "method": "lineClick",
+      "code": "bezl.vars['PartAvail'] = [];\n\nif(bezl.vars.selectedRow.refNum == parm) {\n  bezl.vars.selectedRow.active = false;\n  bezl.vars.selectedRow = {};\n  \n} else {\n\n// Find item with coresponding refNum\nbezl.vars.selectedRow = bezl.vars['PartReq'].find(p => p.refNum == parm);\n\n// Unhighlight other row\nbezl.vars.PartReq.forEach(r => {\n  r.active = false;\n});\n\n// Highlight row\n//$(\"#row_\"+parm).addClass(\"active\");\nbezl.vars.selectedRow.active = true;\n\nbezl.vars['PartAvail'] = bezl.data.PartAvail.filter(p => p.PartNum == bezl.vars.selectedRow.PartNum).sort(function(a,b) {return b.AvailQty-a.AvailQty;});;\n}",
+      "declares": [
+        "$",
+        "parm",
+        "bezl",
+        "dataResp",
+        "require",
+        "FusionCharts"
+      ],
+      "compiled": "bezl.vars['PartAvail'] = [];\r\nif (bezl.vars.selectedRow.refNum == parm) {\r\n    bezl.vars.selectedRow.active = false;\r\n    bezl.vars.selectedRow = {};\r\n}\r\nelse {\r\n    // Find item with coresponding refNum\r\n    bezl.vars.selectedRow = bezl.vars['PartReq'].find(function (p) { return p.refNum == parm; });\r\n    // Unhighlight other row\r\n    bezl.vars.PartReq.forEach(function (r) {\r\n        r.active = false;\r\n    });\r\n    // Highlight row\r\n    //$(\"#row_\"+parm).addClass(\"active\");\r\n    bezl.vars.selectedRow.active = true;\r\n    bezl.vars['PartAvail'] = bezl.data.PartAvail.filter(function (p) { return p.PartNum == bezl.vars.selectedRow.PartNum; }).sort(function (a, b) {\r\n        return b.AvailQty - a.AvailQty;\r\n    });\r\n    ;\r\n}\r\n"
+    },
+    {
+      "method": "applyFilter",
+      "code": "bezl.vars['PartReq'] = bezl.data.PartReq;\nconsole.log(bezl.vars.startDate);\nif(!bezl.vars.startDate) {\n bezl.vars.startDate = \"1900-1-1\"; \n}\nif(!bezl.vars.endDate) {\n bezl.vars.endDate = \"2100-1-1\"; \n}\nbezl.vars['PartReq'] = bezl.data.PartReq.filter(p => p.ReqDate >= bezl.vars.startDate && p.ReqDate <= bezl.vars.endDate);\n",
+      "declares": [
+        "$",
+        "parm",
+        "bezl",
+        "dataResp",
+        "require",
+        "FusionCharts"
+      ],
+      "compiled": "bezl.vars['PartReq'] = bezl.data.PartReq;\r\nconsole.log(bezl.vars.startDate);\r\nif (!bezl.vars.startDate) {\r\n    bezl.vars.startDate = \"1900-1-1\";\r\n}\r\nif (!bezl.vars.endDate) {\r\n    bezl.vars.endDate = \"2100-1-1\";\r\n}\r\nbezl.vars['PartReq'] = bezl.data.PartReq.filter(function (p) { return p.ReqDate >= bezl.vars.startDate && p.ReqDate <= bezl.vars.endDate; });\r\n"
+    }
+  ],
+  "data": ""
+}
