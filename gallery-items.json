@@ -739,6 +739,32 @@
             }
         },
         {
+            "itemId": "ssrs-report-viewer-web-mobile-iphone-ipad-android",
+            "itemName": "SSRS Report Viewer",
+            "featured": true,
+            "itemDescription": "This Bezl allows you to run any server based SSRS Report with fresh data directly within Bezlio. Regardless of your device (iPhone, iPad, Android, PC, or Mac) you will be able to run your SSRS Report from anywhere with refreshed data. Parameters are not currently supported, but will be featured in a future release!",
+            "thumbnailPath": "https://rawgit.com/bezlio/bezlio-gallery/ssrs-report-viewer/ssrs-report-viewer/images/thumb.png",
+            "thumbnailAltText": "Screenshot showing an SSRS Report presented within Bezlio.",
+            "itemImages": [
+                {
+                    "imagePath": "https://rawgit.com/bezlio/bezlio-gallery/ssrs-report-viewer/ssrs-report-viewer/images/main.png",
+                    "imageAltText": "Screenshot showing an SSRS Report presented within Bezlio."
+                }
+            ],
+            "itemVideos": [],
+            "roles": [
+                "common"
+            ],
+            "platforms": [
+                "universal"
+            ],
+            "path": "ssrs-report-viewer",
+            "additionalFiles": [],
+            "installationNotes": {
+                "intro": "Currently, the default BRDB setup does not include the new SSRS Plugin. You must download the latest version from <a href=\"https://github.com/bezlio/bezlio-plugins/tree/master/Plugins\" target=\"_blank\"><u>here</u></a> and it should be placed at C:\\Program Files (x86)\\Bezlio Remote Data Broker\\Plugins\\, which is the default BRDB installation directory. There is also a starting folder parth variable in the Bezl itself, bezl.vars.startingPath, which will need to be modified to your environment."
+            }
+        },
+        {
             "itemId": "top-10-customers",
             "itemName": "Top 10 Customers",
             "featured": true,
