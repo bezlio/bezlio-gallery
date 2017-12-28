@@ -818,7 +818,7 @@
             "itemName": "Top 10 Customers",
             "featured": true,
             "itemDescription": "This Bezl displays the top 10 customers based on their sales.",
-            "thumbnailPath": "https://bezlio-gallery.azurewebsites.net/sales-manager-top-10-customers/images/main.png",
+            "thumbnailPath": "https://bezlio-gallery.azurewebsites.net/sales-manager-top-10-customers/images/thumb.png",
             "thumbnailAltText": "Thumbnail showing a sample data.",
             "itemImages": [
                 {
