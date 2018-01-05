@@ -67,7 +67,7 @@ define(["./report.js"], function (report) {
                 mimeType = mime.getMimeTypeFromExtension(bezl.vars.saveAsFileExtension);
 
                 var file = new Blob(byteArrays, {type: mimeType});
-                saveAs(file, bezl.vars.selectedReport.BaseName + bezl.vars.saveAsFileExtension);
+                bezl.vars.FileSaver.saveAs(file, bezl.vars.selectedReport.BaseName + bezl.vars.saveAsFileExtension);
 
                 bezl.vars.reportLoading = false;
 
