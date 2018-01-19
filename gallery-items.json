@@ -286,10 +286,10 @@
             "platforms": [
                 "excel"
             ],
-            "path": "company-directory",
+            "path": "company-calendar",
             "additionalFiles": [
                 {
-                    "fileName": "company-directory.xlsx",
+                    "fileName": "company-calendar.xlsx",
                     "filePath": "https://bezlio-gallery.azurewebsites.net/company-calendar/data/company-calendar.xlsx",
                     "description": "Sample Excel data source for this Bezl.  Installed by default with latest version of BRDB."
                 }
