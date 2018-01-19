@@ -267,6 +267,38 @@
             }
         },
         {
+            "itemId": "company-directory",
+            "itemName": "Company Directory",
+            "featured": true,
+            "itemDescription": "This bezl provides a company directory that is sortable and supports drill down.",
+            "thumbnailPath": "https://bezlio-gallery.azurewebsites.net/company-directory/images/thumb.png",
+            "thumbnailAltText": "Screenshot showing the company directory",
+            "itemImages": [
+                {
+                    "imagePath": "https://bezlio-gallery.azurewebsites.net/company-directory/images/main.png",
+                    "imageAltText": "Screenshot showing the company directory"
+                }
+            ],
+            "itemVideos": [],
+            "roles": [
+                "common"
+            ],
+            "platforms": [
+                "excel"
+            ],
+            "path": "company-directory",
+            "additionalFiles": [
+                {
+                    "fileName": "company-directory.xlsx",
+                    "filePath": "https://bezlio-gallery.azurewebsites.net/company-directory/data/company-directory.xlsx",
+                    "description": "Sample Excel data source for this Bezl.  Installed by default with latest version of BRDB."
+                }
+            ],
+            "installationNotes": {
+                "intro": "Click to install the bezl and update the company-directory xlsx file."
+            }
+        },
+        {
             "itemId": "comparative-sales-breakdown",
             "itemName": "Comparative Sales Breakdown",
             "featured": true,
