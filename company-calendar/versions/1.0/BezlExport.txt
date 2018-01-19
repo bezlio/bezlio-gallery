@@ -1,0 +1,68 @@
+﻿{
+  "id": "bd376535-ac30-47e4-bff2-e5576030172c",
+  "name": "Company Calendar",
+  "template": "custom",
+  "owner": "bellis@saberlogic.com",
+  "shares": [],
+  "vars": [],
+  "dataSubscriptions": [
+    {
+      "connectionId": "a2d174a1-7c29-45fd-8f39-2d62f2727e8f",
+      "refreshInverval": 0,
+      "name": "companyCalendar",
+      "dataSource": "brdb",
+      "plugin": "ExcelPlugin",
+      "method": "GetData",
+      "args": {
+        "FileName": "C:\\Program Files (x86)\\Bezlio Remote Data Broker\\Data\\company-calendar.xlsx",
+        "SheetName": "Company Calendar",
+        "FirstRowColumnNames": "Yes"
+      }
+    }
+  ],
+  "markup": [
+    "<div id='calendar'></div>"
+  ],
+  "functions": [
+    {
+      "method": "ngOnInit",
+      "code": "bezl.vars.config = {};\nbezl.vars.config.calendarOptions = {\n  header: {\n    left: 'prev,next today',\n    center: 'title',\n    right: 'month,agendaWeek,agendaDay'\n  },\n  defaultView: 'agendaWeek',\n  minTime: '07:00:00',\n  maxTime: '19:00:00',\n  eventClick: function(event) {\n    if (event.url) {\n      window.open(event.url);\n      return false;\n    }\n  }\n};\n// Calendar options - see https://fullcalendar.io/docs/ for all of the available options",
+      "declares": [
+        "$",
+        "parm",
+        "bezl",
+        "dataResp",
+        "require",
+        "FusionCharts"
+      ],
+      "compiled": "bezl.vars.config = {};\r\nbezl.vars.config.calendarOptions = {\r\n    header: {\r\n        left: 'prev,next today',\r\n        center: 'title',\r\n        right: 'month,agendaWeek,agendaDay'\r\n    },\r\n    defaultView: 'agendaWeek',\r\n    minTime: '07:00:00',\r\n    maxTime: '19:00:00',\r\n    eventClick: function (event) {\r\n        if (event.url) {\r\n            window.open(event.url);\r\n            return false;\r\n        }\r\n    }\r\n};\r\n// Calendar options - see https://fullcalendar.io/docs/ for all of the available options \r\n"
+    },
+    {
+      "method": "onDataChange",
+      "code": "bezl.data = dataResp;\n\nif (bezl.data.companyCalendar) {\n  bezl.vars.config.calendarOptions.events = [];\n\n  bezl.data.companyCalendar.forEach(event => {\n    if (event.Active == 'X') {\n      bezl.vars.config.calendarOptions.events.push({\n        title: event.Title,\n        id: event.ID,\n        start: ((!event.Start.endsWith(\"T00:00:00\")) ? event.Start : event.Start.split('T')[0]),\n        end: event.End,\n        url: event.URL\n      });\n    }\n\n  });\n\n  $('#calendar').fullCalendar(bezl.vars.config.calendarOptions);\n}",
+      "declares": [
+        "$",
+        "parm",
+        "bezl",
+        "dataResp",
+        "require",
+        "FusionCharts"
+      ],
+      "compiled": "bezl.data = dataResp;\r\nif (bezl.data.companyCalendar) {\r\n    bezl.vars.config.calendarOptions.events = [];\r\n    bezl.data.companyCalendar.forEach(function (event) {\r\n        if (event.Active == 'X') {\r\n            bezl.vars.config.calendarOptions.events.push({\r\n                title: event.Title,\r\n                id: event.ID,\r\n                start: ((!event.Start.endsWith(\"T00:00:00\")) ? event.Start : event.Start.split('T')[0]),\r\n                end: event.End,\r\n                url: event.URL\r\n            });\r\n        }\r\n    });\r\n    $('#calendar').fullCalendar(bezl.vars.config.calendarOptions);\r\n}\r\n"
+    },
+    {
+      "method": "ngAfterViewInit",
+      "code": "",
+      "declares": [
+        "$",
+        "parm",
+        "bezl",
+        "dataResp",
+        "require",
+        "FusionCharts"
+      ],
+      "compiled": ""
+    }
+  ],
+  "data": ""
+}

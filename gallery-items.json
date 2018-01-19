@@ -267,6 +267,38 @@
             }
         },
         {
+            "itemId": "company-calendar",
+            "itemName": "Company Calendar",
+            "featured": true,
+            "itemDescription": "This bezl provides a company calendar.",
+            "thumbnailPath": "https://bezlio-gallery.azurewebsites.net/company-calendar/images/thumb.png",
+            "thumbnailAltText": "Screenshot showing the company calendar",
+            "itemImages": [
+                {
+                    "imagePath": "https://bezlio-gallery.azurewebsites.net/company-calendar/images/main.png",
+                    "imageAltText": "Screenshot showing the company calendar"
+                }
+            ],
+            "itemVideos": [],
+            "roles": [
+                "common"
+            ],
+            "platforms": [
+                "excel"
+            ],
+            "path": "company-directory",
+            "additionalFiles": [
+                {
+                    "fileName": "company-directory.xlsx",
+                    "filePath": "https://bezlio-gallery.azurewebsites.net/company-calendar/data/company-calendar.xlsx",
+                    "description": "Sample Excel data source for this Bezl.  Installed by default with latest version of BRDB."
+                }
+            ],
+            "installationNotes": {
+                "intro": "Click to install the bezl and update the company-calendar xlsx file."
+            }
+        },
+        {
             "itemId": "company-directory",
             "itemName": "Company Directory",
             "featured": true,
