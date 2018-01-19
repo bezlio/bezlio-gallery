@@ -1,0 +1,184 @@
+﻿{
+  "id": "4b69aa88-5640-45da-bbc0-6305e9212dfd",
+  "name": "Announcements",
+  "template": "custom",
+  "owner": "bellis@saberlogic.com",
+  "shares": [],
+  "vars": [
+    {
+      "name": "announcements",
+      "value": "[]"
+    }
+  ],
+  "dataSubscriptions": [
+    {
+      "name": "announcements",
+      "connectionId": "a2d174a1-7c29-45fd-8f39-2d62f2727e8f",
+      "dataSource": "brdb",
+      "plugin": "ExcelPlugin",
+      "method": "GetData",
+      "args": {
+        "FileName": "C:\\Program Files (x86)\\Bezlio Remote Data Broker\\Data\\announcements.xlsx",
+        "SheetName": "Announcements",
+        "FirstRowColumnNames": "Yes"
+      },
+      "data": null,
+      "refreshInverval": 0,
+      "lastRefresh": null
+    },
+    {
+      "name": "userGroups",
+      "connectionId": "a2d174a1-7c29-45fd-8f39-2d62f2727e8f",
+      "dataSource": "brdb",
+      "plugin": "ExcelPlugin",
+      "method": "GetData",
+      "args": {
+        "FileName": "C:\\Program Files (x86)\\Bezlio Remote Data Broker\\Data\\announcements.xlsx",
+        "SheetName": "UserGroups",
+        "FirstRowColumnNames": "Yes"
+      },
+      "data": null,
+      "refreshInverval": 0,
+      "lastRefresh": null
+    }
+  ],
+  "markup": [
+    "<div id=\"announcementsCarousel\" class=\"carousel slide\" data-ride=\"carousel\" style=\"width: 97%;\">",
+    "  <!-- Indicators -->",
+    "  <ol class=\"carousel-indicators\">",
+    "    <li *ngFor=\"let announcement of bezl.vars.announcements;let i=index\" ",
+    "        (click)=\"bezl.functions['navigateDirect'](i)\"",
+    "        [ngClass]=\"{'active' : announcement.Selected}\"></li>",
+    "  </ol>",
+    "",
+    "  <!-- Wrapper for slides -->",
+    "  <div class=\"carousel-inner\" role=\"listbox\">    ",
+    "    <div class=\"item active\" style=\"position: relative; width: 100%; text-align: center;\">",
+    "      ",
+    "      <!-- Text block for when there is no image to display -->",
+    "      <div [hidden]=\"!bezl.vars.announcementText || bezl.vars.imageLoaded\" style=\"min-height: 250px\">",
+    "        <span style=\"position: absolute; top: calc(20%); left: calc(10%); width: calc(80%);",
+    "                     color: white; ",
+    "                     font: bold 18px/45px Helvetica, Sans-Serif; ",
+    "                     letter-spacing: -1px;  ",
+    "                     background: rgb(0, 0, 0); /* fallback color */",
+    "                     background: rgba(0, 0, 0, 0.7);",
+    "                     padding: 10px\"",
+    "              [innerHTML]=\"bezl.vars.announcementText\"></span>",
+    "      </div>",
+    "      ",
+    "      <!-- Text block for when there is an image to display -->",
+    "      <div [hidden]=\"!bezl.vars.imageLoaded\">",
+    "        <img id=\"viewer\" src=\"\" type=\"image/png\" alt=\"\"",
+    "             style=\"display: block;",
+    "                    margin: auto;",
+    "                    width: 100%;\">",
+    "        ",
+    "        <div [hidden]=\"!bezl.vars.announcementText\">",
+    "          <span style=\"position: absolute; top: calc(20%); left: calc(10%); width: calc(80%);",
+    "                       color: white; ",
+    "                       font: bold 18px/45px Helvetica, Sans-Serif; ",
+    "                       letter-spacing: -1px;  ",
+    "                       background: rgb(0, 0, 0); /* fallback color */",
+    "                       background: rgba(0, 0, 0, 0.7);",
+    "                       padding: 10px\"",
+    "                [innerHTML]=\"bezl.vars.announcementText\"></span>",
+    "        </div>",
+    "      </div>",
+    "      ",
+    "    </div>",
+    "  </div>",
+    "",
+    "  <!-- Left and right controls -->",
+    "  <a class=\"left carousel-control\" href=\"#announcementsCarousel\" role=\"button\" data-slide=\"prev\" (click)=\"bezl.functions['navigateLeft']()\">",
+    "    <span class=\"glyphicon glyphicon-chevron-left\" aria-hidden=\"true\"></span>",
+    "    <span class=\"sr-only\">Previous</span>",
+    "  </a>",
+    "  <a class=\"right carousel-control\" href=\"#announcementsCarousel\" role=\"button\" data-slide=\"next\" (click)=\"bezl.functions['navigateRight']()\">",
+    "    <span class=\"glyphicon glyphicon-chevron-right\" aria-hidden=\"true\"></span>",
+    "    <span class=\"sr-only\">Next</span>",
+    "  </a>",
+    "</div>"
+  ],
+  "functions": [
+    {
+      "method": "ngOnInit",
+      "code": "bezl.vars.config = {};\nbezl.vars.config.slideInterval = 5000;\n\nfunction NavigateLeft(bezl) {\n  var currentIndex = 0;\n  clearInterval(bezl.vars.timer);\n\n  for (var i = 0; i < bezl.vars.announcements.length; i++) {\n    if (bezl.vars.announcements[i].Selected) {\n      currentIndex = i;\n      bezl.vars.announcements[i].Selected = false;\n    }\n  };\n\n  if (currentIndex > 0) {\n    currentIndex -= 1;\n  } else {\n    currentIndex = bezl.vars.announcements.length - 1;\n  }\n\n  if (bezl.vars.announcements[currentIndex]) {  \n    bezl.vars.announcements[currentIndex].Selected = true;\n    bezl.vars.announcementText = bezl.vars.announcements[currentIndex].text;\n    var img = $(bezl.container.nativeElement).find('#viewer')[0];\n\n    // Animate transition to the right off screen\n    ($(bezl.container.nativeElement).find('#viewer')).removeClass().addClass('animated slideOutRight').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){\n      $(this).removeClass();\n    });\n\n    if (bezl.vars.announcements[currentIndex].Loaded) {\n      img.src = bezl.vars.announcements[currentIndex].Url; \n      bezl.vars.imageLoaded = true;\n\n      // Animate transition to the left on screen\n      ($(bezl.container.nativeElement).find('#viewer')).removeClass().addClass('animated slideInLeft').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){\n        $(this).removeClass();\n      });\n    } else {\n      // This is just a dummy image of nothing\n      img.src = \"data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs%3D\";\n      bezl.vars.imageLoaded = false;\n    }\n  }\n}\n\nfunction NavigateRight(bezl) {\n  var currentIndex = 0;\n\n  for (var i = 0; i < bezl.vars.announcements.length; i++) {\n    if (bezl.vars.announcements[i].Selected) {\n      currentIndex = i;\n      bezl.vars.announcements[i].Selected = false;\n    }\n  };\n\n  if (currentIndex < bezl.vars.announcements.length - 1) {\n    currentIndex += 1;\n  } else {\n    currentIndex = 0;\n  }\n\n  if (bezl.vars.announcements[currentIndex]) {\n    bezl.vars.announcements[currentIndex].Selected = true;\n    bezl.vars.announcementText = bezl.vars.announcements[currentIndex].text;\n    var img = $(bezl.container.nativeElement).find('#viewer')[0];\n\n    // Animate transition to the left off screen\n    ($(bezl.container.nativeElement).find('#viewer')).removeClass().addClass('animated slideOutLeft').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){\n      $(this).removeClass();\n    });\n\n    if (bezl.vars.announcements[currentIndex].Loaded) {\n      img.src = bezl.vars.announcements[currentIndex].Url; \n      bezl.vars.imageLoaded = true;\n\n      // Animate transition to the right on screen\n      ($(bezl.container.nativeElement).find('#viewer')).removeClass().addClass('animated slideInRight').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){\n        $(this).removeClass();\n      });\n    } else {\n      // This is just a dummy image of nothing\n      img.src = \"data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs%3D\";\n      bezl.vars.imageLoaded = false;\n    }\n  }\n}\n\nfunction NavigateDirect(bezl, parm) {\n  clearInterval(bezl.vars.timer);\n\n  for (var i = 0; i < bezl.vars.announcements.length; i++) {\n    bezl.vars.announcements[i].Selected = false;\n  };\n\n  bezl.vars.announcements[parm].Selected = true;\n  bezl.vars.announcementText = bezl.vars.announcements[parm].text;\n\n  var img = $(bezl.container.nativeElement).find('#viewer')[0];\n  if (bezl.vars.announcements[parm].Loaded) {\n    img.src = bezl.vars.announcements[parm].Url;\n    bezl.vars.imageLoaded = true;\n  } else {\n    // This is just a dummy image of nothing\n    img.src = \"data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs%3D\";\n    bezl.vars.imageLoaded = false;\n  }\n}\n\nbezl.vars.functions = [];\nbezl.vars.functions.navigateLeft = NavigateLeft;\nbezl.vars.functions.navigateRight = NavigateRight;\nbezl.vars.functions.navigateDirect = NavigateDirect;\n\n// This timer is responsible for advancing the slides        \nbezl.vars.timer = setInterval(function(){ \n  try {\n    if (bezl.vars.announcements != []) {\n      bezl.functions['navigateRight'](bezl);\n    }\n  }\n  catch(err) {\n    console.log(err.message);\n  }\n}, bezl.vars.config.slideInterval);",
+      "declares": [
+        "$",
+        "parm",
+        "bezl",
+        "dataResp",
+        "require",
+        "FusionCharts"
+      ],
+      "compiled": "bezl.vars.config = {};\r\nbezl.vars.config.slideInterval = 5000;\r\nfunction NavigateLeft(bezl) {\r\n    var currentIndex = 0;\r\n    clearInterval(bezl.vars.timer);\r\n    for (var i = 0; i < bezl.vars.announcements.length; i++) {\r\n        if (bezl.vars.announcements[i].Selected) {\r\n            currentIndex = i;\r\n            bezl.vars.announcements[i].Selected = false;\r\n        }\r\n    }\r\n    ;\r\n    if (currentIndex > 0) {\r\n        currentIndex -= 1;\r\n    }\r\n    else {\r\n        currentIndex = bezl.vars.announcements.length - 1;\r\n    }\r\n    if (bezl.vars.announcements[currentIndex]) {\r\n        bezl.vars.announcements[currentIndex].Selected = true;\r\n        bezl.vars.announcementText = bezl.vars.announcements[currentIndex].text;\r\n        var img = $(bezl.container.nativeElement).find('#viewer')[0];\r\n        // Animate transition to the right off screen\r\n        ($(bezl.container.nativeElement).find('#viewer')).removeClass().addClass('animated slideOutRight').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function () {\r\n            $(this).removeClass();\r\n        });\r\n        if (bezl.vars.announcements[currentIndex].Loaded) {\r\n            img.src = bezl.vars.announcements[currentIndex].Url;\r\n            bezl.vars.imageLoaded = true;\r\n            // Animate transition to the left on screen\r\n            ($(bezl.container.nativeElement).find('#viewer')).removeClass().addClass('animated slideInLeft').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function () {\r\n                $(this).removeClass();\r\n            });\r\n        }\r\n        else {\r\n            // This is just a dummy image of nothing\r\n            img.src = \"data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs%3D\";\r\n            bezl.vars.imageLoaded = false;\r\n        }\r\n    }\r\n}\r\nfunction NavigateRight(bezl) {\r\n    var currentIndex = 0;\r\n    for (var i = 0; i < bezl.vars.announcements.length; i++) {\r\n        if (bezl.vars.announcements[i].Selected) {\r\n            currentIndex = i;\r\n            bezl.vars.announcements[i].Selected = false;\r\n        }\r\n    }\r\n    ;\r\n    if (currentIndex < bezl.vars.announcements.length - 1) {\r\n        currentIndex += 1;\r\n    }\r\n    else {\r\n        currentIndex = 0;\r\n    }\r\n    if (bezl.vars.announcements[currentIndex]) {\r\n        bezl.vars.announcements[currentIndex].Selected = true;\r\n        bezl.vars.announcementText = bezl.vars.announcements[currentIndex].text;\r\n        var img = $(bezl.container.nativeElement).find('#viewer')[0];\r\n        // Animate transition to the left off screen\r\n        ($(bezl.container.nativeElement).find('#viewer')).removeClass().addClass('animated slideOutLeft').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function () {\r\n            $(this).removeClass();\r\n        });\r\n        if (bezl.vars.announcements[currentIndex].Loaded) {\r\n            img.src = bezl.vars.announcements[currentIndex].Url;\r\n            bezl.vars.imageLoaded = true;\r\n            // Animate transition to the right on screen\r\n            ($(bezl.container.nativeElement).find('#viewer')).removeClass().addClass('animated slideInRight').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function () {\r\n                $(this).removeClass();\r\n            });\r\n        }\r\n        else {\r\n            // This is just a dummy image of nothing\r\n            img.src = \"data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs%3D\";\r\n            bezl.vars.imageLoaded = false;\r\n        }\r\n    }\r\n}\r\nfunction NavigateDirect(bezl, parm) {\r\n    clearInterval(bezl.vars.timer);\r\n    for (var i = 0; i < bezl.vars.announcements.length; i++) {\r\n        bezl.vars.announcements[i].Selected = false;\r\n    }\r\n    ;\r\n    bezl.vars.announcements[parm].Selected = true;\r\n    bezl.vars.announcementText = bezl.vars.announcements[parm].text;\r\n    var img = $(bezl.container.nativeElement).find('#viewer')[0];\r\n    if (bezl.vars.announcements[parm].Loaded) {\r\n        img.src = bezl.vars.announcements[parm].Url;\r\n        bezl.vars.imageLoaded = true;\r\n    }\r\n    else {\r\n        // This is just a dummy image of nothing\r\n        img.src = \"data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs%3D\";\r\n        bezl.vars.imageLoaded = false;\r\n    }\r\n}\r\nbezl.vars.functions = [];\r\nbezl.vars.functions.navigateLeft = NavigateLeft;\r\nbezl.vars.functions.navigateRight = NavigateRight;\r\nbezl.vars.functions.navigateDirect = NavigateDirect;\r\n// This timer is responsible for advancing the slides        \r\nbezl.vars.timer = setInterval(function () {\r\n    try {\r\n        if (bezl.vars.announcements != []) {\r\n            bezl.functions['navigateRight'](bezl);\r\n        }\r\n    }\r\n    catch (err) {\r\n        console.log(err.message);\r\n    }\r\n}, bezl.vars.config.slideInterval);\r\n"
+    },
+    {
+      "method": "onDataChange",
+      "code": "bezl.data = dataResp;\n\n// Detect when the announcements data subscription has come back.  It gives us a file listing\n// of an 'Announcements' directory from the FileSystem plugin.  For each file listed in this\n// result, download the file and add it to our announcements variable\nif (bezl.data.announcements && bezl.data.userGroups) {\n\n  // Start off by determining what groups the logged in user belongs to\n  bezl.vars.groups = [];\n  bezl.data.userGroups.forEach(g => {\n    if (g.UserID == bezl.env.currentUser) {\n      bezl.vars.groups.push(g.Group);\n    }\n  });\n\n  // Loop through each announcement and add to our announcements array if this user should see it\n  bezl.vars.announcements = [];\n  bezl.data.announcements.forEach(announcement => {\n    if (announcement.Active == 'X' && (announcement.Group == null || bezl.vars.groups.indexOf(announcement.Group) != -1)) {\n      bezl.vars.announcements.push({ id: 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {\n        var r = Math.random()*16|0, v = c == 'x' ? r : (r&0x3|0x8);\n        return v.toString(16);\n      }),\n                                    text: announcement.Text, \n                                    image: announcement.Image, \n                                    Url: {}, \n                                    Obj: {}, \n                                    Loaded: false, \n                                    Loading: false, \n                                    Selected: false });\n    }\n  });\n\n  // Mark the first annoucement as Selected\n  bezl.vars.announcements[0].Selected = true;\n  bezl.vars.announcementText = bezl.vars.announcements[0].text;\n  bezl.vars.imageLoaded = false;\n\n  // Lastly clear out bezl.data.announcements and bezl.data.userGroups so we don't repeat this process\n  bezl.data.announcements = null;\n  bezl.dataService.remove('announcements');\n  bezl.data.userGroups = null;\n  bezl.dataService.remove('userGroups');\n}\n\n// If we are done pulling in the announcements, fire off another process to download any images specified\nif (bezl.vars.announcements.length > 0) {\n  bezl.vars.announcements.forEach(announcement => {\n    // First check to see if the announcement has not been loading and is not loading - in that case we\n    // need to fire off a call to download it\n    if (announcement.image != null && !announcement.Loaded  && !announcement.Loading) {\n      announcement.Loading = true;\n      // Perform the BRDB call to actually download the file\n      bezl.dataService.add(announcement.id,'brdb','FileSystem','GetFile',\n                           { \"Context\": \"Content\"\n                            , \"FileName\": \"img\\\\\" + announcement.image\n                            , \"Parameters\": [] },0);\n      // If it isn't loaded, we are loading, and we got it back\n    } else if (announcement.image != '' && !announcement.Loaded  && announcement.Loading && bezl.data[announcement.id]) {\n      announcement.Loaded = true;\n      announcement.Loading = false;\n\n      // Convert the byte array that came back on GetFile into a blob object we can use in HTML\n      var sliceSize = 1024;\n      var byteCharacters = atob(bezl.data[announcement.id]);\n      var bytesLength = byteCharacters.length;\n      var slicesCount = Math.ceil(bytesLength / sliceSize);\n      var byteArrays = new Array(slicesCount);\n      for (var sliceIndex = 0; sliceIndex < slicesCount; ++sliceIndex) {\n        var begin = sliceIndex * sliceSize;\n        var end = Math.min(begin + sliceSize, bytesLength);\n        var bytes = new Array(end - begin);\n        for (var offset = begin, i = 0 ; offset < end; ++i, ++offset) {\n          bytes[i] = byteCharacters[offset].charCodeAt(0);\n        }\n        byteArrays[sliceIndex] = new Uint8Array(bytes);\n      }\n\n      announcement.Obj = new Blob(byteArrays, {type: 'image/png'});  \n      announcement.Url = URL.createObjectURL(announcement.Obj);\n\n      if (announcement.Selected) {\n        var img = $(bezl.container.nativeElement).find('#viewer')[0];\n        img.src = announcement.Url;  \n        bezl.vars.imageLoaded = true;\n      }\n\n      // Remove the data subscription for this file since we have it stored now\n      bezl.data[announcement.id] = null;\n      bezl.dataService.remove(announcement.id);\n    }\n  });\n}",
+      "declares": [
+        "$",
+        "parm",
+        "bezl",
+        "dataResp",
+        "require",
+        "FusionCharts"
+      ],
+      "compiled": "bezl.data = dataResp;\r\n// Detect when the announcements data subscription has come back.  It gives us a file listing\r\n// of an 'Announcements' directory from the FileSystem plugin.  For each file listed in this\r\n// result, download the file and add it to our announcements variable\r\nif (bezl.data.announcements && bezl.data.userGroups) {\r\n    // Start off by determining what groups the logged in user belongs to\r\n    bezl.vars.groups = [];\r\n    bezl.data.userGroups.forEach(function (g) {\r\n        if (g.UserID == bezl.env.currentUser) {\r\n            bezl.vars.groups.push(g.Group);\r\n        }\r\n    });\r\n    // Loop through each announcement and add to our announcements array if this user should see it\r\n    bezl.vars.announcements = [];\r\n    bezl.data.announcements.forEach(function (announcement) {\r\n        if (announcement.Active == 'X' && (announcement.Group == null || bezl.vars.groups.indexOf(announcement.Group) != -1)) {\r\n            bezl.vars.announcements.push({ id: 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {\r\n                var r = Math.random() * 16 | 0, v = c == 'x' ? r : (r & 0x3 | 0x8);\r\n                return v.toString(16);\r\n            }), text: announcement.Text, image: announcement.Image, Url: {}, Obj: {}, Loaded: false, Loading: false, Selected: false });\r\n        }\r\n    });\r\n    // Mark the first annoucement as Selected\r\n    bezl.vars.announcements[0].Selected = true;\r\n    bezl.vars.announcementText = bezl.vars.announcements[0].text;\r\n    bezl.vars.imageLoaded = false;\r\n    // Lastly clear out bezl.data.announcements and bezl.data.userGroups so we don't repeat this process\r\n    bezl.data.announcements = null;\r\n    bezl.dataService.remove('announcements');\r\n    bezl.data.userGroups = null;\r\n    bezl.dataService.remove('userGroups');\r\n}\r\n// If we are done pulling in the announcements, fire off another process to download any images specified\r\nif (bezl.vars.announcements.length > 0) {\r\n    bezl.vars.announcements.forEach(function (announcement) {\r\n        // First check to see if the announcement has not been loading and is not loading - in that case we\r\n        // need to fire off a call to download it\r\n        if (announcement.image != null && !announcement.Loaded && !announcement.Loading) {\r\n            announcement.Loading = true;\r\n            // Perform the BRDB call to actually download the file\r\n            bezl.dataService.add(announcement.id, 'brdb', 'FileSystem', 'GetFile', { \"Context\": \"Content\", \"FileName\": \"img\\\\\" + announcement.image, \"Parameters\": [] }, 0);\r\n        }\r\n        else if (announcement.image != '' && !announcement.Loaded && announcement.Loading && bezl.data[announcement.id]) {\r\n            announcement.Loaded = true;\r\n            announcement.Loading = false;\r\n            // Convert the byte array that came back on GetFile into a blob object we can use in HTML\r\n            var sliceSize = 1024;\r\n            var byteCharacters = atob(bezl.data[announcement.id]);\r\n            var bytesLength = byteCharacters.length;\r\n            var slicesCount = Math.ceil(bytesLength / sliceSize);\r\n            var byteArrays = new Array(slicesCount);\r\n            for (var sliceIndex = 0; sliceIndex < slicesCount; ++sliceIndex) {\r\n                var begin = sliceIndex * sliceSize;\r\n                var end = Math.min(begin + sliceSize, bytesLength);\r\n                var bytes = new Array(end - begin);\r\n                for (var offset = begin, i = 0; offset < end; ++i, ++offset) {\r\n                    bytes[i] = byteCharacters[offset].charCodeAt(0);\r\n                }\r\n                byteArrays[sliceIndex] = new Uint8Array(bytes);\r\n            }\r\n            announcement.Obj = new Blob(byteArrays, { type: 'image/png' });\r\n            announcement.Url = URL.createObjectURL(announcement.Obj);\r\n            if (announcement.Selected) {\r\n                var img = $(bezl.container.nativeElement).find('#viewer')[0];\r\n                img.src = announcement.Url;\r\n                bezl.vars.imageLoaded = true;\r\n            }\r\n            // Remove the data subscription for this file since we have it stored now\r\n            bezl.data[announcement.id] = null;\r\n            bezl.dataService.remove(announcement.id);\r\n        }\r\n    });\r\n}\r\n"
+    },
+    {
+      "method": "navigateDirect",
+      "code": "bezl.vars.functions.navigateDirect(bezl, parm);",
+      "declares": [
+        "$",
+        "parm",
+        "bezl",
+        "dataResp",
+        "require",
+        "FusionCharts"
+      ],
+      "compiled": "bezl.vars.functions.navigateDirect(bezl, parm);\r\n"
+    },
+    {
+      "method": "navigateLeft",
+      "code": "bezl.vars.functions.navigateLeft(bezl);",
+      "declares": [
+        "$",
+        "parm",
+        "bezl",
+        "dataResp",
+        "require",
+        "FusionCharts"
+      ],
+      "compiled": "bezl.vars.functions.navigateLeft(bezl);\r\n"
+    },
+    {
+      "method": "navigateRight",
+      "code": "bezl.vars.functions.navigateRight(bezl);",
+      "declares": [
+        "$",
+        "parm",
+        "bezl",
+        "dataResp",
+        "require",
+        "FusionCharts"
+      ],
+      "compiled": "bezl.vars.functions.navigateRight(bezl);\r\n"
+    },
+    {
+      "method": "ngAfterViewInit",
+      "code": "",
+      "declares": [
+        "$",
+        "parm",
+        "bezl",
+        "dataResp",
+        "require",
+        "FusionCharts"
+      ],
+      "compiled": ""
+    }
+  ],
+  "data": ""
+}

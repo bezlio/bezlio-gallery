@@ -61,6 +61,38 @@
             }
         },
         {
+            "itemId": "announcements",
+            "itemName": "Announcements",
+            "featured": false,
+            "itemDescription": "This bezl provides company announcements. The announcements can be maintained in an Excel spreadsheet and includes the ability to add media.",
+            "thumbnailPath": "https://bezlio-gallery.azurewebsites.net/announcements/images/thumb.png",
+            "thumbnailAltText": "Thumbnail showing announcements.",
+            "itemImages": [
+                {
+                    "imagePath": "https://bezlio-gallery.azurewebsites.net/announcements/images/main.png",
+                    "imageAltText": "Full image showing announcements."
+                }
+            ],
+            "itemVideos": [],
+            "roles": [
+                "common"
+            ],
+            "platforms": [
+                "universal"
+            ],
+            "path": "announcements",
+            "additionalFiles": [
+                {
+                    "fileName": "Excel File",
+                    "filePath": "https://bezlio-gallery.azurewebsites.net/announcements/data/announcements.xlsx",
+                    "description": "Source data file"
+                }
+            ],
+            "installationNotes": {
+                "intro": "Simply click to install and update the announcements xlsx file to display the announcements you would like to show!"
+            }
+        },
+        {
             "itemId": "ap-summary",
             "itemName": "AP Summary",
             "featured": true,
