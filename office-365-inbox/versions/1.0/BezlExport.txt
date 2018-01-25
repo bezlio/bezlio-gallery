@@ -1,0 +1,172 @@
+﻿{
+  "id": "d4091563-7d2c-4e98-9b50-e622444e5678",
+  "name": "Inbox",
+  "template": "custom",
+  "owner": "rschnable@saberlogic.com",
+  "shares": [],
+  "vars": [
+    {
+      "name": "dialogVisible",
+      "value": "false"
+    },
+    {
+      "name": "textValue",
+      "value": "\"\""
+    }
+  ],
+  "dataSubscriptions": [
+    {
+      "name": "mail",
+      "connectionId": "f1be529f-a135-47a3-8143-ef7e0023787a",
+      "dataSource": "brdb",
+      "plugin": "Office365",
+      "method": "GetMail",
+      "args": {
+        "UserName": "",
+        "Password": "",
+        "MsgCnt": "15",
+        "SubjectFilter": "Bezlio Day"
+      },
+      "data": null,
+      "refreshInverval": 0,
+      "lastRefresh": null
+    }
+  ],
+  "markup": [
+    "<button (click)=\"bezl.functions.retrieveEmails()\" class=\"btn btn-md btn-primary\">Retrieve</button>",
+    "",
+    "<div class=\"panel-group\" id=\"emailAccordion\">",
+    "    <div class=\"panel panel-default\">",
+    "        <div class=\"panel-heading\">",
+    "            <h4 class=\"panel-title\">",
+    "                <a data-toggle=\"collapse\" data-parent=\"#emailAccordion\" href=\"#collapse1\">Sales</a>",
+    "            </h4>",
+    "        </div>",
+    "",
+    "        <div id=\"collapse1\" class=\"panel-collapse collapse in\"  [hidden]=\"bezl.vars.loading\">",
+    "          <label class=\"pull-right\" [hidden]=\"!bezl.vars.loading\">Loading... <i class=\"fa fa-spinner fa-spin\" style=\"font-size:24px\"></i></label>",
+    "            <div class=\"panel-body\">",
+    "                <table class=\"table table-hover table-mail\" [hidden]=\"bezl.vars.loading\">",
+    "                    <thead>",
+    "                        <tr>",
+    "                            <th>From</th>",
+    "                            <th>Subject</th>",
+    "                            <th>Date</th>",
+    "                          \t<th>Read</th>",
+    "                        </tr>",
+    "                    </thead>",
+    "                    <tbody>",
+    "                        <tr class=\"read\" *ngFor=\"let email of bezl.data.mail\" (click)=\"bezl.functions.loadEmail(email)\">",
+    "                          <ng-container>",
+    "                              <td>{{email.From}}</td>",
+    "                              <td>{{email.Subject}}</td>",
+    "                              <td>{{email.DateTimeReceived | date}}</td>",
+    "                              <td>",
+    "                                <input type=\"checkbox\" [(ngModel)]=\"email.Read\">",
+    "                              </td>\t",
+    "                            </ng-container>",
+    "                        </tr>",
+    "                    </tbody>",
+    "                </table>",
+    "            </div>",
+    "        </div>",
+    "    </div>",
+    "",
+    "    <div class=\"panel panel-default\">",
+    "        <div class=\"panel-heading\">",
+    "            <h4 class=\"panel-title\">",
+    "                <a data-toggle=\"collapse\" data-parent=\"#emailAccordion\" href=\"#collapse2\">Production</a>",
+    "            </h4>",
+    "        </div>",
+    "",
+    "        <div id=\"collapse2\" class=\"panel-collapse collapse\">",
+    "            <div class=\"panel-body\">",
+    "                <table class=\"table table-hover table-mail\">",
+    "                    <thead>",
+    "",
+    "                    </thead>",
+    "                    <tbody>",
+    "",
+    "                    </tbody>",
+    "                </table>",
+    "            </div>",
+    "        </div>",
+    "    </div>",
+    "</div>",
+    "",
+    "<!-- Prime NG dialog module, http://www.primefaces.org/primeng/#/dialog for more info -->",
+    "<p-dialog header=\"{{bezl.vars.Subject}}\" width=\"1200\" [(visible)]=\"bezl.vars.dialogVisible\" [modal]=\"false\" appendTo=\"body\">",
+    "  \t<div style=\"overflow-y: scroll; height: 500px;\" [innerHtml]=\"bezl.vars.emailBody\"></div>",
+    "  <footer></footer>",
+    "</p-dialog>",
+    ""
+  ],
+  "functions": [
+    {
+      "method": "ngOnInit",
+      "code": "bezl.vars.emailBody = '';\nbezl.vars.loading = true;",
+      "declares": [
+        "$",
+        "parm",
+        "bezl",
+        "dataResp",
+        "require",
+        "FusionCharts"
+      ],
+      "compiled": "bezl.vars.emailBody = '';\r\nbezl.vars.loading = true;\r\n"
+    },
+    {
+      "method": "onDataChange",
+      "code": "bezl.data = dataResp;\n\nif(bezl.data.mail) {\n  bezl.vars.loading = false;\n}\n\nif(bezl.data.EmailBody) {\n  bezl.vars.dialogVisible = true;\n  bezl.vars.emailBody = bezl.data.EmailBody;\n}",
+      "declares": [
+        "$",
+        "parm",
+        "bezl",
+        "dataResp",
+        "require",
+        "FusionCharts"
+      ],
+      "compiled": "bezl.data = dataResp;\r\nif (bezl.data.mail) {\r\n    bezl.vars.loading = false;\r\n}\r\nif (bezl.data.EmailBody) {\r\n    bezl.vars.dialogVisible = true;\r\n    bezl.vars.emailBody = bezl.data.EmailBody;\r\n}\r\n"
+    },
+    {
+      "method": "retrieveEmails",
+      "code": "bezl.vars.loading = true;\nbezl.dataService.process('mail');",
+      "declares": [
+        "$",
+        "parm",
+        "bezl",
+        "dataResp",
+        "require",
+        "FusionCharts"
+      ],
+      "compiled": "bezl.vars.loading = true;\r\nbezl.dataService.process('mail');\r\n"
+    },
+    {
+      "method": "loadEmail",
+      "code": "bezl.vars.Subject = parm.Subject;\n\nbezl.dataService.add('EmailBody', 'brdb', 'Office365', 'GetBody',\n\t{\n    \t\"UserName\": \"\",\n        \"Password\": ,\n        \"Id\": parm.Id\n\t}, 0);",
+      "declares": [
+        "$",
+        "parm",
+        "bezl",
+        "dataResp",
+        "require",
+        "FusionCharts"
+      ],
+      "compiled": "bezl.vars.Subject = parm.Subject;\r\nbezl.dataService.add('EmailBody', 'brdb', 'Office365', 'GetBody', {\r\n    \"UserName\": \"\",\r\n    \"Password\": ,\r\n    \"Id\": parm.Id\r\n}, 0);\r\n"
+    },
+    {
+      "method": "ngAfterViewInit",
+      "code": "",
+      "declares": [
+        "$",
+        "parm",
+        "bezl",
+        "dataResp",
+        "require",
+        "FusionCharts"
+      ],
+      "compiled": ""
+    }
+  ],
+  "data": ""
+}

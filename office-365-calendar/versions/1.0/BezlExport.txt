@@ -1,0 +1,101 @@
+﻿{
+  "id": "beccf0df-1004-4fb5-895f-e3e9364ffd2f",
+  "name": "Calendar",
+  "template": "custom",
+  "owner": "rschnable@saberlogic.com",
+  "shares": [],
+  "vars": [
+    {
+      "name": "config",
+      "value": "{\n    \"description\": \"Calendar\",\n    \"icon\": \"fa-calendar\",\n    \"type\": \"simple\",\n    \"refreshing\": \"false\",\n    \"ref\": \"6fc9f446-189f-90c5-4b5a\",\n    \"showAll\": false,\n    \"multiRowConfig\": {\n        \"title\": \"OrderNum\",\n        \"start\": \"OrderDate\",\n        \"end\": \"OrderDate\",\n        \"url\": \"\"\n    },\n    \"columnSelectionFormula\": \"\",\n    \"eventDetailsMarkup\": \"\",\n    \"advancedColumnSelection\": false,\n    \"advancedColumnSelectionFormula\": \"\",\n    \"columns\": []    \n}"
+    }
+  ],
+  "dataSubscriptions": [
+    {
+      "name": "calendar",
+      "connectionId": "f1be529f-a135-47a3-8143-ef7e0023787a",
+      "dataSource": "brdb",
+      "plugin": "Office365",
+      "method": "GetCalendar",
+      "args": {
+        "UserName": "",
+        "Password": ""
+      },
+      "data": null,
+      "refreshInverval": 0,
+      "lastRefresh": null
+    }
+  ],
+  "markup": [
+    "<p-dialog [(visible)]=\"bezl.vars.config.viewDetails\" [modal]=\"false\">",
+    "  <div *ngIf=\"bezl.vars.config.eventData\">",
+    "                </div></p-dialog><div class=\"panel\">",
+    "  <div class=\"pad-all\">",
+    "    <p class=\"text-lg text-semibold\">",
+    "      <i class=\"fa {{bezl.vars.config.icon}}\"></i> ",
+    "      {{bezl.vars.config.description}} ",
+    "      <i *ngIf=\"bezl.vars.config.refreshing == false\" style=\"cursor: pointer; cursor: hand;\" class=\"fa fa-refresh\" (click)=\"bezl.functions.refresh()\"></i>",
+    "      <i *ngIf=\"bezl.vars.config.refreshing == true\" style=\"cursor: not-allowed;\" class=\"fa fa-refresh fa-spin\"></i>",
+    "    </p>",
+    "  </div>",
+    "  <div class=\"pad-all\">",
+    "    <div id=\"calendar\"></div>",
+    "  </div>",
+    "</div>"
+  ],
+  "functions": [
+    {
+      "method": "ngOnInit",
+      "code": "bezl.vars.config.refreshing = true;\nbezl.vars.config.init = true;",
+      "declares": [
+        "$",
+        "parm",
+        "bezl",
+        "dataResp",
+        "require",
+        "FusionCharts"
+      ],
+      "compiled": "bezl.vars.config.refreshing = true;\r\nbezl.vars.config.init = true;\r\n"
+    },
+    {
+      "method": "onDataChange",
+      "code": "bezl.data = dataResp;\n\nif(bezl.data.calendar){\n    bezl.vars['config'].events = [];\n  \n  \tbezl.data.calendar.map(cal => { \n      bezl.vars.config.events.push({'title': cal.Subject, 'start': cal.ItemDate});\n    });\n  \n  \t$('#calendar').fullCalendar({\n      events: bezl.vars.config.events\n    });\n  \n  \tif(!bezl.vars.config.init) {\n  \t\t$('#calendar').fullCalendar('renderEvents', bezl.vars.config.events, true);\n    }\n  \n    bezl.vars['config'].refreshing = false;\n}",
+      "declares": [
+        "$",
+        "parm",
+        "bezl",
+        "dataResp",
+        "require",
+        "FusionCharts"
+      ],
+      "compiled": "bezl.data = dataResp;\r\nif (bezl.data.calendar) {\r\n    bezl.vars['config'].events = [];\r\n    bezl.data.calendar.map(function (cal) {\r\n        bezl.vars.config.events.push({ 'title': cal.Subject, 'start': cal.ItemDate });\r\n    });\r\n    $('#calendar').fullCalendar({\r\n        events: bezl.vars.config.events\r\n    });\r\n    if (!bezl.vars.config.init) {\r\n        $('#calendar').fullCalendar('renderEvents', bezl.vars.config.events, true);\r\n    }\r\n    bezl.vars['config'].refreshing = false;\r\n}\r\n"
+    },
+    {
+      "method": "refresh",
+      "code": "$('#calendar').fullCalendar('removeEvents');\nbezl.vars.config.refreshing = true;\nbezl.vars.config.init = false;\nbezl.dataService.process('calendar');\n",
+      "declares": [
+        "$",
+        "parm",
+        "bezl",
+        "dataResp",
+        "require",
+        "FusionCharts"
+      ],
+      "compiled": "$('#calendar').fullCalendar('removeEvents');\r\nbezl.vars.config.refreshing = true;\r\nbezl.vars.config.init = false;\r\nbezl.dataService.process('calendar');\r\n"
+    },
+    {
+      "method": "ngAfterViewInit",
+      "code": "",
+      "declares": [
+        "$",
+        "parm",
+        "bezl",
+        "dataResp",
+        "require",
+        "FusionCharts"
+      ],
+      "compiled": ""
+    }
+  ],
+  "data": ""
+}
