@@ -656,6 +656,58 @@
             }
         },
         {
+            "itemId": "office-365-calendar",
+            "itemName": "Office 365 Calendar",
+            "featured": true,
+            "itemDescription": "This Office 365 Calendar bezl will allow you to view your calendar appointments. Future updates will include the ability to update and modify emails, i.e. delete, flag or forward them.",
+            "thumbnailPath": "https://bezlio-gallery.azurewebsites.net/office-365-calendar/images/thumb.png",
+            "thumbnailAltText": "Screenshot showing calendar for January 2018",
+            "itemImages": [
+                {
+                    "imagePath": "https://bezlio-gallery.azurewebsites.net/office-365-inbox/images/detail.png",
+                    "imageAltText": "Screenshot showing a more detailed calendar view"
+                }
+            ],
+            "itemVideos": [],
+            "roles": [
+                "universal"
+            ],
+            "platforms": [
+                "office 365"
+            ],
+            "path": "office-365-calendar",
+            "additionalFiles": [],
+            "installationNotes": {
+                "intro": "This bezl requires your Office 365 email address and password. For security purposes, these have been removed, so the bezl will not function on startup. Please refer to our knowledgebase article for detailed instructions on configuring."
+            }
+        },
+        {
+            "itemId": "office-365-inbox",
+            "itemName": "Office 365 Mailbox",
+            "featured": true,
+            "itemDescription": "This Office 365 Mailbox bezl will allow you to view your inbox, filtered by Subject text, and even view messages in their full detail. Future updates will include the ability to update and modify emails, i.e. delete, flag or forward them.",
+            "thumbnailPath": "https://bezlio-gallery.azurewebsites.net/office-365-inbox/images/thumb.png",
+            "thumbnailAltText": "Screenshot showing inbox items, filtered by Bezlio messages",
+            "itemImages": [
+                {
+                    "imagePath": "https://bezlio-gallery.azurewebsites.net/office-365-inbox/images/detail.png",
+                    "imageAltText": "Screenshot showing an email opened up in detail view"
+                }
+            ],
+            "itemVideos": [],
+            "roles": [
+                "universal"
+            ],
+            "platforms": [
+                "office 365"
+            ],
+            "path": "office-365-inbox",
+            "additionalFiles": [],
+            "installationNotes": {
+                "intro": "This bezl requires your Office 365 email address and password. For security purposes, these have been removed, so the bezl will not function on startup. Please refer to our knowledgebase article for detailed instructions on configuring."
+            }
+        },
+        {
             "itemId": "part-lookup",
             "itemName": "Part Lookup",
             "featured": false,
@@ -769,7 +821,7 @@
                 }
             ],
             "installationNotes": {
-            "intro": "When you install this Bezl it will require you to point the data subscriptions to your data connection and SQL Server plugin. If you have any questions, please contact support and we will help you get it set up."
+                "intro": "When you install this Bezl it will require you to point the data subscriptions to your data connection and SQL Server plugin. If you have any questions, please contact support and we will help you get it set up."
             }
         },
         {
