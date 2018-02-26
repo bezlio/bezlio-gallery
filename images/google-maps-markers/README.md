@@ -1,0 +1,1 @@
+All credit for these images go to Benjamin Keen (http://www.benjaminkeen.com) who kindly made them available for free use at http://www.benjaminkeen.com/google-maps-coloured-markers/.
