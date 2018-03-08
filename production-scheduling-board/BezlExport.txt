@@ -1,12 +1,13 @@
 ﻿{
-  "id": "b4747d08-5d8b-4d8a-b556-2dd2f1eaec62",
+  "id": "0412fdde-1ac1-4657-9cd9-687bae25d7e8",
   "name": "Production Scheduling Board",
   "template": "custom",
-  "owner": "kmansfield@saberlogic.com",
+  "owner": "nowens@saberlogic.com",
   "shares": [],
   "vars": [],
   "dataSubscriptions": [
     {
+      "onDemand": null,
       "name": "JobSchedule",
       "connectionId": "b9084b1e-48b6-45e7-a5e3-d68fe28f7d70",
       "dataSource": "brdb",
@@ -22,6 +23,7 @@
       "lastRefresh": null
     },
     {
+      "onDemand": null,
       "name": "Resources",
       "connectionId": "b9084b1e-48b6-45e7-a5e3-d68fe28f7d70",
       "dataSource": "brdb",
@@ -178,7 +180,7 @@
   "functions": [
     {
       "method": "ngOnInit",
-      "code": "bezl.vars.loading = true;\nbezl.vars.locations = [];\n\n// Configure drang and drop\nbezl.vars.dragList = [];\n\nsetTimeout(function(){ \n  require(['https://cdn.rawgit.com/bevacqua/dragula/7b9d90ed/dist/dragula.js'], function(dragula) {\n    \n    // Add each of the elements we want to make draggable to dragList\n    bezl.vars.dragList.push(document.getElementById('jobQueue'));\n    \n    // Now make them draggable with options we may wish to configure\n    bezl.vars.drake = dragula(bezl.vars.dragList,{\n      isContainer: function (el) {\n        return false; // only elements in drake.containers will be taken into account\n      },\n      moves: function (el, source, handle, sibling) {\n        return true; // elements are always draggable by default\n      },\n      accepts: function (el, target, source, sibling) {\n        return true; // elements can be dropped in any of the `containers` by default\n      },\n      invalid: function (el, handle) {\n        return false; // don't prevent any drags from initiating by default\n      },\n      direction: 'vertical',             // Y axis is considered when determining where an element would be dropped\n      copy: false,                       // elements are moved by default, not copied\n      copySortSource: false,             // elements in copy-source containers can be reordered\n      revertOnSpill: true,              // spilling will put the element back where it was dragged from, if this is true\n      removeOnSpill: false,              // spilling will `.remove` the element, if this is true\n      mirrorContainer: document.body,    // set the element that gets mirror elements appended\n      ignoreInputTextSelection: true     // allows users to select input text, see details below\n    });    \n  });\n}, 100);\n",
+      "code": "bezl.vars.loading = true;\nbezl.vars.locations = [];\n\n",
       "declares": [
         "$",
         "parm",
@@ -187,7 +189,7 @@
         "require",
         "FusionCharts"
       ],
-      "compiled": "bezl.vars.loading = true;\r\nbezl.vars.locations = [];\r\n// Configure drang and drop\r\nbezl.vars.dragList = [];\r\nsetTimeout(function () {\r\n    require(['https://cdn.rawgit.com/bevacqua/dragula/7b9d90ed/dist/dragula.js'], function (dragula) {\r\n        // Add each of the elements we want to make draggable to dragList\r\n        bezl.vars.dragList.push(document.getElementById('jobQueue'));\r\n        // Now make them draggable with options we may wish to configure\r\n        bezl.vars.drake = dragula(bezl.vars.dragList, {\r\n            isContainer: function (el) {\r\n                return false; // only elements in drake.containers will be taken into account\r\n            },\r\n            moves: function (el, source, handle, sibling) {\r\n                return true; // elements are always draggable by default\r\n            },\r\n            accepts: function (el, target, source, sibling) {\r\n                return true; // elements can be dropped in any of the `containers` by default\r\n            },\r\n            invalid: function (el, handle) {\r\n                return false; // don't prevent any drags from initiating by default\r\n            },\r\n            direction: 'vertical',\r\n            copy: false,\r\n            copySortSource: false,\r\n            revertOnSpill: true,\r\n            removeOnSpill: false,\r\n            mirrorContainer: document.body,\r\n            ignoreInputTextSelection: true // allows users to select input text, see details below\r\n        });\r\n    });\r\n}, 100);\r\n"
+      "compiled": "bezl.vars.loading = true;\r\nbezl.vars.locations = [];\r\n"
     },
     {
       "method": "onDataChange",
@@ -240,6 +242,19 @@
         "FusionCharts"
       ],
       "compiled": "var FusionCharts; // Loop through the resource queues and update the job schedule accordingly.  Doing this by just\r\n// looking at DOM elements with jQuery.  We could also have done this with a bit more of a managed\r\n// set of arrays build on the onDrop events but this seemed easier, save for just being a little\r\n// harder to understand here.\r\n$('[id^=\"resource\"]').each(function (index, resource) {\r\n    var resourceId = resource.id.replace(/resource/i, '');\r\n    var resourceSequence = 10;\r\n    $(this).find('[id*=\"Job\"]').each(function (index, job) {\r\n        // Update the given job with the assigned resource and sequence\r\n        var job = bezl.data.JobSchedule.find(function (j) { return j.UniqueID == job.id.replace(/queueJob/i, '').replace(/resourceJob/i, ''); });\r\n        if (job) {\r\n            job.ResourceID = resourceId;\r\n            job.ResourceSequence = resourceSequence;\r\n            // Update bezl.data.Resources.Jobs as well\r\n            bezl.data.Resources.forEach(function (r) {\r\n                var rjob = r.Jobs.find(function (j) { return j.UniqueID == job; });\r\n                if (rjob) {\r\n                    job.ResourceID = resourceId;\r\n                    job.ResourceSequence = resourceSequence;\r\n                }\r\n            });\r\n        }\r\n        resourceSequence += 10;\r\n    });\r\n});\r\n// Clear the resource ID from anything in the queue\r\n$('#jobQueue').each(function (index, queue) {\r\n    $(this).find('[id^=\"resourceJob\"]').each(function (index, job) {\r\n        console.log(job);\r\n        var js = bezl.data.JobSchedule.find(function (j) { return j.UniqueID == job.id.replace(/resourceJob/i, ''); });\r\n        if (js) {\r\n            js.ResourceID = ' ';\r\n        }\r\n    });\r\n});\r\n// Now push the saved changes out. Any BRDB call is acceptable here, just keep the subscription name as 'SaveChanges' so that we can correctly monitor for success\r\nbezl.dataService.add('SaveChanges', 'brdb', 'ExcelPlugin', 'WriteFile', {\r\n    FileName: \"c:\\\\Program Files (x86)\\\\Bezlio Remote Data Broker\\\\Data\\\\production.xlsx\",\r\n    SheetName: \"Job Schedule\",\r\n    FirstRowColumnNames: \"Yes\",\r\n    SheetData: JSON.stringify(bezl.data.JobSchedule)\r\n}, 0);\r\nbezl.vars.saving = true;\r\n"
+    },
+    {
+      "method": "ngAfterViewInit",
+      "code": "// Configure drang and drop\nbezl.vars.dragList = [];\n\nsetTimeout(function(){ \n  require(['https://cdn.rawgit.com/bevacqua/dragula/7b9d90ed/dist/dragula.js'], function(dragula) {\n    \n    // Add each of the elements we want to make draggable to dragList\n    bezl.vars.dragList.push(document.getElementById('jobQueue'));\n    \n    // Now make them draggable with options we may wish to configure\n    bezl.vars.drake = dragula(bezl.vars.dragList,{\n      isContainer: function (el) {\n        return false; // only elements in drake.containers will be taken into account\n      },\n      moves: function (el, source, handle, sibling) {\n        return true; // elements are always draggable by default\n      },\n      accepts: function (el, target, source, sibling) {\n        return true; // elements can be dropped in any of the `containers` by default\n      },\n      invalid: function (el, handle) {\n        return false; // don't prevent any drags from initiating by default\n      },\n      direction: 'vertical',             // Y axis is considered when determining where an element would be dropped\n      copy: false,                       // elements are moved by default, not copied\n      copySortSource: false,             // elements in copy-source containers can be reordered\n      revertOnSpill: true,              // spilling will put the element back where it was dragged from, if this is true\n      removeOnSpill: false,              // spilling will `.remove` the element, if this is true\n      mirrorContainer: document.body,    // set the element that gets mirror elements appended\n      ignoreInputTextSelection: true     // allows users to select input text, see details below\n    });    \n  });\n}, 100);\n",
+      "declares": [
+        "$",
+        "parm",
+        "bezl",
+        "dataResp",
+        "require",
+        "FusionCharts"
+      ],
+      "compiled": "var FusionCharts; // Configure drang and drop\r\nbezl.vars.dragList = [];\r\nsetTimeout(function () {\r\n    require(['https://cdn.rawgit.com/bevacqua/dragula/7b9d90ed/dist/dragula.js'], function (dragula) {\r\n        // Add each of the elements we want to make draggable to dragList\r\n        bezl.vars.dragList.push(document.getElementById('jobQueue'));\r\n        // Now make them draggable with options we may wish to configure\r\n        bezl.vars.drake = dragula(bezl.vars.dragList, {\r\n            isContainer: function (el) {\r\n                return false; // only elements in drake.containers will be taken into account\r\n            },\r\n            moves: function (el, source, handle, sibling) {\r\n                return true; // elements are always draggable by default\r\n            },\r\n            accepts: function (el, target, source, sibling) {\r\n                return true; // elements can be dropped in any of the `containers` by default\r\n            },\r\n            invalid: function (el, handle) {\r\n                return false; // don't prevent any drags from initiating by default\r\n            },\r\n            direction: 'vertical',\r\n            copy: false,\r\n            copySortSource: false,\r\n            revertOnSpill: true,\r\n            removeOnSpill: false,\r\n            mirrorContainer: document.body,\r\n            ignoreInputTextSelection: true // allows users to select input text, see details below\r\n        });\r\n    });\r\n}, 100);\r\n"
     }
   ],
   "data": ""
