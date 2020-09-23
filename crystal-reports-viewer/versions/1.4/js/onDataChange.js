@@ -12,7 +12,7 @@ define(["./report.js"], function (report) {
             bezl.data.Report = null;
 
             require.config({
-              paths: {'pdfjs-dist': 'https://npmcdn.com/pdfjs-dist'}
+              paths: {'pdfjs-dist': 'https://npmcdn.com/pdfjs-dist@2.0.943'}
             });
             require(['pdfjs-dist/build/pdf'], function (PDFJS) {
 
